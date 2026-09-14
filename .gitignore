@@ -1,0 +1,24 @@
+# KiCad backups and autosaves
+*-bak
+*.kicad_sch-bak
+*.kicad_pcb-bak
+_autosave-*
+*.bck
+*.tmp
+
+# KiCad lock files
+~*.lck
+
+# KiCad local/per-user settings (not meant to be shared)
+*.kicad_prl
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# KiCad local history (KiCad keeps its own git repo in here)
+.history/
+
+# KiCad caches / backup dirs
+fp-info-cache
+*-backups/
