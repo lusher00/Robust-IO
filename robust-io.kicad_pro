@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 3.2,
-          "height": 3.6,
-          "width": 3.6
+          "drill": 0.0,
+          "height": 0.45,
+          "width": 1.5
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -195,6 +195,9 @@
       ],
       "track_widths": [
         0.0,
+        0.2,
+        0.3,
+        0.4,
         0.5,
         1.0,
         2.0,
@@ -231,6 +234,22 @@
         {
           "diameter": 0.0,
           "drill": 0.0
+        },
+        {
+          "diameter": 0.6,
+          "drill": 0.3
+        },
+        {
+          "diameter": 0.8,
+          "drill": 0.4
+        },
+        {
+          "diameter": 1.2,
+          "drill": 0.6
+        },
+        {
+          "diameter": 1.5,
+          "drill": 0.8
         }
       ],
       "zones_allow_external_fillets": false
@@ -491,7 +510,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "roboIO.kicad_pro",
+    "filename": "robust-io.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -525,13 +544,13 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 2.0,
+        "track_width": 5.0,
         "tuning_profile": "",
-        "via_diameter": 0.8,
-        "via_drill": 0.4
+        "via_diameter": 1.6,
+        "via_drill": 0.6
       },
       {
-        "clearance": 0.5,
+        "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_width": 0.2,
         "microvia_diameter": 0.3,
@@ -732,18 +751,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "roboIO.kicad_sch",
-        "name": "roboIO",
+        "filename": "robust-io.kicad_sch",
+        "name": "robust-io",
         "uuid": "322f7d05-ddc2-428a-a730-7ae2c3e041ae"
       }
     ],
-    "used_designators": "Q3-4,J9-10,J14,J16,J18-19",
+    "used_designators": "C71-73,Q3-4,#PWR115-117,J9-10,J14,J16,J18-19",
     "variants": []
   },
   "sheets": [
     [
       "322f7d05-ddc2-428a-a730-7ae2c3e041ae",
-      "roboIO"
+      "robust-io"
     ],
     [
       "c9871cc2-d22f-4c29-a335-190c71969a0a",

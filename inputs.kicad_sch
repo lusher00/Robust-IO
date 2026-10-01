@@ -2651,13 +2651,13 @@
 		)
 	)
 	(junction
-		(at 184.15 87.63)
+		(at 184.15 90.17)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "02465dab-263d-4302-9fe4-81aec7259039")
 	)
 	(junction
-		(at 189.23 87.63)
+		(at 189.23 90.17)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0d3d2ee0-4fca-4bc2-9f23-5b971576cca0")
@@ -2675,7 +2675,7 @@
 		(uuid "1adb49c8-f998-4ec7-8a2a-da09c2bb10c3")
 	)
 	(junction
-		(at 194.31 87.63)
+		(at 194.31 90.17)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1be38afa-8a7c-43c6-959c-5899ec9f01a4")
@@ -2693,10 +2693,10 @@
 		(uuid "20762ef6-c6c4-43f8-83ca-3e59a7836c83")
 	)
 	(junction
-		(at 168.91 71.12)
+		(at 204.47 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "23ad277b-61c8-4c5e-94fe-0b5cce188878")
+		(uuid "2177245e-1d23-435b-9e67-0fc39595cc4d")
 	)
 	(junction
 		(at 25.4 50.8)
@@ -2705,13 +2705,7 @@
 		(uuid "240e6c9d-8018-4760-b5c1-87f65b30a97e")
 	)
 	(junction
-		(at 179.07 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2bde7516-9c13-4935-8abc-8eb08d10a74e")
-	)
-	(junction
-		(at 209.55 87.63)
+		(at 209.55 90.17)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2c630453-c3dc-427f-83e4-f1ecc3fb5a36")
@@ -2747,6 +2741,12 @@
 		(uuid "3735d5dd-4c27-4d31-8e94-7a9cce0674fb")
 	)
 	(junction
+		(at 173.99 68.58)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "38627aa2-9e99-46e7-9f9a-fd805c0c361f")
+	)
+	(junction
 		(at 35.56 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2763,6 +2763,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3c6e1622-440c-413f-9d96-ea010c9e8fd6")
+	)
+	(junction
+		(at 214.63 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3d0b21c3-baed-442e-96eb-0794ed5fa188")
 	)
 	(junction
 		(at 55.88 87.63)
@@ -2789,16 +2795,16 @@
 		(uuid "4bf2b507-78f1-44ed-b1e6-0597e0eba260")
 	)
 	(junction
-		(at 132.08 76.2)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4f63dd98-9c17-4d0a-8328-50d8514c77af")
-	)
-	(junction
 		(at 91.44 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "53bd7288-854b-4a6b-bc45-0726d676ea18")
+	)
+	(junction
+		(at 209.55 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5a3f0961-7ee9-4a71-a0a9-fad4d90a6671")
 	)
 	(junction
 		(at 137.16 45.72)
@@ -2807,10 +2813,16 @@
 		(uuid "5a955538-eaaf-412c-9128-54003a84ef38")
 	)
 	(junction
-		(at 189.23 60.96)
+		(at 194.31 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5c3ef7ed-5429-4285-919b-25193d089bf1")
+		(uuid "5c74f334-69a7-4cb1-9733-668054201e9b")
+	)
+	(junction
+		(at 184.15 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5c882a36-c4e6-4e9f-aaa2-aab84b25aaa0")
 	)
 	(junction
 		(at 99.06 97.79)
@@ -2849,6 +2861,12 @@
 		(uuid "68a88f50-f849-4084-837e-0dccef20ee72")
 	)
 	(junction
+		(at 199.39 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6971b1bf-1971-4a6a-b957-01122fbfd682")
+	)
+	(junction
 		(at 236.22 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2873,13 +2891,7 @@
 		(uuid "77e8c423-840c-420d-83ab-db3ad0416037")
 	)
 	(junction
-		(at 163.83 73.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "77eaba73-bf40-4d37-8a47-2b9f650d5679")
-	)
-	(junction
-		(at 204.47 87.63)
+		(at 204.47 90.17)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "781678d8-6ae4-47c3-812e-b103bd85af23")
@@ -2889,6 +2901,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8430a0c6-19b1-4840-bc15-d353d8a08509")
+	)
+	(junction
+		(at 179.07 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "891c60e0-9be1-4173-ada7-f047aec04a8a")
 	)
 	(junction
 		(at 45.72 60.96)
@@ -2901,12 +2919,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "920a5416-1a2f-4e0a-8fc9-3002b9949495")
-	)
-	(junction
-		(at 209.55 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "935ca00a-f98d-4c31-a893-b27f6375cb57")
 	)
 	(junction
 		(at 40.64 87.63)
@@ -2933,7 +2945,7 @@
 		(uuid "a2a830fc-8a37-4cd3-a68b-d716cbe0797a")
 	)
 	(junction
-		(at 173.99 87.63)
+		(at 173.99 90.17)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a50eb37c-7ab5-4b73-86a5-7336ca867149")
@@ -2957,6 +2969,12 @@
 		(uuid "aa0726d4-31fe-4bbc-b448-a9f86d5ad63d")
 	)
 	(junction
+		(at 168.91 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aa74eed8-2408-4b94-8dec-415c6c68dda7")
+	)
+	(junction
 		(at 236.22 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2969,22 +2987,10 @@
 		(uuid "b7c1b951-d35d-40a6-879d-a6df4af620f1")
 	)
 	(junction
-		(at 204.47 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bae3fec5-af34-44ff-aa21-a0d9e462dae1")
-	)
-	(junction
 		(at 50.8 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bd79fbf5-096c-43eb-b0d2-12d8579d8e5d")
-	)
-	(junction
-		(at 173.99 68.58)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bfa63ee1-eee8-47cf-9d48-73ee8f4805c5")
 	)
 	(junction
 		(at 236.22 114.3)
@@ -2993,19 +2999,19 @@
 		(uuid "c54a71d1-b01b-4b57-ba45-da0a965d5b28")
 	)
 	(junction
-		(at 214.63 48.26)
+		(at 189.23 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ce79e24d-3053-431d-b655-2a1cc13b3a43")
+		(uuid "cd3551c3-1667-41d7-b1c7-bdac46e0e186")
 	)
 	(junction
-		(at 194.31 58.42)
+		(at 163.83 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "d24ee02a-2a31-4e6b-b9ce-eb63bd66127e")
+		(uuid "ce253e8d-ca85-45e3-a23a-28d973118bda")
 	)
 	(junction
-		(at 199.39 87.63)
+		(at 199.39 90.17)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d4da22fd-6bc8-4a09-8594-02d70a7951f8")
@@ -3029,16 +3035,10 @@
 		(uuid "eb1a89d4-a977-41f7-9aa6-12906a23dcdb")
 	)
 	(junction
-		(at 168.91 87.63)
+		(at 168.91 90.17)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f04cc273-9509-4a2e-a08e-f0da67d9aa04")
-	)
-	(junction
-		(at 184.15 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f3ce160b-e129-4ec5-b858-8399cd3c566e")
 	)
 	(junction
 		(at 236.22 48.26)
@@ -3047,13 +3047,7 @@
 		(uuid "f733869c-a973-445f-91d2-3adc4386fdba")
 	)
 	(junction
-		(at 199.39 55.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f7abc676-59a5-4b72-8472-ca4394b0f6d6")
-	)
-	(junction
-		(at 179.07 87.63)
+		(at 179.07 90.17)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fb13692c-9a89-462c-976e-5441a1c7e5b4")
@@ -3102,7 +3096,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 82.55) (xy 189.23 87.63)
+			(xy 189.23 85.09) (xy 189.23 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3122,7 +3116,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 48.26) (xy 214.63 77.47)
+			(xy 214.63 48.26) (xy 214.63 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3152,23 +3146,13 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 43.18) (xy 101.6 43.18)
+			(xy 69.85 43.18) (xy 101.6 43.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "058669d9-e718-43a5-b385-101cf01064a1")
-	)
-	(wire
-		(pts
-			(xy 92.71 45.72) (xy 101.6 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "05eeb42d-d18c-42fa-a735-a6117d8e6626")
 	)
 	(wire
 		(pts
@@ -3202,17 +3186,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 71.12) (xy 168.91 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "08593025-5948-4651-bb12-2d5ab93dbfe4")
-	)
-	(wire
-		(pts
-			(xy 163.83 82.55) (xy 163.83 87.63)
+			(xy 163.83 85.09) (xy 163.83 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3222,7 +3196,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 82.55) (xy 209.55 87.63)
+			(xy 209.55 85.09) (xy 209.55 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3342,7 +3316,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 87.63) (xy 189.23 87.63)
+			(xy 194.31 90.17) (xy 189.23 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3352,7 +3326,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 87.63) (xy 209.55 87.63)
+			(xy 214.63 90.17) (xy 209.55 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3532,7 +3506,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 87.63) (xy 179.07 87.63)
+			(xy 184.15 90.17) (xy 179.07 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3542,7 +3516,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 87.63) (xy 168.91 87.63)
+			(xy 173.99 90.17) (xy 168.91 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3599,6 +3573,16 @@
 			(type default)
 		)
 		(uuid "2c797750-48b5-4743-a88b-468917d434a3")
+	)
+	(wire
+		(pts
+			(xy 199.39 55.88) (xy 199.39 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2cf36a61-6fb5-4ded-a599-1447caa867d0")
 	)
 	(wire
 		(pts
@@ -3862,7 +3846,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 53.34) (xy 204.47 77.47)
+			(xy 204.47 53.34) (xy 204.47 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3939,16 +3923,6 @@
 			(type default)
 		)
 		(uuid "451e007c-34e7-4218-9281-e23095ea1b03")
-	)
-	(wire
-		(pts
-			(xy 194.31 58.42) (xy 194.31 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4583459a-2a96-4838-b7ec-a10e41d021fd")
 	)
 	(wire
 		(pts
@@ -4082,16 +4056,6 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 68.58) (xy 173.99 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4e50662c-840d-4a93-b59d-a6d46c66da34")
-	)
-	(wire
-		(pts
 			(xy 236.22 78.74) (xy 236.22 83.82)
 		)
 		(stroke
@@ -4162,7 +4126,7 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 82.55) (xy 199.39 87.63)
+			(xy 199.39 85.09) (xy 199.39 90.17)
 		)
 		(stroke
 			(width 0)
@@ -4272,7 +4236,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 66.04) (xy 179.07 77.47)
+			(xy 179.07 66.04) (xy 179.07 80.01)
 		)
 		(stroke
 			(width 0)
@@ -4292,7 +4256,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 82.55) (xy 184.15 87.63)
+			(xy 184.15 85.09) (xy 184.15 90.17)
 		)
 		(stroke
 			(width 0)
@@ -4329,6 +4293,16 @@
 			(type default)
 		)
 		(uuid "65537ee1-96a8-416b-9422-b61f7f949841")
+	)
+	(wire
+		(pts
+			(xy 69.85 45.72) (xy 101.6 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65861c99-9759-48e3-81e2-42884c87cfa2")
 	)
 	(wire
 		(pts
@@ -4402,7 +4376,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 87.63) (xy 184.15 87.63)
+			(xy 189.23 90.17) (xy 184.15 90.17)
 		)
 		(stroke
 			(width 0)
@@ -4439,6 +4413,16 @@
 			(type default)
 		)
 		(uuid "6eda0e58-e9ec-42ff-b2b8-796531eaffeb")
+	)
+	(wire
+		(pts
+			(xy 189.23 60.96) (xy 189.23 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f7479a2-2f15-45c4-9dfd-5c840dd1c9eb")
 	)
 	(wire
 		(pts
@@ -4532,6 +4516,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.15 63.5) (xy 184.15 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78b428cc-5092-49be-8f8e-88ac5c26c084")
+	)
+	(wire
+		(pts
 			(xy 66.04 82.55) (xy 66.04 87.63)
 		)
 		(stroke
@@ -4572,7 +4566,7 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 87.63) (xy 194.31 87.63)
+			(xy 199.39 90.17) (xy 194.31 90.17)
 		)
 		(stroke
 			(width 0)
@@ -4872,17 +4866,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 60.96) (xy 189.23 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "95df3b62-fc9b-484f-b431-dacc480fd4f5")
-	)
-	(wire
-		(pts
-			(xy 129.54 38.1) (xy 147.32 38.1)
+			(xy 129.54 38.1) (xy 157.48 38.1)
 		)
 		(stroke
 			(width 0)
@@ -4922,13 +4906,23 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 50.8) (xy 209.55 77.47)
+			(xy 209.55 50.8) (xy 209.55 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "9938ec20-6dfb-4e37-87f7-3fe07e782059")
+	)
+	(wire
+		(pts
+			(xy 168.91 71.12) (xy 168.91 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99730082-6f00-4719-8abd-acc9fb34a9cc")
 	)
 	(wire
 		(pts
@@ -4939,6 +4933,16 @@
 			(type default)
 		)
 		(uuid "99c4cfe9-0d2d-493c-aeac-7ffa66df9627")
+	)
+	(wire
+		(pts
+			(xy 194.31 58.42) (xy 194.31 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9adfe1a8-828d-45da-8e8b-c086e9061da2")
 	)
 	(wire
 		(pts
@@ -5062,7 +5066,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 82.55) (xy 179.07 87.63)
+			(xy 179.07 85.09) (xy 179.07 90.17)
 		)
 		(stroke
 			(width 0)
@@ -5082,7 +5086,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 87.63) (xy 163.83 87.63)
+			(xy 168.91 90.17) (xy 163.83 90.17)
 		)
 		(stroke
 			(width 0)
@@ -5162,7 +5166,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 82.55) (xy 173.99 87.63)
+			(xy 173.99 85.09) (xy 173.99 90.17)
 		)
 		(stroke
 			(width 0)
@@ -5349,16 +5353,6 @@
 			(type default)
 		)
 		(uuid "b3f1b8d2-3c6d-42c4-b06d-736efeebecd0")
-	)
-	(wire
-		(pts
-			(xy 184.15 63.5) (xy 184.15 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b5d09ea8-05a9-483c-a40f-016ba0243427")
 	)
 	(wire
 		(pts
@@ -5592,7 +5586,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 87.63) (xy 173.99 87.63)
+			(xy 179.07 90.17) (xy 173.99 90.17)
 		)
 		(stroke
 			(width 0)
@@ -5662,7 +5656,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 40.64) (xy 101.6 40.64)
+			(xy 69.85 40.64) (xy 101.6 40.64)
 		)
 		(stroke
 			(width 0)
@@ -5722,23 +5716,13 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 87.63) (xy 199.39 87.63)
+			(xy 204.47 90.17) (xy 199.39 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "cfa9490c-8881-4bb3-88fc-e29de31be130")
-	)
-	(wire
-		(pts
-			(xy 199.39 55.88) (xy 199.39 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d0b1fcf9-3cba-46cc-ad24-01c11091b43f")
 	)
 	(wire
 		(pts
@@ -5822,7 +5806,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 82.55) (xy 204.47 87.63)
+			(xy 204.47 85.09) (xy 204.47 90.17)
 		)
 		(stroke
 			(width 0)
@@ -5972,7 +5956,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 45.72) (xy 147.32 45.72)
+			(xy 137.16 45.72) (xy 157.48 45.72)
 		)
 		(stroke
 			(width 0)
@@ -5982,7 +5966,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 82.55) (xy 194.31 87.63)
+			(xy 194.31 85.09) (xy 194.31 90.17)
 		)
 		(stroke
 			(width 0)
@@ -6012,6 +5996,16 @@
 	)
 	(wire
 		(pts
+			(xy 173.99 68.58) (xy 173.99 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e56eaa8f-f956-497e-a9b0-2c4e54e786b1")
+	)
+	(wire
+		(pts
 			(xy 248.92 124.46) (xy 251.46 124.46)
 		)
 		(stroke
@@ -6032,7 +6026,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 87.63) (xy 204.47 87.63)
+			(xy 209.55 90.17) (xy 204.47 90.17)
 		)
 		(stroke
 			(width 0)
@@ -6052,7 +6046,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 82.55) (xy 168.91 87.63)
+			(xy 168.91 85.09) (xy 168.91 90.17)
 		)
 		(stroke
 			(width 0)
@@ -6082,16 +6076,6 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 76.2) (xy 147.32 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb0d743a-ca80-40be-9840-9db2c87a8635")
-	)
-	(wire
-		(pts
 			(xy 86.36 60.96) (xy 101.6 60.96)
 		)
 		(stroke
@@ -6102,7 +6086,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 82.55) (xy 214.63 87.63)
+			(xy 214.63 85.09) (xy 214.63 90.17)
 		)
 		(stroke
 			(width 0)
@@ -6202,7 +6186,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 73.66) (xy 163.83 77.47)
+			(xy 163.83 73.66) (xy 163.83 80.01)
 		)
 		(stroke
 			(width 0)
@@ -6262,7 +6246,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 87.63) (xy 189.23 90.17)
+			(xy 189.23 90.17) (xy 189.23 92.71)
 		)
 		(stroke
 			(width 0)
@@ -6310,16 +6294,6 @@
 		)
 		(uuid "02ff6876-17ed-4d2b-bfde-c31df0a63064")
 	)
-	(label "MOSI0"
-		(at 92.71 40.64 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "03d0cb0c-465e-45b2-9a2e-6368278dfde1")
-	)
 	(label "_SP1"
 		(at 96.52 50.8 0)
 		(effects
@@ -6350,16 +6324,6 @@
 		)
 		(uuid "0a34472e-c93d-41ff-8858-0ea1db384f24")
 	)
-	(label "AMUX0"
-		(at 143.51 91.44 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0ca0e4b8-7aa7-4d50-bd2a-539b9b42299b")
-	)
 	(label "_SP3"
 		(at 261.62 53.34 0)
 		(effects
@@ -6389,16 +6353,6 @@
 			(justify left bottom)
 		)
 		(uuid "134b802a-08e5-4105-9aa2-976db16f4f7c")
-	)
-	(label "CS_IN0"
-		(at 92.71 45.72 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "158205bc-ec9d-4e4a-9ccd-5fb7a917f848")
 	)
 	(label "_SG9"
 		(at 261.62 124.46 0)
@@ -6439,16 +6393,6 @@
 			(justify left bottom)
 		)
 		(uuid "205a8210-de97-45bd-866a-757b90c8b5b2")
-	)
-	(label "INT_B0"
-		(at 142.24 45.72 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "243c9d29-0c2b-48a1-b447-5319dcdf06ee")
 	)
 	(label "SG2"
 		(at 15.24 63.5 0)
@@ -6670,16 +6614,6 @@
 		)
 		(uuid "69f33eb5-b369-4977-b0a2-49d6e52268ad")
 	)
-	(label "WAKE_B0"
-		(at 143.51 76.2 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6c1822f9-0dbf-4dbd-a130-29836d7268f6")
-	)
 	(label "SP4"
 		(at 58.42 144.78 0)
 		(effects
@@ -6820,26 +6754,6 @@
 		)
 		(uuid "90b62502-984c-44fd-be52-2acab9518405")
 	)
-	(label "SCLK0"
-		(at 92.71 43.18 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "974a0bc9-fa19-4701-be3e-5b1ad934fe10")
-	)
-	(label "MISO0"
-		(at 142.24 38.1 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "97906f41-7c18-4501-92c2-6f756788a51e")
-	)
 	(label "_SP1"
 		(at 261.62 43.18 0)
 		(effects
@@ -6869,6 +6783,16 @@
 			(justify right bottom)
 		)
 		(uuid "9f633ca6-0ace-42d1-9453-fbb6533da8b0")
+	)
+	(label "_SG6"
+		(at 96.52 73.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a01f77a5-b349-4360-b9c3-d7a3096f1d21")
 	)
 	(label "_SP5"
 		(at 130.81 53.34 0)
@@ -7060,7 +6984,7 @@
 		)
 		(uuid "d80e35e8-0c75-405e-b77a-f8fb674ea54e")
 	)
-	(label "_SP8"
+	(label "_SG8"
 		(at 130.81 71.12 0)
 		(effects
 			(font
@@ -7220,6 +7144,150 @@
 		)
 		(uuid "ff584d91-a99e-4654-8717-c68dc880f2e2")
 	)
+	(global_label "CS_IN0"
+		(shape input)
+		(at 69.85 45.72 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "00e8c76e-2cca-4161-9d65-6150eaeb53e4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 60.2729 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "INT_B0"
+		(shape input)
+		(at 157.48 45.72 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3a07bd43-ba0e-4240-bd60-bc0b3de16e28")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 166.8152 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "MOSI0"
+		(shape input)
+		(at 69.85 40.64 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "411bb092-3f35-4cd9-bbe8-defa67a316d9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 61.0591 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "SCLK0"
+		(shape input)
+		(at 69.85 43.18 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "79183175-8a10-43a4-a652-8a19381567a2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 60.8777 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "MISO0"
+		(shape input)
+		(at 157.48 38.1 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bc491ee8-c30b-4e9e-8864-3b9dcf38f218")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 166.2709 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "AMUX0"
+		(shape input)
+		(at 148.59 91.44 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "efd38ade-5b4a-45e6-addc-06ef998b291d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 157.8647 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:LED")
 		(at 255.27 53.34 180)
@@ -7303,7 +7371,7 @@
 			(uuid "c290e3d0-63ac-4202-9685-dd9fb9a43685")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D17")
 					(unit 1)
@@ -7380,7 +7448,7 @@
 			(uuid "4ddc88e1-c1bf-4cf0-ab69-993d4cd30f54")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR095")
 					(unit 1)
@@ -7390,7 +7458,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDREF")
-		(at 189.23 90.17 0)
+		(at 189.23 92.71 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7400,7 +7468,7 @@
 		(dnp no)
 		(uuid "07219e98-a138-4acd-9c6e-19587aa58453")
 		(property "Reference" "#PWR093"
-			(at 189.23 96.52 0)
+			(at 189.23 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7411,7 +7479,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 189.23 93.726 0)
+			(at 189.23 96.266 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7421,7 +7489,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 189.23 90.17 0)
+			(at 189.23 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7432,7 +7500,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 189.23 90.17 0)
+			(at 189.23 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7443,7 +7511,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDREF\" , reference supply ground"
-			(at 189.23 90.17 0)
+			(at 189.23 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7457,7 +7525,7 @@
 			(uuid "cac58236-923f-487a-975e-3b03df68f1ba")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR093")
 					(unit 1)
@@ -7535,7 +7603,7 @@
 			(uuid "df824fe8-6021-47fd-a627-ec0bf416a9b4")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR035")
 					(unit 1)
@@ -7614,7 +7682,7 @@
 			(uuid "944e24c1-b74b-46ee-adfd-9da6979c0b1c")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R31")
 					(unit 1)
@@ -7691,7 +7759,7 @@
 			(uuid "88216d0e-6b94-422d-9c25-f75088ceff3a")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR0101")
 					(unit 1)
@@ -7785,7 +7853,7 @@
 			(uuid "c462bba8-1218-4047-8e78-4b07984d60f2")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "J10")
 					(unit 1)
@@ -7876,7 +7944,7 @@
 			(uuid "3e777270-0534-4e67-b8a6-4ec6fa59d191")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D32")
 					(unit 1)
@@ -7953,7 +8021,7 @@
 			(uuid "e0fb5559-98aa-47d6-aa2d-424255c987b3")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR096")
 					(unit 1)
@@ -8033,7 +8101,7 @@
 			(uuid "550279fc-b424-4c81-90b3-1ba0ac0581cc")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R47")
 					(unit 1)
@@ -8116,7 +8184,7 @@
 			(uuid "e4a6dd62-803a-490d-bc36-12956a6c4952")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "F6")
 					(unit 1)
@@ -8197,7 +8265,7 @@
 			(uuid "b2b35a15-fb43-4218-b4f5-3a5dcbae9c50")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C19")
 					(unit 1)
@@ -8291,7 +8359,7 @@
 			(uuid "57b18fe4-9fbf-4de2-a604-8f2437a57bdf")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "J19")
 					(unit 1)
@@ -8371,7 +8439,7 @@
 			(uuid "40b11d32-2ee6-4848-9fa9-b3290a68b3c7")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R44")
 					(unit 1)
@@ -8448,7 +8516,7 @@
 			(uuid "6e69b310-e2c6-41e6-aa5c-0ebe88efcc4c")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR098")
 					(unit 1)
@@ -8525,7 +8593,7 @@
 			(uuid "922d95ba-f5e7-4788-a6ac-da230de4c3a7")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR089")
 					(unit 1)
@@ -8606,7 +8674,7 @@
 			(uuid "9990be1a-d8c6-453a-b229-2149f3637237")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C25")
 					(unit 1)
@@ -8697,7 +8765,7 @@
 			(uuid "682a3d6d-8020-40e2-810c-93b1837daa87")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D34")
 					(unit 1)
@@ -8776,7 +8844,7 @@
 			(uuid "c4315a2d-0954-4dec-be26-b06271bfdd94")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R32")
 					(unit 1)
@@ -8853,7 +8921,7 @@
 			(uuid "0463d016-a960-4d2b-ac7f-2c18fbad7fa7")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR050")
 					(unit 1)
@@ -8932,7 +9000,7 @@
 			(uuid "dd5bb747-7740-436a-bbdd-27d50cfa2763")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R29")
 					(unit 1)
@@ -9011,7 +9079,7 @@
 			(uuid "062e8c5d-deee-470a-9928-2a778683d657")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R73")
 					(unit 1)
@@ -9102,7 +9170,7 @@
 			(uuid "e79ea515-8550-4cb5-9fc3-9dfd46945c22")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D35")
 					(unit 1)
@@ -9183,7 +9251,7 @@
 			(uuid "ae9a2a87-5755-4542-8052-3f4edcb187c1")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C24")
 					(unit 1)
@@ -9274,7 +9342,7 @@
 			(uuid "528f5911-3ca4-4e30-a294-32c573d1d70b")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D25")
 					(unit 1)
@@ -9355,7 +9423,7 @@
 			(uuid "8173007a-0aa9-4af6-b3a9-1cdc75140f73")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C23")
 					(unit 1)
@@ -9443,7 +9511,7 @@
 			(uuid "e37a30ea-ac82-4ea0-b4e6-22424bc65cf0")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "J14")
 					(unit 1)
@@ -9534,7 +9602,7 @@
 			(uuid "3741e405-cdf9-4228-a62f-fab99052eb33")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D16")
 					(unit 1)
@@ -9614,7 +9682,7 @@
 			(uuid "8162b370-0b14-49ea-bdc6-811a3ef42267")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R46")
 					(unit 1)
@@ -9708,7 +9776,7 @@
 			(uuid "1fe71bf4-af67-461d-abb1-aeb08df60998")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "J9")
 					(unit 1)
@@ -9787,7 +9855,7 @@
 			(uuid "0638dab9-6543-48a5-bb42-f5eba3ca9189")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R37")
 					(unit 1)
@@ -9878,7 +9946,7 @@
 			(uuid "008c1118-4270-4c14-b268-264e372809db")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D29")
 					(unit 1)
@@ -9969,7 +10037,7 @@
 			(uuid "59588572-c831-4735-9cfa-c40ac23a0be7")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D24")
 					(unit 1)
@@ -10060,7 +10128,7 @@
 			(uuid "97a102c1-f687-4aa2-841d-fa10e79e2b35")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D18")
 					(unit 1)
@@ -10139,7 +10207,7 @@
 			(uuid "3fc7ebb1-afb0-4fd2-934a-f7a25fa3192a")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R77")
 					(unit 1)
@@ -10230,7 +10298,7 @@
 			(uuid "586de37c-6b77-4f50-9fee-8dc82d54b2b5")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D31")
 					(unit 1)
@@ -10324,7 +10392,7 @@
 			(uuid "beec3313-8d5f-4f76-a833-a2fb868ec7ff")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "J16")
 					(unit 1)
@@ -10404,7 +10472,7 @@
 			(uuid "45f65ec7-ee14-4404-a5c7-23cb294750e2")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R51")
 					(unit 1)
@@ -10481,7 +10549,7 @@
 			(uuid "231cc35d-895b-41c3-b576-812c2a1ad4ff")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR033")
 					(unit 1)
@@ -10558,7 +10626,7 @@
 			(uuid "98019a5e-750a-4f9d-b9f9-cdd0499a0f76")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR097")
 					(unit 1)
@@ -10637,7 +10705,7 @@
 			(uuid "975ecfc4-1eac-4d87-8843-a748c262f656")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R82")
 					(unit 1)
@@ -10716,7 +10784,7 @@
 			(uuid "de4311ad-cc5a-4f9b-b23f-310f486d1035")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R71")
 					(unit 1)
@@ -10797,7 +10865,7 @@
 			(uuid "e649bf58-1846-4e23-8dbe-b137126a11c0")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C20")
 					(unit 1)
@@ -10807,7 +10875,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
-		(at 189.23 80.01 0)
+		(at 189.23 82.55 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -10818,7 +10886,7 @@
 		(dnp no)
 		(uuid "4eceba99-44bd-48fc-a2b9-ea73494c8c8c")
 		(property "Reference" "C38"
-			(at 189.23 76.962 0)
+			(at 189.23 79.502 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10829,7 +10897,7 @@
 			)
 		)
 		(property "Value" ".1uF"
-			(at 188.976 78.486 0)
+			(at 188.976 81.026 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10840,7 +10908,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 189.23 80.01 0)
+			(at 189.23 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10851,7 +10919,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 189.23 80.01 0)
+			(at 189.23 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10862,7 +10930,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 189.23 80.01 0)
+			(at 189.23 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10879,7 +10947,7 @@
 			(uuid "47da994c-4f72-4b8a-9728-0523bdb5ef8f")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C38")
 					(unit 1)
@@ -10889,7 +10957,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
-		(at 214.63 80.01 0)
+		(at 214.63 82.55 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -10900,7 +10968,7 @@
 		(dnp no)
 		(uuid "4f2ba215-3549-4c85-b66d-1fadffb55867")
 		(property "Reference" "C33"
-			(at 214.63 76.962 0)
+			(at 214.63 79.502 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10911,7 +10979,7 @@
 			)
 		)
 		(property "Value" ".1uF"
-			(at 214.376 78.486 0)
+			(at 214.376 81.026 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10922,7 +10990,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 214.63 80.01 0)
+			(at 214.63 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10933,7 +11001,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 214.63 80.01 0)
+			(at 214.63 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10944,7 +11012,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 214.63 80.01 0)
+			(at 214.63 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10961,7 +11029,7 @@
 			(uuid "f68ef1e2-3027-4c5b-b880-06282c1bae27")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C33")
 					(unit 1)
@@ -11040,7 +11108,7 @@
 			(uuid "dcddcc21-6e71-469f-b025-11f6cd4c55f5")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R83")
 					(unit 1)
@@ -11117,7 +11185,7 @@
 			(uuid "7a3a183a-a9fe-42aa-917c-c26387d29f8d")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR0106")
 					(unit 1)
@@ -11127,7 +11195,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
-		(at 209.55 80.01 0)
+		(at 209.55 82.55 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -11138,7 +11206,7 @@
 		(dnp no)
 		(uuid "512c9675-41b5-4428-9316-0dfa69d7d4a5")
 		(property "Reference" "C34"
-			(at 209.55 76.962 0)
+			(at 209.55 79.502 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11149,7 +11217,7 @@
 			)
 		)
 		(property "Value" ".1uF"
-			(at 209.296 78.486 0)
+			(at 209.296 81.026 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11160,7 +11228,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 209.55 80.01 0)
+			(at 209.55 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11171,7 +11239,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 209.55 80.01 0)
+			(at 209.55 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11182,7 +11250,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 209.55 80.01 0)
+			(at 209.55 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11199,7 +11267,7 @@
 			(uuid "64b75eeb-cd75-4e6f-957f-ac8acd8475ed")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C34")
 					(unit 1)
@@ -11209,7 +11277,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
-		(at 173.99 80.01 0)
+		(at 173.99 82.55 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -11220,7 +11288,7 @@
 		(dnp no)
 		(uuid "52e64ec3-4361-4ee4-988f-9371893fe756")
 		(property "Reference" "C41"
-			(at 173.99 76.962 0)
+			(at 173.99 79.502 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11231,7 +11299,7 @@
 			)
 		)
 		(property "Value" ".1uF"
-			(at 173.736 78.486 0)
+			(at 173.736 81.026 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11242,7 +11310,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 173.99 80.01 0)
+			(at 173.99 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11253,7 +11321,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 173.99 80.01 0)
+			(at 173.99 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11264,7 +11332,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 173.99 80.01 0)
+			(at 173.99 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11281,7 +11349,7 @@
 			(uuid "cabfa942-035c-405a-9543-6b843eec4010")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C41")
 					(unit 1)
@@ -11362,7 +11430,7 @@
 			(uuid "0a639d95-70a7-45ff-a617-1c2eff693179")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C17")
 					(unit 1)
@@ -11445,7 +11513,7 @@
 			(uuid "41930af9-22c1-4847-a300-fe3ef75a61bb")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "F2")
 					(unit 1)
@@ -11455,7 +11523,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
-		(at 184.15 80.01 0)
+		(at 184.15 82.55 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -11466,7 +11534,7 @@
 		(dnp no)
 		(uuid "555253ce-0f25-484d-a13d-19a02f4ee518")
 		(property "Reference" "C39"
-			(at 184.15 76.962 0)
+			(at 184.15 79.502 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11477,7 +11545,7 @@
 			)
 		)
 		(property "Value" ".1uF"
-			(at 183.896 78.486 0)
+			(at 183.896 81.026 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11488,7 +11556,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 184.15 80.01 0)
+			(at 184.15 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11499,7 +11567,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 184.15 80.01 0)
+			(at 184.15 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11510,7 +11578,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 184.15 80.01 0)
+			(at 184.15 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11527,7 +11595,7 @@
 			(uuid "81e48c4f-6da8-46b9-9909-701a65f1a208")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C39")
 					(unit 1)
@@ -11606,7 +11674,7 @@
 			(uuid "cc10488b-25f6-4648-b6c0-f88c2beb2173")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R35")
 					(unit 1)
@@ -11686,7 +11754,7 @@
 			(uuid "95d49682-6bf8-48fc-8c25-eea629d455cd")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R52")
 					(unit 1)
@@ -11766,7 +11834,7 @@
 			(uuid "20403a71-191e-4955-96f0-184cb7f81643")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R49")
 					(unit 1)
@@ -11857,7 +11925,7 @@
 			(uuid "3d60c617-0b02-4cc1-be27-8a508831cef1")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D15")
 					(unit 1)
@@ -11938,7 +12006,7 @@
 			(uuid "782b79a2-4e96-4944-b756-8a65970e7f53")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C18")
 					(unit 1)
@@ -12015,7 +12083,7 @@
 			(uuid "967ed8ab-e6d1-428e-ab51-83ad8a6f0d2d")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR051")
 					(unit 1)
@@ -12094,7 +12162,7 @@
 			(uuid "65796851-47db-4f89-a235-ec02886f7e42")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R70")
 					(unit 1)
@@ -12173,7 +12241,7 @@
 			(uuid "b28ffc9e-6436-4dd6-9f71-8dbdb133903a")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R81")
 					(unit 1)
@@ -12252,7 +12320,7 @@
 			(uuid "9dee34e7-511e-40d8-9091-a586140828c4")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R28")
 					(unit 1)
@@ -12331,7 +12399,7 @@
 			(uuid "773e7309-afa0-4923-b21f-c4e78e77da9c")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R68")
 					(unit 1)
@@ -12408,7 +12476,7 @@
 			(uuid "b17cb108-38d4-4d08-a4b1-5c29074cc69c")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR052")
 					(unit 1)
@@ -12485,7 +12553,7 @@
 			(uuid "a6ab629a-d5c8-4591-b3db-218a9acde5f9")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR0105")
 					(unit 1)
@@ -12565,7 +12633,7 @@
 			(uuid "c76d1e0c-8e86-4c1a-b109-a7d4858e3b4e")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R45")
 					(unit 1)
@@ -12644,7 +12712,7 @@
 			(uuid "a145464a-0954-4c6e-bb07-85418a5cd52e")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R64")
 					(unit 1)
@@ -12723,7 +12791,7 @@
 			(uuid "7a6b45e5-141e-4dc4-985b-28cf5b152df7")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R40")
 					(unit 1)
@@ -12802,7 +12870,7 @@
 			(uuid "6bfed711-e0e9-4e42-bdf2-e55b0e7cda56")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R69")
 					(unit 1)
@@ -12881,7 +12949,7 @@
 			(uuid "89bab3b8-9e50-41d3-ab25-b556850e96aa")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R79")
 					(unit 1)
@@ -12960,7 +13028,7 @@
 			(uuid "00321ab0-d9da-44a7-a6fb-01533d200245")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R38")
 					(unit 1)
@@ -12970,7 +13038,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
-		(at 163.83 80.01 0)
+		(at 163.83 82.55 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -12981,7 +13049,7 @@
 		(dnp no)
 		(uuid "9977cea3-b32d-48d6-b27a-fec38d8f670c")
 		(property "Reference" "C43"
-			(at 163.83 76.962 0)
+			(at 163.83 79.502 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12992,7 +13060,7 @@
 			)
 		)
 		(property "Value" ".1uF"
-			(at 163.576 78.486 0)
+			(at 163.576 81.026 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13003,7 +13071,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 163.83 80.01 0)
+			(at 163.83 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13014,7 +13082,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 163.83 80.01 0)
+			(at 163.83 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13025,7 +13093,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 163.83 80.01 0)
+			(at 163.83 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13042,7 +13110,7 @@
 			(uuid "02a1144b-1ab2-4327-88c0-4bf4635ee4b4")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C43")
 					(unit 1)
@@ -13122,7 +13190,7 @@
 			(uuid "67680afa-44eb-4d64-ac9c-dc1234b5aa64")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R43")
 					(unit 1)
@@ -13201,7 +13269,7 @@
 			(uuid "f55d5d5d-285b-448f-a50b-b0a606f20cfb")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R80")
 					(unit 1)
@@ -13292,7 +13360,7 @@
 			(uuid "f28d620d-b3f3-4221-b0cb-65cb1bae989b")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D22")
 					(unit 1)
@@ -13371,7 +13439,7 @@
 			(uuid "ecdba64f-9c6b-44a1-9f6d-1fa347dd930d")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R67")
 					(unit 1)
@@ -13452,7 +13520,7 @@
 			(uuid "7cf1a1c5-721f-4b6e-82d0-8bd450172cb5")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C29")
 					(unit 1)
@@ -13543,7 +13611,7 @@
 			(uuid "5fbfa33f-2449-4b14-91a0-de1dc2479c7b")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D14")
 					(unit 1)
@@ -13634,7 +13702,7 @@
 			(uuid "b38df70a-6d6e-4991-bf3d-ab9835fa2c91")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D27")
 					(unit 1)
@@ -13715,7 +13783,7 @@
 			(uuid "3e39590f-a689-4b32-be99-73b7cb265674")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C27")
 					(unit 1)
@@ -13794,7 +13862,7 @@
 			(uuid "a397a4f6-49dd-45c7-b95d-422cdeff3023")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R33")
 					(unit 1)
@@ -13885,7 +13953,7 @@
 			(uuid "5c0acf27-29b4-4457-b2d5-5412d46bcc27")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D23")
 					(unit 1)
@@ -13895,7 +13963,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
-		(at 199.39 80.01 0)
+		(at 199.39 82.55 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -13906,7 +13974,7 @@
 		(dnp no)
 		(uuid "adfa5d1e-c1f7-4d91-8ed2-b58d1a3ed57e")
 		(property "Reference" "C36"
-			(at 199.39 76.962 0)
+			(at 199.39 79.502 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13917,7 +13985,7 @@
 			)
 		)
 		(property "Value" ".1uF"
-			(at 199.136 78.486 0)
+			(at 199.136 81.026 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13928,7 +13996,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 199.39 80.01 0)
+			(at 199.39 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13939,7 +14007,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 199.39 80.01 0)
+			(at 199.39 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13950,7 +14018,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 199.39 80.01 0)
+			(at 199.39 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13967,7 +14035,7 @@
 			(uuid "1839dbf9-fb9c-41de-993c-1d47edc24094")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C36")
 					(unit 1)
@@ -13977,7 +14045,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
-		(at 168.91 80.01 0)
+		(at 168.91 82.55 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -13988,7 +14056,7 @@
 		(dnp no)
 		(uuid "ae8c4e68-718e-4819-8945-d65c552d5c2a")
 		(property "Reference" "C42"
-			(at 168.91 76.962 0)
+			(at 168.91 79.502 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13999,7 +14067,7 @@
 			)
 		)
 		(property "Value" ".1uF"
-			(at 168.656 78.486 0)
+			(at 168.656 81.026 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14010,7 +14078,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 168.91 80.01 0)
+			(at 168.91 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14021,7 +14089,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 168.91 80.01 0)
+			(at 168.91 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14032,7 +14100,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 168.91 80.01 0)
+			(at 168.91 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14049,7 +14117,7 @@
 			(uuid "ce9b22ef-17ab-4be0-a4d4-5d2cb47f8390")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C42")
 					(unit 1)
@@ -14128,7 +14196,7 @@
 			(uuid "4b2e9f5a-2793-4230-9b5a-e94abf7697ea")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R30")
 					(unit 1)
@@ -14211,7 +14279,7 @@
 			(uuid "bade6c2c-8f40-4748-9403-b3674ca36a8c")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "F4")
 					(unit 1)
@@ -14290,7 +14358,7 @@
 			(uuid "f373e19e-e3ac-4993-9d47-3d2231ba9d12")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R41")
 					(unit 1)
@@ -14373,7 +14441,7 @@
 			(uuid "d40ca2eb-c7af-46de-a3e9-bb6e2252ea88")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "F8")
 					(unit 1)
@@ -14464,7 +14532,7 @@
 			(uuid "08c17f5a-1534-4fcd-9048-37777d11f1aa")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D28")
 					(unit 1)
@@ -14541,7 +14609,7 @@
 			(uuid "71aa6cb9-3b12-488c-8001-4b74e2fff9a5")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR049")
 					(unit 1)
@@ -14620,7 +14688,7 @@
 			(uuid "0bc75140-bcbf-4b3b-b1e4-34cda60b991e")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R36")
 					(unit 1)
@@ -14697,7 +14765,7 @@
 			(uuid "e6e07e28-ae9e-402f-94d0-807ae46409b4")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR092")
 					(unit 1)
@@ -14780,7 +14848,7 @@
 			(uuid "8cdd2b57-a617-48d8-9dc5-f3d25ad2dfb0")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "F3")
 					(unit 1)
@@ -14859,7 +14927,7 @@
 			(uuid "04fa5249-eec2-4c1e-a075-35d6ae939c23")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R72")
 					(unit 1)
@@ -14938,7 +15006,7 @@
 			(uuid "c73eb6b7-7eb2-4687-aef3-8ae3dcab7740")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R63")
 					(unit 1)
@@ -15015,7 +15083,7 @@
 			(uuid "bacb292c-48eb-4d53-9171-c7520a254740")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR094")
 					(unit 1)
@@ -15093,7 +15161,7 @@
 			(uuid "ec5c1a67-7769-4bc4-b22e-b91c4cb20434")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR034")
 					(unit 1)
@@ -15184,7 +15252,7 @@
 			(uuid "724367d2-ee8e-4004-8877-a3c6fb532e1e")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D20")
 					(unit 1)
@@ -15263,7 +15331,7 @@
 			(uuid "003046c0-f480-4da3-8720-5f74e6c3c66e")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R76")
 					(unit 1)
@@ -15344,7 +15412,7 @@
 			(uuid "73c30508-f1ad-4709-b83a-3ae58fb14c4f")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C26")
 					(unit 1)
@@ -15435,7 +15503,7 @@
 			(uuid "bde7d06b-65f5-4257-b79b-abb0b8d27a93")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D26")
 					(unit 1)
@@ -15526,7 +15594,7 @@
 			(uuid "19331175-74bc-4c50-9dde-62af936e9a14")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D30")
 					(unit 1)
@@ -15607,7 +15675,7 @@
 			(uuid "7662e730-1ba3-40ff-96f5-7e4e9a534f74")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C22")
 					(unit 1)
@@ -15698,7 +15766,7 @@
 			(uuid "aeab99c1-725b-428e-b148-3bd61be0e6ad")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D19")
 					(unit 1)
@@ -15775,7 +15843,7 @@
 			(uuid "eb441186-6118-46b6-a8d3-3a19845e3953")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR0102")
 					(unit 1)
@@ -15785,7 +15853,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
-		(at 179.07 80.01 0)
+		(at 179.07 82.55 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -15796,7 +15864,7 @@
 		(dnp no)
 		(uuid "cd9a9519-cb85-4ae8-ac8d-d87d22d32b68")
 		(property "Reference" "C40"
-			(at 179.07 76.962 0)
+			(at 179.07 79.502 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15807,7 +15875,7 @@
 			)
 		)
 		(property "Value" ".1uF"
-			(at 178.816 78.486 0)
+			(at 178.816 81.026 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15818,7 +15886,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 179.07 80.01 0)
+			(at 179.07 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15829,7 +15897,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 179.07 80.01 0)
+			(at 179.07 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15840,7 +15908,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 179.07 80.01 0)
+			(at 179.07 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15857,7 +15925,7 @@
 			(uuid "050d4216-47b5-4717-a7e6-69bbfa1f5998")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C40")
 					(unit 1)
@@ -15936,7 +16004,7 @@
 			(uuid "189e61b1-2827-4102-b344-a4fa10f46a7d")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R39")
 					(unit 1)
@@ -15946,7 +16014,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
-		(at 194.31 80.01 0)
+		(at 194.31 82.55 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -15957,7 +16025,7 @@
 		(dnp no)
 		(uuid "cf2bda88-3405-4511-b9bd-93415bae5d43")
 		(property "Reference" "C37"
-			(at 194.31 76.962 0)
+			(at 194.31 79.502 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15968,7 +16036,7 @@
 			)
 		)
 		(property "Value" ".1uF"
-			(at 194.056 78.486 0)
+			(at 194.056 81.026 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15979,7 +16047,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 194.31 80.01 0)
+			(at 194.31 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15990,7 +16058,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 194.31 80.01 0)
+			(at 194.31 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16001,7 +16069,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 194.31 80.01 0)
+			(at 194.31 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16018,7 +16086,7 @@
 			(uuid "dc8b5657-b2d0-41cb-8ee4-0b8868075f67")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C37")
 					(unit 1)
@@ -16097,7 +16165,7 @@
 			(uuid "3b8ce57b-da41-42b3-a042-98a48feb6b69")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R75")
 					(unit 1)
@@ -16176,7 +16244,7 @@
 			(uuid "a93c2f12-b677-4efc-966e-df80d141bf8b")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R74")
 					(unit 1)
@@ -16256,7 +16324,7 @@
 			(uuid "4fa77ed9-2e6c-454c-90e8-69dda68089fd")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R48")
 					(unit 1)
@@ -16337,7 +16405,7 @@
 			(uuid "452b2f68-f95a-4814-a7b9-f292d3a4daab")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C31")
 					(unit 1)
@@ -16431,7 +16499,7 @@
 			(uuid "73b40733-9370-4c57-8c3a-2a5f6a0b4ad2")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "J18")
 					(unit 1)
@@ -16512,7 +16580,7 @@
 			(uuid "5a81ea04-df53-4d5d-9aa5-7384653c91e9")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C30")
 					(unit 1)
@@ -16591,7 +16659,7 @@
 			(uuid "bb512e61-1325-4f32-ba52-fe3f1718e20d")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R65")
 					(unit 1)
@@ -16668,7 +16736,7 @@
 			(uuid "b9de0330-47a3-47d2-b26f-114d2b68ca6e")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR0103")
 					(unit 1)
@@ -16749,7 +16817,7 @@
 			(uuid "5677a539-376e-4296-8206-da2b1a975123")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D7")
 					(unit 1)
@@ -16829,7 +16897,7 @@
 			(uuid "3aa8efe0-c6fe-4fea-ada3-c88e587c56fe")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R42")
 					(unit 1)
@@ -16908,7 +16976,7 @@
 			(uuid "af457c80-5de3-4049-bfbe-d3441a8c19a8")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R62")
 					(unit 1)
@@ -16987,7 +17055,7 @@
 			(uuid "a13f2aa6-4ef6-40d2-a574-3722c87d1d24")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R78")
 					(unit 1)
@@ -17066,7 +17134,7 @@
 			(uuid "2ff2cd9d-1996-4718-9346-966badf2434d")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R34")
 					(unit 1)
@@ -17076,7 +17144,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
-		(at 204.47 80.01 0)
+		(at 204.47 82.55 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -17087,7 +17155,7 @@
 		(dnp no)
 		(uuid "eb51eefa-99cf-4df8-bb64-572f94c4fdf8")
 		(property "Reference" "C35"
-			(at 204.47 76.962 0)
+			(at 204.47 79.502 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17098,7 +17166,7 @@
 			)
 		)
 		(property "Value" ".1uF"
-			(at 204.216 78.486 0)
+			(at 204.216 81.026 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17109,7 +17177,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 204.47 80.01 0)
+			(at 204.47 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17120,7 +17188,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 204.47 80.01 0)
+			(at 204.47 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17131,7 +17199,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 204.47 80.01 0)
+			(at 204.47 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17148,7 +17216,7 @@
 			(uuid "494d36e7-309a-46dd-9bb9-2a21fd7813c0")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C35")
 					(unit 1)
@@ -17375,7 +17443,7 @@
 			(uuid "fe242d88-c34a-4ed6-8651-280b4d5b5c34")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "U7")
 					(unit 1)
@@ -17458,7 +17526,7 @@
 			(uuid "f5b06f8d-041f-434b-ac29-7821758a5f73")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "F7")
 					(unit 1)
@@ -17549,7 +17617,7 @@
 			(uuid "ead4669c-9b88-4d4c-9282-7198ade1f0bc")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D33")
 					(unit 1)
@@ -17629,7 +17697,7 @@
 			(uuid "db5a4bf6-178a-460e-a7ef-f4cbb3bdbe45")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R50")
 					(unit 1)
@@ -17708,7 +17776,7 @@
 			(uuid "4fe0c72f-d236-4572-a963-c63b9f76acc8")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "R66")
 					(unit 1)
@@ -17785,7 +17853,7 @@
 			(uuid "35728698-6702-4a03-8851-6e9cab7d38c1")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "#PWR0104")
 					(unit 1)
@@ -17866,7 +17934,7 @@
 			(uuid "b9c0694e-00a3-4e6a-b059-499e0f113e97")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C21")
 					(unit 1)
@@ -17957,7 +18025,7 @@
 			(uuid "85d17922-b176-4e40-94c6-bf8d5f9d856f")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "D21")
 					(unit 1)
@@ -18038,7 +18106,7 @@
 			(uuid "fd6c26f9-d0ba-4060-a211-19c96028cdf0")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C28")
 					(unit 1)
@@ -18119,7 +18187,7 @@
 			(uuid "e37a5f81-b135-47ba-b979-8a44cb41d9c8")
 		)
 		(instances
-			(project "roboIO"
+			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/887a3d78-1564-4676-8391-bb394e346573"
 					(reference "C32")
 					(unit 1)
