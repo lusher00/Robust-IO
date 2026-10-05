@@ -2,6 +2,8 @@
 
 A rugged industrial I/O board designed in KiCad 10.
 
+![Robust IO rev A, 3D render](docs/board-angle.png)
+
 ## Status
 
 - **Rev A:** released to fabrication on 2026-10-05 (JLCPCB, 5 bare boards,
@@ -69,6 +71,22 @@ listed in `fab/robust-io-testpoints.csv`.
 - `robust-io.kicad_sym`, `sym-lib-table` - project symbol library
 - `robust-io.kicad_dru` - custom design rules
 - `DRC.rpt`, `ERC.rpt` - latest check reports
+
+## Documentation (`docs/`)
+
+| File | Content |
+|---|---|
+| [robust-io-schematic.pdf](docs/robust-io-schematic.pdf) | Schematic, all sheets |
+| [layout-top.pdf](docs/layout-top.pdf), [layout-bottom.pdf](docs/layout-bottom.pdf) | Copper and silkscreen per side |
+| [assembly-top.pdf](docs/assembly-top.pdf) | Assembly drawing with reference designators |
+| [board-top.png](docs/board-top.png), [board-bottom.png](docs/board-bottom.png) | 3D renders |
+
+Regenerate with `bash docs/make_docs.sh` after saving the schematic and board.
+
+## Firmware (`firmware/`)
+
+Design only at this stage. See [firmware/DESIGN.md](firmware/DESIGN.md) for the
+pin map, architecture, console commands and CAN protocol proposal.
 
 ## Fabrication outputs (`fab/`)
 
