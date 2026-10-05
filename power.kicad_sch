@@ -317,6 +317,129 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C_Polarized_Small_US"
 			(pin_numbers
 				(hide yes)
@@ -1734,7 +1857,122 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "rml_kicad_lib:TPS5604"
+		(symbol "power:PWR_FLAG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "robust-io:TPS5604"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1825,7 +2063,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin power_in line
 					(at -7.62 -2.54 0)
 					(length 2.54)
 					(name "GND"
@@ -1861,7 +2099,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin input line
 					(at -7.62 0 0)
 					(length 2.54)
 					(name "EN"
@@ -1879,7 +2117,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin power_in line
 					(at -7.62 2.54 0)
 					(length 2.54)
 					(name "VIN"
@@ -1920,7 +2158,7 @@
 		)
 	)
 	(junction
-		(at 82.55 96.52)
+		(at 90.17 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0b4114c2-a543-4a32-a1c8-1bbf2ee41b73")
@@ -1932,7 +2170,7 @@
 		(uuid "13972c13-f134-4453-8a1e-8a5e563f7374")
 	)
 	(junction
-		(at 74.93 96.52)
+		(at 80.01 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "14ed7b02-5539-4996-b52b-a3f1892fc3d8")
@@ -1956,7 +2194,7 @@
 		(uuid "3d2e33a7-a511-44fc-bbd6-2b767ad81e6c")
 	)
 	(junction
-		(at 66.04 106.68)
+		(at 68.58 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "58dd9dd8-21b3-47f5-bb1c-74a643aa0ed7")
@@ -2022,7 +2260,7 @@
 		(uuid "b5ee1932-aa39-4464-992b-d7081cc23e8c")
 	)
 	(junction
-		(at 66.04 96.52)
+		(at 68.58 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c71fdadf-e7b9-42bb-91b2-034eeaf16b30")
@@ -2034,7 +2272,7 @@
 		(uuid "cb2951e6-3ca2-401c-a5b3-689691d3eab8")
 	)
 	(junction
-		(at 74.93 106.68)
+		(at 80.01 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d9ba800b-6964-4455-bf9d-7aa680e00290")
@@ -2071,7 +2309,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 104.14) (xy 82.55 106.68)
+			(xy 90.17 104.14) (xy 90.17 106.68)
 		)
 		(stroke
 			(width 0)
@@ -2111,7 +2349,17 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 96.52) (xy 66.04 99.06)
+			(xy 80.01 106.68) (xy 90.17 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06cb9950-4f59-417d-8b81-664044f22f13")
+	)
+	(wire
+		(pts
+			(xy 68.58 96.52) (xy 68.58 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2221,7 +2469,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 96.52) (xy 74.93 99.06)
+			(xy 80.01 96.52) (xy 80.01 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2251,7 +2499,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 106.68) (xy 66.04 109.22)
+			(xy 68.58 106.68) (xy 68.58 109.22)
 		)
 		(stroke
 			(width 0)
@@ -2331,7 +2579,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 96.52) (xy 82.55 99.06)
+			(xy 90.17 96.52) (xy 90.17 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2381,17 +2629,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 106.68) (xy 74.93 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "457fb623-d937-402a-ad42-65970d5ed9d9")
-	)
-	(wire
-		(pts
-			(xy 82.55 95.25) (xy 82.55 96.52)
+			(xy 90.17 95.25) (xy 90.17 96.52)
 		)
 		(stroke
 			(width 0)
@@ -2448,16 +2686,6 @@
 			(type default)
 		)
 		(uuid "4ce860d4-bf22-4848-8bf7-7ca0e2012d23")
-	)
-	(wire
-		(pts
-			(xy 57.15 96.52) (xy 82.55 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f477158-d776-415f-ace0-241ffa2fad91")
 	)
 	(wire
 		(pts
@@ -2641,6 +2869,16 @@
 	)
 	(wire
 		(pts
+			(xy 57.15 96.52) (xy 90.17 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8709d1a1-0de4-4c45-bd5c-f9333d473c61")
+	)
+	(wire
+		(pts
 			(xy 33.02 96.52) (xy 36.83 96.52)
 		)
 		(stroke
@@ -2721,7 +2959,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 104.14) (xy 66.04 106.68)
+			(xy 68.58 104.14) (xy 68.58 106.68)
 		)
 		(stroke
 			(width 0)
@@ -2738,16 +2976,6 @@
 			(type default)
 		)
 		(uuid "b2f83f18-9aa5-4e62-ab40-d478eceb9313")
-	)
-	(wire
-		(pts
-			(xy 57.15 106.68) (xy 74.93 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b443874d-2694-4577-9184-6e0e980d5a03")
 	)
 	(wire
 		(pts
@@ -2911,7 +3139,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 104.14) (xy 74.93 106.68)
+			(xy 80.01 104.14) (xy 80.01 106.68)
 		)
 		(stroke
 			(width 0)
@@ -2928,6 +3156,16 @@
 			(type default)
 		)
 		(uuid "dfa6b870-2231-4fee-8411-3bce43bd4d0b")
+	)
+	(wire
+		(pts
+			(xy 57.15 106.68) (xy 80.01 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfe085e8-d204-4212-aa34-4c26f5fc0fe8")
 	)
 	(wire
 		(pts
@@ -2968,6 +3206,870 @@
 			(type default)
 		)
 		(uuid "fdc5e9a8-4383-4c68-8d81-53a0c5868484")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 266.7 101.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0c5d3e7d-c9c2-4ff4-b75d-682f31aac9bf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 257.9 101.6 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "PH_M0"
+		(shape input)
+		(at 236.22 86.36 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0f854039-7fae-4512-a3ff-f2c86bc8c494")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 227.42 86.36 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "MISO0"
+		(shape input)
+		(at 205.74 63.5 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "17b3d759-37c5-4e54-a313-02b4e10137ce")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 196.94 63.5 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DRV_OUT2"
+		(shape input)
+		(at 266.7 40.64 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1acf28b1-3409-4c68-a8bb-106d9d754654")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 257.9 40.64 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DRV_OUT3"
+		(shape input)
+		(at 266.7 48.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "26bf151a-bc86-4c17-bdc3-30651fd5d62f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 257.9 48.26 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "ISENSE"
+		(shape input)
+		(at 205.74 86.36 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2ee21226-9323-4001-a3a5-5f8f8e8a417c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 196.94 86.36 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DEN2"
+		(shape input)
+		(at 236.22 55.88 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "37485da8-9c3b-4771-a817-0d4423d85dbc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 227.42 55.88 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "IPROPIM1"
+		(shape input)
+		(at 236.22 25.4 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3b04132d-aba2-4a4f-9cf6-5b15edab7ff9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 227.42 25.4 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DRV_OUT4"
+		(shape input)
+		(at 266.7 55.88 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "402077b6-e607-49b1-8a3e-d59b6452dd84")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 257.9 55.88 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "MOSI0"
+		(shape input)
+		(at 205.74 55.88 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4609d561-b908-4502-89b2-170f71534da9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 196.94 55.88 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "AMUX0"
+		(shape input)
+		(at 205.74 101.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "48d72b3e-0102-4dad-9aab-77c13c83e3ff")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 196.94 101.6 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DSELn"
+		(shape input)
+		(at 236.22 33.02 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5b3388d6-b338-4786-a9b9-95c678fcda05")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 227.42 33.02 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "+5V"
+		(shape input)
+		(at 205.74 33.02 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5f25fdad-a9dc-48d9-af04-09c1f9c02e4a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 196.94 33.02 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DRV_OUT0"
+		(shape input)
+		(at 266.7 25.4 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "609d81ce-72aa-405e-9e7b-2cb182b32860")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 257.9 25.4 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DRV_OUT7"
+		(shape input)
+		(at 266.7 78.74 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "78e13461-d968-43ba-8bd1-0b6964eeb6a1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 257.9 78.74 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "INT_B0"
+		(shape input)
+		(at 205.74 78.74 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "79682066-a6e4-4d37-a8a8-3ade223ee859")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 196.94 78.74 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "nSLEEPMn"
+		(shape input)
+		(at 236.22 101.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "79790cc1-a40e-4f99-ae10-97c0077b0fad")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 227.42 101.6 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DRV_OUT1"
+		(shape input)
+		(at 266.7 33.02 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "882bf4f6-c969-4696-8078-782cb72589a7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 257.9 33.02 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "EN_M1"
+		(shape input)
+		(at 236.22 78.74 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "889686d6-3ab5-449e-9a50-6f8e2ca3edd9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 227.42 78.74 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DRV_OUT5"
+		(shape input)
+		(at 266.7 63.5 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "951b4071-76e2-402e-a4ec-5dd8d6a7321b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 257.9 63.5 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "EN_M0"
+		(shape input)
+		(at 236.22 71.12 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "99f77ede-9b9a-4256-a9b6-3b904ee6856e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 227.42 71.12 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "+3.3V"
+		(shape input)
+		(at 205.74 25.4 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9bb8af0d-ceef-4551-81ec-a1cba1423571")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 196.94 25.4 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DRV_OUT6"
+		(shape input)
+		(at 266.7 71.12 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a2f5617f-8664-47d0-9f83-fa0f416d454b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 257.9 71.12 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "PH_M1"
+		(shape input)
+		(at 236.22 93.98 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a66529a9-96da-4ccc-a35c-ed2321f76c1e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 227.42 93.98 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DEN0"
+		(shape input)
+		(at 236.22 40.64 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ab4e327d-876c-4655-9d76-7d794d3d30f0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 227.42 40.64 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "CS_IN0"
+		(shape input)
+		(at 205.74 71.12 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c17c7352-33dd-4365-83ea-a743d5268d55")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 196.94 71.12 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 266.7 93.98 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c18e55a7-746f-41b1-b7a9-c21a85cd1727")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 257.9 93.98 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "FAULTMn"
+		(shape input)
+		(at 236.22 109.22 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d65cd08a-d006-4316-96b1-2bf8a9194eee")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 227.42 109.22 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "ISENSE_PROT"
+		(shape input)
+		(at 205.74 93.98 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d9494b43-3eda-4d8c-a203-2626145f88c5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 196.94 93.98 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "SCLK0"
+		(shape input)
+		(at 205.74 48.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e18899d5-f3ab-4e8f-af69-619b1c004111")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 196.94 48.26 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "IPROPIM0"
+		(shape input)
+		(at 205.74 109.22 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ee3223dc-f1ab-4433-943b-2c499ec05bb7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 196.94 109.22 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "+24V"
+		(shape input)
+		(at 205.74 40.64 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f25efaaf-ff58-4384-a17c-4c8ee67399f9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 196.94 40.64 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DEN3"
+		(shape input)
+		(at 236.22 63.5 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f3d3c2fa-9318-4d55-b3ec-2896b39ce4df")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 227.42 63.5 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DEN1"
+		(shape input)
+		(at 236.22 48.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f471d9d7-1523-47fd-95d7-38ee3b2b9342")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 227.42 48.26 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 266.7 86.36 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f540b95a-0e07-462a-8116-2ea291563e89")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 257.9 86.36 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 266.7 109.22 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f98996f4-542c-47cf-9899-ad33a9888f95")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 257.9 109.22 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 	)
 	(rule_area
 		(exclude_from_sim no)
@@ -3054,6 +4156,84 @@
 					(italic yes)
 				)
 				(justify left)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 48.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "019f6c3d-2ba4-4385-8a35-8a4f99100083")
+		(property "Reference" "TP4"
+			(at 207.34 44.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCLK0"
+			(at 205.74 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 205.74 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "614cbb1a-aa85-4f8a-a627-7ca1973e67e3")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP4")
+					(unit 1)
+				)
 			)
 		)
 	)
@@ -3218,6 +4398,240 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0857b701-d665-4b8d-974a-03a40320733b")
+		(property "Reference" "TP39"
+			(at 268.3 90.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 266.7 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 266.7 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9fbca3aa-31b1-4b27-ba6c-ec1bc2ba9e0e")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP39")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 236.22 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0aae229e-35c7-429c-88a4-e75d25c599b2")
+		(property "Reference" "TP29"
+			(at 237.82 105.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "FAULTMn"
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3d259fa2-c884-4f47-a905-3aade4c019a4")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 25.4 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0e2171ff-d194-4d83-b371-f3a505caa34f")
+		(property "Reference" "TP1"
+			(at 207.34 22.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 205.74 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 205.74 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "49a85892-d2c9-4542-ad1e-1969eda43fd2")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+12V")
 		(at 162.56 109.22 0)
 		(unit 1)
@@ -3326,7 +4740,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
+		(property "Footprint" "Inductor_SMD:L_Sunlord_SWPA4030S"
 			(at 147.32 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -3376,7 +4790,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDREF")
-		(at 66.04 109.22 0)
+		(at 68.58 109.22 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3386,7 +4800,7 @@
 		(dnp no)
 		(uuid "11042560-951d-4e33-8e75-b4869b2b479c")
 		(property "Reference" "#PWR055"
-			(at 66.04 115.57 0)
+			(at 68.58 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3397,7 +4811,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 66.04 114.046 0)
+			(at 68.58 114.046 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3407,7 +4821,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 66.04 109.22 0)
+			(at 68.58 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3418,7 +4832,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 66.04 109.22 0)
+			(at 68.58 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3429,7 +4843,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDREF\" , reference supply ground"
-			(at 66.04 109.22 0)
+			(at 68.58 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3446,6 +4860,84 @@
 			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
 					(reference "#PWR055")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 78.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "12ec6fb4-e80f-45f7-91c3-11d39b7828f5")
+		(property "Reference" "TP9"
+			(at 207.34 75.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "INT_B0"
+			(at 205.74 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 205.74 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6edd703e-69de-4f70-94cc-3c3a04b5d2b4")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP9")
 					(unit 1)
 				)
 			)
@@ -3694,6 +5186,318 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "18889cd3-a26d-47ef-b7bb-7db060e98d60")
+		(property "Reference" "TP5"
+			(at 207.34 52.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MOSI0"
+			(at 205.74 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 205.74 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4dfd463c-eb27-48d4-8049-60b7a752069a")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 236.22 40.64 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1a43fa48-9c4b-43d9-b846-e965f06a665f")
+		(property "Reference" "TP20"
+			(at 237.82 37.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DEN0"
+			(at 236.22 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 236.22 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 236.22 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ae8c2e6b-9571-45c5-8c18-07f311b62ede")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 71.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1fab6cdc-3749-47e6-8a8e-a5f533208250")
+		(property "Reference" "TP7"
+			(at 207.34 67.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CS_IN0"
+			(at 205.74 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 205.74 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7cb5be43-72dd-4094-8dc7-c7dc2e748921")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "249934d2-8098-4ca6-9992-99db80fc4e0f")
+		(property "Reference" "TP17"
+			(at 207.34 105.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "IPROPIM0"
+			(at 205.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 205.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "97676f3e-9a9f-4473-a969-76f069c06372")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GNDREF")
 		(at 87.63 152.4 0)
 		(unit 1)
@@ -3844,6 +5648,240 @@
 			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
 					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3257fdec-6228-4905-86b6-445a1a6457d9")
+		(property "Reference" "TP14"
+			(at 207.34 83.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ISENSE"
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "63478fd2-4202-4090-baa8-1f1a652bbe02")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 236.22 33.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3aef47fc-cab0-4b7d-a7be-ca7816d9edc6")
+		(property "Reference" "TP19"
+			(at 237.82 29.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DSELn"
+			(at 236.22 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 236.22 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 236.22 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "96f6a028-02c1-4964-9fc3-9e55398e0658")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 236.22 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3d630fc4-6f53-4a00-a745-d029b6e9d425")
+		(property "Reference" "TP22"
+			(at 237.82 52.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DEN2"
+			(at 236.22 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 236.22 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 236.22 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f56ce688-9d29-4441-8002-df0151409fef")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP22")
 					(unit 1)
 				)
 			)
@@ -4020,7 +6058,7 @@
 		(dnp no)
 		(uuid "4c39a920-f30f-4797-b728-fbf7d982581b")
 		(property "Reference" "C44"
-			(at 50.038 100.076 0)
+			(at 52.705 98.425 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4030,8 +6068,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100uF"
-			(at 49.784 102.108 0)
+		(property "Value" "100uF 50V"
+			(at 60.325 107.315 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4041,7 +6079,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:CP_Elec_8x10"
 			(at 57.15 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -4162,6 +6200,84 @@
 			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
 					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5322a03c-7c80-4da3-9d88-1bf8995e9e84")
+		(property "Reference" "TP34"
+			(at 268.3 52.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DRV_OUT4"
+			(at 266.7 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 266.7 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5d0b16c8-cd1b-4da0-bd99-6680b1b55e10")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP34")
 					(unit 1)
 				)
 			)
@@ -4326,8 +6442,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Polarized_Small_US")
-		(at 74.93 101.6 0)
+		(lib_id "Connector:TestPoint")
+		(at 266.7 109.22 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4335,9 +6451,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "616d0576-4d43-4435-938b-8a970242e13a")
-		(property "Reference" "C46"
-			(at 69.342 100.076 0)
+		(uuid "6121b31a-5c36-4e79-8eb5-d994733c918d")
+		(property "Reference" "TP41"
+			(at 268.3 105.92 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4347,8 +6463,86 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2uF"
-			(at 67.818 102.108 0)
+		(property "Value" "GND"
+			(at 266.7 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 266.7 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "91963004-e624-4bb3-bbfb-e3a41523aa3b")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized_Small_US")
+		(at 80.01 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "616d0576-4d43-4435-938b-8a970242e13a")
+		(property "Reference" "C46"
+			(at 76.2 99.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2.2uF 50V"
+			(at 82.55 106.68 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4359,7 +6553,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 74.93 101.6 0)
+			(at 80.01 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4370,7 +6564,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 74.93 101.6 0)
+			(at 80.01 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4381,7 +6575,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 74.93 101.6 0)
+			(at 80.01 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4401,6 +6595,239 @@
 			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
 					(reference "C46")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 115.57 74.93 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "617b71c9-164c-4b0e-a26b-ec268ef08ffe")
+		(property "Reference" "#FLG04"
+			(at 113.67 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 110.49 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 115.57 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 115.57 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 115.57 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d3747563-3d60-4c14-9a3a-cfc4c73bc1f4")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "#FLG04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 40.64 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "651806eb-7063-4b46-b5d1-9c27c9c0fe9b")
+		(property "Reference" "TP3"
+			(at 207.34 37.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+24V"
+			(at 205.74 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 205.74 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "95447324-048c-4d7f-a443-a86153dd3fbb")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 63.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "70c17fbf-95de-49d9-8675-bde82a249724")
+		(property "Reference" "TP6"
+			(at 207.34 60.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MISO0"
+			(at 205.74 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 205.74 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4b17ec9b-7cfa-449c-8cff-cbe64e245073")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP6")
 					(unit 1)
 				)
 			)
@@ -4490,7 +6917,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
-		(at 66.04 101.6 0)
+		(at 68.58 101.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4500,7 +6927,7 @@
 		(dnp no)
 		(uuid "73bf46c3-a124-4b5c-870d-151daa1763bd")
 		(property "Reference" "C45"
-			(at 58.928 100.076 0)
+			(at 64.77 99.06 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4510,8 +6937,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100uF"
-			(at 58.674 102.108 0)
+		(property "Value" "100uF 50V"
+			(at 71.755 107.315 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4521,8 +6948,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 66.04 101.6 0)
+		(property "Footprint" "Capacitor_SMD:CP_Elec_8x10"
+			(at 68.58 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4533,7 +6960,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 66.04 101.6 0)
+			(at 68.58 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4544,7 +6971,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 66.04 101.6 0)
+			(at 68.58 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4564,6 +6991,84 @@
 			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
 					(reference "C45")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 236.22 25.4 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "78eac2c3-8be4-4f01-8e30-1dda7775bd92")
+		(property "Reference" "TP18"
+			(at 237.82 22.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "IPROPIM1"
+			(at 236.22 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 236.22 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 236.22 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "acad941f-32cc-4ffc-b2ef-e29fec6e5307")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP18")
 					(unit 1)
 				)
 			)
@@ -4649,8 +7154,242 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 78.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "855bfd6e-c183-4174-a5d7-f248faa24b4e")
+		(property "Reference" "TP37"
+			(at 268.3 75.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DRV_OUT7"
+			(at 266.7 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 266.7 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1e0456c5-c1d1-40f3-999e-28b6f38764e7")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 236.22 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8e98bef2-f5a8-42f7-9cf9-9eb3d9b84d2c")
+		(property "Reference" "TP26"
+			(at 237.82 83.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PH_M0"
+			(at 236.22 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 236.22 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 236.22 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "18b7f95f-52c9-4a99-ba03-2b443a867188")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 236.22 78.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8f2457ea-7f0f-45df-bb7b-f33bc4ee31f8")
+		(property "Reference" "TP25"
+			(at 237.82 75.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "EN_M1"
+			(at 236.22 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 236.22 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 236.22 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "42895511-857f-46cf-98e0-641e526e2e78")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+24V")
-		(at 82.55 95.25 0)
+		(at 90.17 95.25 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4661,7 +7400,7 @@
 		(fields_autoplaced yes)
 		(uuid "8fa7a349-5adf-4b40-822c-879af92782bf")
 		(property "Reference" "#PWR038"
-			(at 82.55 99.06 0)
+			(at 90.17 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4672,7 +7411,7 @@
 			)
 		)
 		(property "Value" "+24V"
-			(at 82.55 90.17 0)
+			(at 90.17 90.17 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4682,7 +7421,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 82.55 95.25 0)
+			(at 90.17 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4693,7 +7432,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 82.55 95.25 0)
+			(at 90.17 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4704,7 +7443,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+24V\""
-			(at 82.55 95.25 0)
+			(at 90.17 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4721,6 +7460,84 @@
 			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
 					(reference "#PWR038")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "90910c4d-abeb-4446-b1d3-b681cce25ed6")
+		(property "Reference" "TP38"
+			(at 268.3 83.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 266.7 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 266.7 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "567ff93f-ae4f-4575-affb-f8b3033da571")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP38")
 					(unit 1)
 				)
 			)
@@ -4808,7 +7625,7 @@
 		)
 	)
 	(symbol
-		(lib_id "rml_kicad_lib:TPS5604")
+		(lib_id "robust-io:TPS5604")
 		(at 129.54 78.74 0)
 		(unit 1)
 		(body_style 1)
@@ -5010,7 +7827,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SMCJ28A"
+		(property "Value" "SMDJ24A"
 			(at 37.846 102.108 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5064,6 +7881,84 @@
 			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
 					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a48871ca-90e5-4c59-abec-bc21f3dad0b9")
+		(property "Reference" "TP15"
+			(at 207.34 90.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ISENSE_PROT"
+			(at 205.74 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 205.74 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d1cb1d35-47f2-46e8-bc9d-f10d1e7ea6de")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP15")
 					(unit 1)
 				)
 			)
@@ -5149,7 +8044,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
-		(at 82.55 101.6 0)
+		(at 90.17 101.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5159,7 +8054,7 @@
 		(dnp no)
 		(uuid "b044907d-f392-44e0-a636-9e225357ffb3")
 		(property "Reference" "C47"
-			(at 77.216 100.076 0)
+			(at 86.36 99.06 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5169,8 +8064,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" ".1uF"
-			(at 76.708 102.108 0)
+		(property "Value" ".1uF 50V"
+			(at 93.345 106.045 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5181,7 +8076,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 82.55 101.6 0)
+			(at 90.17 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5192,7 +8087,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 82.55 101.6 0)
+			(at 90.17 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5203,7 +8098,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 82.55 101.6 0)
+			(at 90.17 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5223,6 +8118,84 @@
 			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
 					(reference "C47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 236.22 63.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b64c7754-f9cf-4cb4-8ce3-d6143200d45e")
+		(property "Reference" "TP23"
+			(at 237.82 60.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DEN3"
+			(at 236.22 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 236.22 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 236.22 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e4e27a87-6af9-4a96-8534-b8da9047b94f")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP23")
 					(unit 1)
 				)
 			)
@@ -5301,6 +8274,84 @@
 			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
 					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 40.64 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bbf299cc-c8dd-4782-930e-929527d33811")
+		(property "Reference" "TP32"
+			(at 268.3 37.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DRV_OUT2"
+			(at 266.7 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 266.7 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5a3635ae-8e82-4722-a557-0d474c9c49f8")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP32")
 					(unit 1)
 				)
 			)
@@ -5465,7 +8516,85 @@
 		)
 	)
 	(symbol
-		(lib_id "rml_kicad_lib:TPS5604")
+		(lib_id "Connector:TestPoint")
+		(at 236.22 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c836688e-b7a2-4ad0-a21a-d3254af92614")
+		(property "Reference" "TP27"
+			(at 237.82 90.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PH_M1"
+			(at 236.22 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 236.22 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 236.22 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3bb5208a-fd6e-4c9a-8946-907a5579b453")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "robust-io:TPS5604")
 		(at 129.54 110.49 0)
 		(unit 1)
 		(body_style 1)
@@ -5638,6 +8767,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 236.22 71.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cbf3c90f-7552-4390-af3b-787b50e97d27")
+		(property "Reference" "TP24"
+			(at 237.82 67.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "EN_M0"
+			(at 236.22 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 236.22 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 236.22 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2d83f517-00e4-4fe6-a325-07c80a033d23")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
 		(at 115.57 80.01 0)
 		(unit 1)
@@ -5719,6 +8926,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 236.22 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d374e75d-4105-4060-9d8e-11abbceb1b53")
+		(property "Reference" "TP28"
+			(at 237.82 98.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "nSLEEPMn"
+			(at 236.22 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 236.22 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 236.22 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "72a6c53b-1023-4f2a-a647-94884153c78f")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GNDREF")
 		(at 115.57 115.57 0)
 		(unit 1)
@@ -5791,6 +9076,84 @@
 			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
 					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 33.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d65558f5-4047-47da-a026-399174e215d0")
+		(property "Reference" "TP2"
+			(at 207.34 29.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+5V"
+			(at 205.74 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 205.74 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c598e8ca-9353-4c88-bbd3-6699e68b8cb0")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP2")
 					(unit 1)
 				)
 			)
@@ -5954,6 +9317,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 25.4 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d8a1e1f7-cae8-4b9b-b0d7-7915594b1047")
+		(property "Reference" "TP30"
+			(at 268.3 22.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DRV_OUT0"
+			(at 266.7 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 266.7 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "65e8b39e-f15d-4d19-a131-9b47fb171107")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+12V")
 		(at 162.56 77.47 0)
 		(unit 1)
@@ -6026,6 +9467,84 @@
 			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
 					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 71.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dbe6ad9d-a239-4d92-b99b-3fc998cc8aa3")
+		(property "Reference" "TP36"
+			(at 268.3 67.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DRV_OUT6"
+			(at 266.7 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 266.7 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1ddaa35d-9758-4ada-bd8a-fe5325f1524c")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP36")
 					(unit 1)
 				)
 			)
@@ -6191,6 +9710,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e3289316-350c-47e7-abd5-f6e890bd535d")
+		(property "Reference" "TP16"
+			(at 207.34 98.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "AMUX0"
+			(at 205.74 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 205.74 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "070684a3-6c18-4d75-8200-a0710d3a260d")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GNDREF")
 		(at 95.25 152.4 0)
 		(unit 1)
@@ -6269,6 +9866,240 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 236.22 48.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "eb03b26c-f0f7-4dee-9e98-f43a189dc15f")
+		(property "Reference" "TP21"
+			(at 237.82 44.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DEN1"
+			(at 236.22 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 236.22 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 236.22 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "06246bcf-4b00-4dd9-b634-73b75d6fa9ed")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 48.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f17a42c1-6f8e-4764-a5f7-8c858f718f29")
+		(property "Reference" "TP33"
+			(at 268.3 44.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DRV_OUT3"
+			(at 266.7 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 266.7 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ab3eb6a4-b38f-41ae-8bb3-8444d57cd0c4")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f3446f56-d625-49ed-957f-acf20a78b038")
+		(property "Reference" "TP40"
+			(at 268.3 98.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 266.7 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 266.7 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e4d7d208-6e74-4665-941d-96f3e247e167")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP40")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:L")
 		(at 147.32 110.49 90)
 		(unit 1)
@@ -6299,7 +10130,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder"
+		(property "Footprint" "Inductor_SMD:L_Sunlord_SWPA4030S"
 			(at 147.32 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -6353,6 +10184,239 @@
 			(project "robust-io"
 				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
 					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 33.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f9c76d85-fb21-4a05-863d-e555228633bc")
+		(property "Reference" "TP31"
+			(at 268.3 29.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DRV_OUT1"
+			(at 266.7 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 266.7 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c770ba91-eaea-4817-be88-454badff3bda")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 63.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fa8eeca2-aa8a-4a93-9dcd-5f2b2864fc18")
+		(property "Reference" "TP35"
+			(at 268.3 60.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DRV_OUT5"
+			(at 266.7 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 266.7 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 266.7 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "400fbf42-01d3-4131-82fe-a9d3c3654492")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "TP35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 115.57 106.68 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ffd9aa42-8143-4f51-81d0-7ead2ceb06b9")
+		(property "Reference" "#FLG05"
+			(at 113.67 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 110.49 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 115.57 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 115.57 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 115.57 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9e3c061a-1911-40e0-91ab-b330ece8bdf4")
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae/c9871cc2-d22f-4c29-a335-190c71969a0a"
+					(reference "#FLG05")
 					(unit 1)
 				)
 			)

@@ -1614,7 +1614,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "robust-io:BTS7008-2EPA"
+		(symbol "rml_kicad_lib:BTS7008-2EPA"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1640,7 +1640,7 @@
 					)
 				)
 			)
-			(property "Footprint" "robust-io:PG-TSDSO-14_L4.9-W3.9-P0.65-LS6.0-BL-EP"
+			(property "Footprint" "rml_kicad_lib:PG-TSDSO-14_L4.9-W3.9-P0.65-LS6.0-BL-EP"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1931,7 +1931,7 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin input line
 					(at 12.7 0 180)
 					(length 2.54)
 					(name "n.c."
@@ -2024,7 +2024,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "robust-io:DRV8876PWPR"
+		(symbol "rml_kicad_lib:DRV8876PWPR"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2050,7 +2050,7 @@
 					)
 				)
 			)
-			(property "Footprint" "robust-io:HTSSOP-16_L5.0-W4.4-P0.65-LS6.4-BL-EP"
+			(property "Footprint" "rml_kicad_lib:HTSSOP-16_L5.0-W4.4-P0.65-LS6.4-BL-EP"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2161,7 +2161,7 @@
 						(type none)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at -13.97 8.89 0)
 					(length 2.54)
 					(name "EN/IN1"
@@ -2179,7 +2179,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at -13.97 6.35 0)
 					(length 2.54)
 					(name "PH/IN2"
@@ -2197,7 +2197,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at -13.97 3.81 0)
 					(length 2.54)
 					(name "nSLEEP"
@@ -2215,7 +2215,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at -13.97 1.27 0)
 					(length 2.54)
 					(name "nFAULT"
@@ -2233,7 +2233,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at -13.97 -1.27 0)
 					(length 2.54)
 					(name "VREF"
@@ -2251,7 +2251,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at -13.97 -3.81 0)
 					(length 2.54)
 					(name "IPROPI"
@@ -2269,7 +2269,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at -13.97 -6.35 0)
 					(length 2.54)
 					(name "IMODE"
@@ -2287,7 +2287,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at -13.97 -8.89 0)
 					(length 2.54)
 					(name "OUT1"
@@ -2305,7 +2305,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at 13.97 -8.89 180)
 					(length 2.54)
 					(name "PGND"
@@ -2323,7 +2323,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at 13.97 -6.35 180)
 					(length 2.54)
 					(name "OUT2"
@@ -2341,7 +2341,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at 13.97 -3.81 180)
 					(length 2.54)
 					(name "VM"
@@ -2359,7 +2359,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at 13.97 -1.27 180)
 					(length 2.54)
 					(name "VCP"
@@ -2377,7 +2377,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at 13.97 1.27 180)
 					(length 2.54)
 					(name "CPH"
@@ -2395,7 +2395,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at 13.97 3.81 180)
 					(length 2.54)
 					(name "CPL"
@@ -2413,7 +2413,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at 13.97 6.35 180)
 					(length 2.54)
 					(name "GND"
@@ -2431,7 +2431,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at 13.97 8.89 180)
 					(length 2.54)
 					(name "PMODE"
@@ -2449,7 +2449,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin unspecified line
 					(at 0 16.51 270)
 					(length 5.08)
 					(name "EP"
@@ -2979,7 +2979,7 @@
 	)
 	(wire
 		(pts
-			(xy 261.62 64.77) (xy 271.78 64.77)
+			(xy 250.19 64.77) (xy 271.78 64.77)
 		)
 		(stroke
 			(width 0)
@@ -3719,7 +3719,7 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 41.91) (xy 261.62 41.91)
+			(xy 271.78 41.91) (xy 250.19 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4019,7 +4019,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 85.09) (xy 271.78 85.09)
+			(xy 250.19 85.09) (xy 271.78 85.09)
 		)
 		(stroke
 			(width 0)
@@ -4249,7 +4249,7 @@
 	)
 	(wire
 		(pts
-			(xy 261.62 59.69) (xy 271.78 59.69)
+			(xy 250.19 59.69) (xy 271.78 59.69)
 		)
 		(stroke
 			(width 0)
@@ -4499,7 +4499,7 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 46.99) (xy 261.62 46.99)
+			(xy 271.78 46.99) (xy 250.19 46.99)
 		)
 		(stroke
 			(width 0)
@@ -4529,7 +4529,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 77.47) (xy 271.78 77.47)
+			(xy 250.19 77.47) (xy 271.78 77.47)
 		)
 		(stroke
 			(width 0)
@@ -5259,7 +5259,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 80.01) (xy 271.78 80.01)
+			(xy 250.19 80.01) (xy 271.78 80.01)
 		)
 		(stroke
 			(width 0)
@@ -5719,7 +5719,7 @@
 	)
 	(wire
 		(pts
-			(xy 261.62 62.23) (xy 271.78 62.23)
+			(xy 250.19 62.23) (xy 271.78 62.23)
 		)
 		(stroke
 			(width 0)
@@ -5829,7 +5829,7 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 49.53) (xy 261.62 49.53)
+			(xy 271.78 49.53) (xy 250.19 49.53)
 		)
 		(stroke
 			(width 0)
@@ -6249,7 +6249,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 82.55) (xy 271.78 82.55)
+			(xy 250.19 82.55) (xy 271.78 82.55)
 		)
 		(stroke
 			(width 0)
@@ -6279,7 +6279,7 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 44.45) (xy 261.62 44.45)
+			(xy 271.78 44.45) (xy 250.19 44.45)
 		)
 		(stroke
 			(width 0)
@@ -6389,7 +6389,7 @@
 	)
 	(wire
 		(pts
-			(xy 261.62 67.31) (xy 271.78 67.31)
+			(xy 250.19 67.31) (xy 271.78 67.31)
 		)
 		(stroke
 			(width 0)
@@ -7802,7 +7802,7 @@
 		)
 	)
 	(symbol
-		(lib_id "robust-io:DRV8876PWPR")
+		(lib_id "rml_kicad_lib:DRV8876PWPR")
 		(at 186.69 59.69 0)
 		(unit 1)
 		(body_style 1)
@@ -8238,7 +8238,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 143.764 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9027,7 +9027,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 128.524 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9418,7 +9418,7 @@
 		)
 	)
 	(symbol
-		(lib_id "robust-io:BTS7008-2EPA")
+		(lib_id "rml_kicad_lib:BTS7008-2EPA")
 		(at 69.85 41.91 0)
 		(unit 1)
 		(body_style 1)
@@ -10016,7 +10016,7 @@
 		)
 	)
 	(symbol
-		(lib_id "robust-io:BTS7008-2EPA")
+		(lib_id "rml_kicad_lib:BTS7008-2EPA")
 		(at 69.85 142.24 0)
 		(unit 1)
 		(body_style 1)
@@ -12440,7 +12440,7 @@
 		)
 	)
 	(symbol
-		(lib_id "robust-io:DRV8876PWPR")
+		(lib_id "rml_kicad_lib:DRV8876PWPR")
 		(at 186.69 105.41 0)
 		(unit 1)
 		(body_style 1)
@@ -13330,7 +13330,7 @@
 		)
 	)
 	(symbol
-		(lib_id "robust-io:BTS7008-2EPA")
+		(lib_id "rml_kicad_lib:BTS7008-2EPA")
 		(at 69.85 74.93 0)
 		(unit 1)
 		(body_style 1)
@@ -14801,7 +14801,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 113.284 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15332,7 +15332,7 @@
 		)
 	)
 	(symbol
-		(lib_id "robust-io:BTS7008-2EPA")
+		(lib_id "rml_kicad_lib:BTS7008-2EPA")
 		(at 69.85 107.95 0)
 		(unit 1)
 		(body_style 1)
@@ -15840,7 +15840,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 148.844 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15919,7 +15919,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 138.684 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15998,7 +15998,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 123.444 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16634,7 +16634,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 133.604 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17205,7 +17205,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 118.364 90)
 			(show_name no)
 			(do_not_autoplace no)

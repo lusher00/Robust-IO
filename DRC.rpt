@@ -1,0 +1,33 @@
+** Drc report for robust-io.kicad_pcb **
+** Created on 2026-10-05T13:30:45 **
+** Report includes: Errors, Warnings, Exclusions **
+
+** Found 4 DRC violations **
+[lib_footprint_mismatch]: Footprint 'PinHeader_1x06_P2.54mm_Vertical_SMD_Pin1Right' does not match copy in library 'Connector_PinHeader_2.54mm'
+    Local override; warning
+    @(167.8000 mm, 77.8500 mm): Footprint J20
+[lib_footprint_mismatch]: Footprint 'IC_DRV8876PWPR' does not match copy in library 'rml'
+    Local override; warning
+    @(177.2510 mm, 115.8033 mm): Footprint U1
+[lib_footprint_mismatch]: Footprint 'IC_DRV8876PWPR' does not match copy in library 'rml'
+    Local override; warning
+    @(158.6466 mm, 115.8902 mm): Footprint U14
+[lib_footprint_mismatch]: Footprint 'HSOP-32-1EP_7.5x11mm_P0.65mm_EP4.7x4.7mm' does not match copy in library 'Package_SO'
+    Local override; warning
+    @(110.3000 mm, 59.8000 mm): Footprint U7
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Silkscreen clipped by board edge
+    - PTH inside courtyard
+    - NPTH inside courtyard
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

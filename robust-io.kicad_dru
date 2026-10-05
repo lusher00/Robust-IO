@@ -1,0 +1,20 @@
+(version 1)
+
+# BTS7008 (U8-U11) and DRV8876 (U1, U14) pins are on a 0.65 mm pitch, which leaves 0.2 mm between pads.
+# The HS_Output netclass asks for 0.3 mm, so relax it to 0.2 mm at the pads of those ICs only.
+
+# An HS_Output pad on one of those ICs against any neighbouring copper.
+(rule "HS_Output IC pad to neighbour"
+	(condition "A.Type == 'Pad' && A.NetClass == 'HS_Output' && (A.memberOfFootprint('U1') || A.memberOfFootprint('U14') || A.memberOfFootprint('U8') || A.memberOfFootprint('U9') || A.memberOfFootprint('U10') || A.memberOfFootprint('U11'))")
+	(constraint clearance (min 0.2mm)))
+
+# Any HS_Output copper against a pad of one of those ICs.
+(rule "HS_Output copper to IC pad"
+	(condition "A.NetClass == 'HS_Output' && B.Type == 'Pad' && (B.memberOfFootprint('U1') || B.memberOfFootprint('U14') || B.memberOfFootprint('U8') || B.memberOfFootprint('U9') || B.memberOfFootprint('U10') || B.memberOfFootprint('U11'))")
+	(constraint clearance (min 0.2mm)))
+
+# U7 (HSOP-32, 0.65 mm pitch) has 0.5 mm wide pads, which leaves 0.15 mm between neighbouring pads.
+# Allow that gap between pads of U7 only; tracks and other copper keep the netclass clearance.
+(rule "U7 pad to pad"
+	(condition "A.Type == 'Pad' && B.Type == 'Pad' && A.memberOfFootprint('U7') && B.memberOfFootprint('U7')")
+	(constraint clearance (min 0.15mm)))

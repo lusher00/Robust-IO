@@ -8238,7 +8238,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 143.764 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9027,7 +9027,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 128.524 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14801,7 +14801,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 113.284 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15840,7 +15840,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 148.844 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15919,7 +15919,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 138.684 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15998,7 +15998,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 123.444 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16634,7 +16634,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 133.604 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17205,7 +17205,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 265.938 118.364 90)
 			(show_name no)
 			(do_not_autoplace no)

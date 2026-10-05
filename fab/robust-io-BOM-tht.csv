@@ -1,0 +1,6 @@
+Comment,Designator,Footprint,LCSC Part #
+10-20A,F1,Fuseholder_Blade_Mini_Keystone_3568,
+Screw_Terminal_01x06,"J3,J5,J6","PhoenixContact_MSTBA_2,5_6-G-5,08_1x06_P5.08mm_Horizontal",
+Screw_Terminal_01x04,"J4,J15","PhoenixContact_MSTBA_2,5_4-G-5,08_1x04_P5.08mm_Horizontal",
+Screw_Terminal_01x06,"J9,J10,J16,J18,J19","PhoenixContact_MC_1,5_6-G-3.5_1x06_P3.50mm_Horizontal",
+Screw_Terminal_01x04,J14,"PhoenixContact_MC_1,5_4-G-3.5_1x04_P3.50mm_Horizontal",
