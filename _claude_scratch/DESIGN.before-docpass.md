@@ -64,7 +64,7 @@ These come from the netlist and the device datasheets. Items marked CHECK are to
 - **ADC reference is AVCC (3.3 V).** AREF has only a capacitor.
 - **ISENSE scaling:** I_load = V_adc / 750 ohm x kILIS. kILIS is 5400 typical: within 4 % at 5.5 A, 13.5 % at 1 A, 30 % at 100 mA. 3.3 V full scale is about 23 A, about 23 mA per count at 10 bits. The fault signal is a sense current of at least 4.4 mA, which is 3.3 V on R25, so a reading above 3.0 V means fault. With the output off, an open load gives 1.9 to 3.5 mA (1.4 to 2.6 V).
 - **Motor current limit is set in hardware.** PMODE is tied low (PH/EN mode). VREF = 3.3 V x 16.2k / 26.2k = 2.04 V and IPROPI is 1.5k, so the DRV8876 regulates at about 1.36 A. Firmware reads current at 1.5 V per amp but cannot raise the limit.
-- **nSLEEP and nFAULT are shared** between the two DRV8876. A fault cannot be attributed to one motor from the pin alone, so the firmware stops both and records both IPROPI currents at the time of the fault for diagnosis.
+- **nSLEEP and nFAULT are shared** between the two DRV8876. A fault cannot be attributed to one motor from the pin alone; the firmware uses the two IPROPI readings and the commanded state to decide.
 - **SP0 to SP7 are configured as switch-to-ground.** SG pins are switch-to-ground only; SP pins are programmable as switch-to-ground or switch-to-battery. On rev A every input, SP included, has an indicator LED and 2.2k from +24V to the IC pin. In switch-to-battery mode that path sources about 8 mA into the pin with the switch open, more than the IC's sustain current sinks, so the input would read closed all the time. Switch-to-battery on an SP channel needs its LED removed (D14 to D17 for SP0 to SP3 on J9, D18 to D21 for SP4 to SP7 on J10). The MC33978 powers up with SP pins in switch-to-battery mode (datasheet), so the driver clears device configuration bits 7 to 0 before the first read.
 - **Clocks:** MCU 12 MHz, MCP2515 16 MHz (Y1). 115200 baud at 12 MHz with U2X has 0.16 % error.
 - **CAN termination** is SW1 (120 ohm). Not readable by firmware.
@@ -103,21 +103,21 @@ The Pi's UART can also serve as the J20 console: Pi pin 8 (TXD) to J20 pin 4, Pi
 
 ## 5. Architecture
 
-Single foreground loop plus short interrupt handlers. No RTOS, no dynamic memory.
+Single foreground loop plus short interrupt handlers. No dynamic memory.
 
-    app        config, inputs, canproto, console, selftest
+    app        console commands, CAN protocol, output/motor state machines
     --------------------------------------------------------------------
     drivers    mc33978   mcp2515   hsd (BTS7008)   motor (DRV8876)
     --------------------------------------------------------------------
-    hal        tick   uart   spi   adc
+    hal        gpio   spi   uart   adc   tick   pwm   eeprom   wdt
     --------------------------------------------------------------------
-    board.h    pin map, scaling constants, configuration defaults
+    board.h    pin map, scaling constants, F_CPU
 
 Rules:
 
-- Interrupt handlers only move bytes or count time: 1 ms tick (Timer0 CTC) and the UART RX and TX ring buffers. The MC33978, MCP2515 and DRV8876 interrupt pins are polled, not interrupt driven. All SPI traffic happens in the foreground, so the bus needs no locking.
-- Every module has an init function and a non-blocking task function called on every main-loop pass, each keeping its own timing from the tick. The only waits after start-up are short and bounded: MCP2515 mode changes (up to 20 ms) and transmit aborts (up to 3 ms), and the console self-test.
-- The drivers write the port and peripheral registers they own directly; the HAL covers the shared peripherals. Host-side testing is done by running the whole firmware in the simulator (section 11).
+- Only `hal/` touches AVR registers. Drivers call the HAL. This lets the drivers and the protocol code be compiled and unit-tested on the Mac.
+- Interrupt handlers only move bytes or set flags: 1 ms tick (Timer0 CTC), UART RX and TX ring buffers, INT0/INT1/INT2 set "service me" flags. All SPI traffic happens in the foreground, so the bus needs no locking.
+- Every module has `init()` and a non-blocking `task()` called from the main loop. No `_delay_ms()` after start-up.
 
 Timers:
 
@@ -125,32 +125,31 @@ Timers:
 |---|---|
 | Timer0 | 1 ms system tick (CTC). OC0A/OC0B stay disconnected because PB3/PB4 are DEN0/DEN1 |
 | Timer1 | Motor 0 PWM on OC1A, phase-correct 8-bit, 23.5 kHz |
-| Timer2 | Motor 1 PWM on OC2A, phase-correct 8-bit, 23.5 kHz |
+| Timer2 | Motor 1 PWM on OC2A, phase-correct, 23.5 kHz |
 
-Main loop, every pass, in order:
+Main loop schedule:
 
-| Task | Timing inside the task |
+| Period | Task |
 |---|---|
-| watchdog kick | every pass (250 ms watchdog) |
-| console | every pass |
-| output sense scan | one channel every 3 ms, about 25 ms for all eight |
-| motor control | fault pin every pass, ramp every 10 ms, idle sleep after the configured delay |
-| inputs | every 5 ms and at once when INT_B is low; device check every 1 s |
-| CAN | receive when INT is low; status frames every 100 ms, heartbeat every 1 s; host timeout check every pass |
+| every pass | UART console, CAN receive, interrupt flags |
+| 1 ms | ADC sequencer step |
+| 10 ms | Poll MC33978 inputs (also on INT_B0), debounce, output and motor state machines |
+| 100 ms | Periodic CAN status frames, watchdog kick, heartbeat |
 
 ## 6. Drivers
 
 **mc33978** - 22 switch inputs (SG0 to SG13, SP0 to SP7).
-Init: SPI check (expects 0x123456), SP pins to switch-to-ground, AMUX selected over SPI, interrupt on change for every input, wetting current from the configuration. Wetting timer, thresholds and low-power mode stay at their power-on defaults. Run time: one status read returns all 22 inputs and the fault flag; the fault status register is read when the flag is set, and a device power-on reset triggers a new setup. The AMUX channel (an input, the die temperature or the battery voltage) is selected from the console and read on ADC0.
+Init: read device ID, set SP pins as switch-to-ground or switch-to-battery, set wetting current and wetting timer, set thresholds, enable interrupts on change. Run time: read switch status (one 32-bit frame returns all 22 bits), select AMUX channel to read an input voltage, battery sense or die temperature on ADC0. Reports SPI error and over-temperature flags.
 
 **mcp2515** - CAN controller.
-Init: reset, bit timing for the 16 MHz crystal (125, 250, 500 kbit/s and 1 Mbit/s tables), receive any standard frame into RXB0 with rollover to RXB1, INT pin on receive, normal mode. Transmit uses whichever of the three TX buffers is free; pending transmissions can be aborted. Loopback mode is used for the self-test. Bus-off recovery is the controller's own automatic recovery; error counters and EFLG are reported in the heartbeat.
+Init: reset, set bit timing for the 16 MHz crystal (250 kbit/s default; 125k, 500k and 1M tables included), set filters, enter normal mode. Loopback mode is used for the self-test. Run time: receive from both buffers into a software queue, transmit from a software queue using the three TX buffers, track error counters and bus-off, recover from bus-off after a delay.
 
-**hsd** - eight high-side outputs, on/off only (PWM is on the motor drivers).
-Per channel: commanded state, last sense voltage and current, status (off, off-but-high, on, tripped, device fault). The scan raises one DEN, sets DSELn, waits 2 ms for the sense output to settle (datasheet worst case 0.4 ms at small load), samples ADC1, then moves to the next channel. Software trip per channel with configurable level and time; device fault on two consecutive readings at the BTS7008 fault level. Both are latched until cleared. The BTS7008's own protection remains the backstop.
+**hsd** - eight high-side outputs.
+On/off only. PWM is provided on the motor drivers, not on these outputs.
+Per channel: commanded state, measured current, status (off, on, overcurrent, open load, fault). The ADC sequencer raises one DEN, sets DSELn, waits for the sense output to settle (datasheet worst case 0.4 ms at small load; the design uses 2 ms), samples ADC1, then moves to the next channel. A full scan of eight channels takes about 20 ms. Software overcurrent trip per channel with configurable limit and time, latched until cleared by command. The BTS7008's own protection remains the backstop.
 
 **motor** - two DRV8876 in PH/EN mode.
-Signed duty command, ramped at the configured rate. nSLEEP is raised when either motor is commanded and dropped when both have been at zero for the idle delay. Fault handling: on FAULTMn low (ignored for 2 ms after wake), stop both, put the drivers to sleep (which clears them), record the currents and count, and refuse commands until cleared.
+Signed duty command, slew-rate limited. nSLEEP is raised when either motor is commanded and dropped when both have been idle for a set time. Fault handling: on FAULTMn low, stop both, record currents, pulse nSLEEP to clear, report.
 
 ## 7. Safe state and fault handling
 
@@ -287,18 +286,15 @@ Firmware 0.3: about 19 KB flash, 0.7 KB RAM.
 
 ## 12. Bring-up sequence
 
-Write the fuses before any load is wired to J3 or J5 (section 3, JTAG pins).
+Each step is one console command and is what `selftest` automates.
 
-1. `make fuses`, then `make flash`. The banner (`ver` output) appears on J20.
-2. `ver` shows the reset cause as power-on and both SPI devices ok.
-3. `selftest` passes with nothing connected.
-4. `in`: shorting each input to ground sets its bit.
-5. `can loop` passes; with a second node on the bus (SW1 terminating as needed), `robustio scan` on the host sees the board.
-6. With a resistive load on each output in turn, `out n 1`; `isense` matches a meter.
-7. `motor 0 20`, `motor 0 -20`, same for motor 1; `motor` current matches a meter.
-8. Stop the host: outputs drop after the timeout.
-
-Steps 2, 3 and 5 to 8 are automated by `robustio bringup` in `tools/`, which writes a report per board (`--loads` when loads are connected).
+1. Fuses, then flash. Heartbeat line appears on J20.
+2. `ver` shows the reset cause as power-on.
+3. `in`: MC33978 ID reads correctly; shorting an input to ground changes its bit.
+4. `can loop` passes; then `can tx` is seen by a second node with SW1 set as needed.
+5. `out n 1` with a resistive load on each output in turn; `isense` matches a meter.
+6. `motor 0 20`, `motor 0 -20`, same for motor 1; `motor stat` current matches a meter.
+7. Remove the host: outputs drop after the timeout.
 
 ## 13. Open questions
 
@@ -312,5 +308,5 @@ None blocking. Decisions taken as defaults, all changeable in configuration:
 To confirm on hardware:
 
 - MC33978 SPI mode (see section 3).
-- Which of each BTS7008's two channels reaches which connector pin. The firmware assumes DRV_OUTn switches OUT_n; `out n 1` at bring-up confirms it, and a swap within a pair is a one-line change.
-- BTS7008 sense scaling against a meter (kILIS is plus or minus 30 % at 100 mA, 4 % at 5.5 A).
+- Which of each BTS7008's two channels reaches which connector pin. The firmware assumes DRV_OUTn switches OUT_n; `out n 1` at bring-up confirms it, and a swap within a pair is a one-line table change.
+- The layout of the MC33978 device configuration register above bit 7. The driver reads the register and writes it back with only bits 7 to 0 cleared.

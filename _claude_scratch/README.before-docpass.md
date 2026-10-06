@@ -127,18 +127,12 @@ the result in JLCPCB's placement preview before ordering.
 
 ## Bring-up order
 
-1. Fit F1 and J15. Apply 24 V from a current-limited supply with nothing else
-   connected.
+1. Fit F1 and J15. Apply 24 V from a current-limited supply
+   with nothing else connected.
 2. Check +5V (TP2) and +3.3V (TP1) against ground.
-3. Wire the Raspberry Pi to J1 and J20 (`firmware/DESIGN.md` section 4) and run
-   `make fuses`, then `make flash`, in `firmware/`. Do this before connecting
-   any load to J3 or J5: until the fuses disable JTAG, outputs 2, 3 and 5 can
-   switch on by themselves.
-4. On the J20 console: `ver`, then `selftest`.
-5. Connect CAN and run `robustio bringup --console /dev/serial0 --serial <n>`
-   from `tools/`, which writes a report for the board.
-6. Connect loads and enable the outputs and motor drivers one channel at a time
-   (`robustio bringup --loads` once all are connected).
+3. Program the ATmega1284P over J1 and confirm the clock and UART on J20.
+4. Bring up SPI to the MC33978 and MCP2515.
+5. Enable the high-side outputs and motor drivers one channel at a time.
 
 ## License
 
