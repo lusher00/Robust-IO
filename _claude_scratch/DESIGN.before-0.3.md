@@ -3,7 +3,7 @@
 Target: ATmega1284P-AU on Robust IO rev A, 3.3 V, 12 MHz crystal (Y2).
 Toolchain: avr-gcc, avr-libc, avrdude, one Makefile. C11, no RTOS, no Arduino core.
 
-Status: firmware 0.3, feature complete for rev A. Compiles without warnings (avr-gcc 7.3). All simulation scenarios in test/ pass against models of the MC33978 and MCP2515. Nothing has run on hardware.
+Status: bring-up build written. It compiles without warnings (avr-gcc 7.3). In simavr, with console input and the sense voltage injected, the console, selftest, software trip and device-fault paths behave as designed; the SPI devices are not simulated. Nothing has run on hardware.
 
 ## 1. Goals
 
@@ -74,10 +74,10 @@ These come from the netlist and the device datasheets. Items marked CHECK are to
 | Fuse | Value | Meaning |
 |---|---|---|
 | low | 0xFF | External crystal 8 to 16 MHz, slowest start-up |
-| high | 0xD1 | JTAG disabled, SPI programming enabled, EEPROM kept through chip erase, no bootloader |
+| high | 0xD9 | JTAG disabled, SPI programming enabled, no bootloader |
 | extended | 0xFD | Brown-out at 2.7 V |
 
-`make fuses` writes these. EESAVE (in the high fuse) keeps the saved configuration when `make flash` erases the chip.
+`make fuses` writes these.
 
 ### Programmer: Raspberry Pi over SPI
 
@@ -158,90 +158,60 @@ Safe state = DRV_OUT0..7 low, EN_M0/EN_M1 low, nSLEEPMn low.
 Entered on:
 
 - Reset, before anything else runs (ports are set in `.init3`, before C start-up).
-- Watchdog reset (250 ms watchdog, kicked once per main-loop pass).
+- Watchdog reset (250 ms watchdog, kicked only from the main loop when all tasks have run).
 - Brown-out.
-- Loss of host: after a set-outputs or set-motors frame has been received, no further one for the configured timeout (default 500 ms, 0 disables). Console commands do not start the timeout.
+- Loss of host: no valid command frame for the configured timeout (default 500 ms, 0 disables).
+- MC33978 or MCP2515 failing its ID check or reporting an SPI fault.
 
-Per-device faults stop only what they affect:
-
-- Output over the software limit for the trip time, or the BTS7008 fault level on two consecutive readings: that output off and latched until cleared.
-- DRV8876 nFAULT low: both motors stopped and the drivers put to sleep (which also clears them); motor commands refused until cleared. The fault count and the currents at the time are recorded.
-- MC33978 SPI check failing (checked every second): inputs flagged invalid on CAN; the chip is set up again when it answers. A device power-on reset seen in the fault status register also triggers a new setup.
-- MCP2515 not answering at start: retried every second.
-
-The reset cause (MCUSR) is saved at start and reported on the console and in the CAN heartbeat.
+The reset cause (MCUSR) is saved at start and reported on the console and on CAN.
 
 ## 8. Console (UART0, 115200 8N1)
 
-Line-based text commands, used for bring-up and service. `help` lists them.
+Line-based text commands, used for bring-up and service.
 
-    ver                        version, reset cause, device check, node, uptime
-    in                         debounced and raw inputs, MC33978 fault status
-    in watch                   print debounced inputs on change (any key stops)
-    in raw <cmd-hex>           read one MC33978 register
-    amux [code]                select AMUX channel (6 temperature, 7 battery) and read mV
-    out <0-7> <0|1>            switch one output
-    out all 0                  all outputs off
-    out clear                  clear latched trips and faults
-    isense                     state, sense voltage, current and limit per output
-    limit <0-7|all> <mA> [ms]  trip level and time
-    motor <0|1> <-100..100>    command duty in percent, ramped
-    motor off                  stop both now, drivers asleep
-    motor clear                clear a latched driver fault
-    motor                      status
-    can                        status and counters
-    can loop                   loopback self-test
-    can tx <id-hex> [bytes]    send a standard frame
-    cfg                        show settings
-    cfg <name> <value>         change a setting
-    cfg save | cfg default     write to EEPROM | load defaults (not saved)
-    selftest                   checks that switch nothing on: SPI devices, CAN loopback,
-                               outputs quiet, motor drivers idle
-    selftest out               also pulses each output for 200 ms
-    selftest motor             also runs each motor at 20 % both ways
+    help
+    ver                       firmware version, reset cause
+    in                        22 input bits, raw and debounced
+    in watch                  print on change
+    amux <ch>                 MC33978 analog channel in mV
+    out <0-7> <0|1>           switch one output
+    out all 0                 all outputs off
+    isense                    eight channel currents in mA and status
+    motor <0|1> <-100..100>   signed duty in percent
+    motor stat                currents, fault, sleep state
+    can stat                  mode, error counters, rx/tx counts
+    can loop                  loopback self-test
+    can tx <id> <bytes...>    send a frame
+    cfg show | set <k> <v> | save
+    out clear                 clear latched trips and faults
+    limit <0-7|all> <mA> [ms] software trip level and time
+    selftest                  checks that switch nothing on: SPI devices, CAN loopback,
+                              outputs quiet, motor drivers idle
+    selftest out              also pulses each output for 200 ms
+    selftest motor            also runs each motor at 20 % both ways
     reset
 
-## 9. CAN protocol
+## 9. CAN protocol (proposal)
 
-Standard 11-bit IDs, node number N (0 to 15) and bit rate from the configuration. Multi-byte values are little-endian.
+Standard 11-bit IDs, 250 kbit/s, node number N (0 to 15) stored in EEPROM.
 
-| ID | Dir | When | DLC | Data |
-|---|---|---|---|---|
-| 0x100+N | out | on debounced change, and 100 ms | 4 | d0..d2: input bits, bit n = input n (0..13 SG0..SG13, 14..21 SP0..SP7), 1 = closed. d3: bit0 inputs valid, bit1 MC33978 fault flag (UV, OV, temperature, SPI, hash) |
-| 0x110+N | out | 100 ms | 5 | d0 commanded mask, d1 on mask, d2 tripped mask, d3 device-fault mask, d4 off-but-high mask (open load or short to supply) |
-| 0x120+N | out | 100 ms | 8 | output 0..7 current, 100 mA per count, 255 = 25.5 A or more |
-| 0x130+N | out | 100 ms | 6 | d0, d1 motor 0, 1 duty (signed %), d2, d3 current (10 mA per count), d4 bit0 asleep, bit1 fault latched, bit2 nFAULT low, d5 fault count |
-| 0x140+N | out | 1 s | 8 | d0 state, d1 reset cause (MCUSR), d2 version major, d3 version minor, d4 TEC, d5 REC, d6 EFLG, d7 frames dropped |
-| 0x200+N | in | | 2 | d0 mask, d1 values: for each bit set in d0, output n is set to bit n of d1 |
-| 0x210+N | in | | 2 | d0, d1 motor 0, 1 duty, signed percent -100..100, ramped |
-| 0x220+N | in | | 1-2 | d0 output mask to clear, d1 bit0 clear motor fault |
-| 0x230+N | in | | 2-4 | d0 op (0 read, 1 write, 2 save, 3 load defaults), d1 key, d2-d3 value |
-| 0x240+N | out | reply to 0x230 | 5 | d0 op, d1 key, d2-d3 value, d4 result (0 ok, 1 bad key, 2 bad value, 3 EEPROM failed) |
+| ID | Dir | Period | Data |
+|---|---|---|---|
+| 0x100 + N | out | on change and 100 ms | Inputs: 3 bytes, bit n = input n, then 1 byte status |
+| 0x110 + N | out | 100 ms | Outputs: commanded mask, on mask, fault mask, open-load mask |
+| 0x120 + N | out | 100 ms | Output currents: 8 bytes, 100 mA per count |
+| 0x130 + N | out | 100 ms | Motors: duty 0, duty 1, current 0, current 1 (10 mA per count), flags |
+| 0x140 + N | out | 1 s | Heartbeat: state, reset cause, firmware version, error count |
+| 0x200 + N | in | - | Set outputs: mask, value |
+| 0x210 + N | in | - | Set motors: signed duty 0, signed duty 1 |
+| 0x220 + N | in | - | Clear faults: output mask, motor flag |
+| 0x230 + N | in | - | Config read/write: key, value |
 
-Heartbeat state bits: 0 host active, 1 host timed out (until the next command), 2 inputs valid, 3 configuration from defaults, 4 motor fault latched, 5 an output is latched off.
-
-A set-outputs or set-motors frame makes the host active and restarts the timeout. Commands to a latched output or motor are ignored until a clear frame.
-
-Transmission: status frames are queued in software and loaded into the MCP2515's three transmit buffers. If frames from the previous 100 ms period are still waiting when the next period starts (no other node acknowledging), they are aborted and counted as dropped, so the bus only ever carries current data.
+Any valid 0x200 or 0x210 frame restarts the host timeout.
 
 ## 10. Configuration (EEPROM)
 
-One struct with a version byte and CRC16, loaded at start; defaults are used when the CRC fails. Changes take effect at once except node and rate, which apply after `cfg save` and a reset.
-
-| Key | Name | Unit, range | Default |
-|---|---|---|---|
-| 0x00 | node | 0..15 | 0 |
-| 0x01 | rate | kbit/s: 125, 250, 500, 1000 | 250 |
-| 0x02 | timeout | host timeout ms, 0 = off, up to 60000 | 500 |
-| 0x03 | debounce | ms, 0..250 | 20 |
-| 0x04 | wet_sp | SP wetting current mA: 2 6 8 10 12 14 16 20 | 16 |
-| 0x05 | wet_sg | SG wetting current mA | 16 |
-| 0x06 | slew | motor duty change, % per 10 ms, 1..100 | 10 |
-| 0x07 | idle | motor driver sleep delay ms, 0..60000 | 1000 |
-| 0x10-0x17 | limit0..7 | output trip level mA, 100..30000 | 5000 |
-| 0x18-0x1F | trip0..7 | output trip time ms, 0..10000 | 100 |
-
-Wetting current is applied for 20 ms after a switch closes, then drops to the sustain current (MC33978 default, not changed).
+One struct with a version byte and CRC16: node number, CAN bit rate, host timeout, input debounce time, SP pin mode, wetting current, per-output current limit and trip time, motor slew rate. Defaults are used if the CRC fails.
 
 ## 11. Layout and build
 
@@ -249,21 +219,14 @@ Wetting current is applied for 20 ms after a switch closes, then drops to the su
       Makefile
       DESIGN.md
       src/
-        board.h          pin map, scaling, defaults
-        version.h
-        main.c           start-up, main loop
-        hal/             tick, uart, spi, adc
-        drivers/         mc33978, mcp2515, hsd (BTS7008), motor (DRV8876)
-        app/             config, inputs, canproto, console, selftest
-      test/
-        sim.c            simavr harness with MC33978 and MCP2515 models
-        run_sim.sh       builds it and runs the scenarios
+        board.h
+        main.c
+        hal/      gpio.h spi.c uart.c adc.c tick.c pwm.c eeprom.c wdt.c
+        drivers/  mc33978.c mcp2515.c hsd.c motor.c
+        app/      console.c canproto.c config.c selftest.c
+      test/       host-built unit tests for drivers and protocol
 
-Make targets: `all`, `flash`, `fuses`, `size`, `clean`. The programmer settings are Makefile variables (`PROGRAMMER`, `PORT`, `SPI_HZ`), defaulting to the Raspberry Pi `linuxspi` setup above.
-
-Main loop, every pass: console, output sense scan, motor control, inputs, CAN. Each task keeps its own timing from the 1 ms tick: sense scan one channel per 3 ms, inputs every 5 ms or on INT_B, motor ramp every 10 ms, CAN status every 100 ms, heartbeat every 1 s, device checks every 1 s.
-
-Simulation: `bash test/run_sim.sh [boot|selftest|inputs|can|config|protect|noack]` runs the firmware on simavr against simple models of the two SPI devices. It checks the firmware's logic and protocol handling, not the real chips. Needs simavr and libelf.
+Make targets: `all`, `flash`, `fuses`, `size`, `clean`, `test`. The programmer settings are Makefile variables (`PROGRAMMER`, `PORT`, `BITCLOCK`), defaulting to the Raspberry Pi `linuxspi` setup above.
 
 ## 11a. What is implemented
 
@@ -271,18 +234,17 @@ Simulation: `bash test/run_sim.sh [boot|selftest|inputs|can|config|protect|noack
 |---|---|
 | Safe-state start-up, reset cause, watchdog, JTAG disable | done |
 | HAL: tick, UART (interrupt driven), SPI, ADC | done |
-| MC33978: check, SP mode, wetting current, interrupts, AMUX, fault status, re-setup | done |
-| Inputs: 5 ms poll and INT_B, per-input debounce | done |
-| MCP2515: bit timing, modes, three TX buffers, abort, receive | done |
-| High-side outputs: background sense scan, software trip, device fault, latching | done |
-| Motors: ramped PWM, wake and idle sleep, fault latch and clear | done |
-| CAN protocol and host timeout | done |
-| EEPROM configuration over console and CAN | done |
-| Console and selftest | done |
-| Simulation scenarios | done; all pass |
-| Run on hardware | not yet |
-
-Firmware 0.3: about 19 KB flash, 0.7 KB RAM.
+| MC33978: SPI check, SP mode, read inputs, raw register read | done |
+| MCP2515: reset, bit timing, modes, send, receive, status | done |
+| High-side outputs: on/off, background sense scan (about 25 ms for 8 channels) | done |
+| Output protection: software trip (default 5 A for 100 ms), device fault detection, latched until `out clear` | done |
+| Motors: PWM, direction, sleep, fault pin, current | done |
+| Console: ver, in, amux, out, isense, limit, motor, can, selftest, reset | done |
+| Motor fault handling (stop, record, clear) | not started |
+| CAN protocol, host timeout, EEPROM configuration | not started |
+| MC33978 wetting current, thresholds, interrupts, AMUX select | not started |
+| selftest command | done |
+| Host unit tests | not started |
 
 ## 12. Bring-up sequence
 

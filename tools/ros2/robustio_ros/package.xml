@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>robustio_ros</name>
+  <version>0.3.0</version>
+  <description>ROS 2 driver for the Robust IO board over CAN: switch inputs, high-side outputs, motor drivers, diagnostics.</description>
+  <maintainer email="ryan.lush@gmail.com">Ryan Lush</maintainer>
+  <license>Proprietary (free for personal, educational and open-source use; see LICENSE)</license>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>diagnostic_msgs</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

@@ -1,0 +1,8 @@
+robustio:
+  ros__parameters:
+    interface: socketcan      # python-can interface: socketcan, slcan, pcan, gs_usb, sim
+    channel: can0
+    bitrate: 250000           # not used by socketcan; set with 'ip link'
+    node_id: 0                # board node number 0..15
+    publish_rate: 10.0        # Hz for currents, output states, motor state
+    cmd_timeout: 0.5          # s; with no command for this long the board times out to all off

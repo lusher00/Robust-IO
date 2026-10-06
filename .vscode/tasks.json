@@ -1,0 +1,40 @@
+{
+    "version": "2.0.0",
+    "options": { "cwd": "${workspaceFolder}/firmware" },
+    "tasks": [
+        {
+            "label": "firmware: build",
+            "type": "shell",
+            "command": "make",
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": ["relative", "${workspaceFolder}/firmware"]
+            }
+        },
+        {
+            "label": "firmware: clean",
+            "type": "shell",
+            "command": "make clean",
+            "problemMatcher": []
+        },
+        {
+            "label": "firmware: size",
+            "type": "shell",
+            "command": "make size",
+            "problemMatcher": []
+        },
+        {
+            "label": "firmware: flash (run on the Pi)",
+            "type": "shell",
+            "command": "make flash",
+            "problemMatcher": []
+        },
+        {
+            "label": "firmware: fuses (run on the Pi, new chip only)",
+            "type": "shell",
+            "command": "make fuses",
+            "problemMatcher": []
+        }
+    ]
+}

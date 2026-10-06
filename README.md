@@ -85,8 +85,21 @@ Regenerate with `bash docs/make_docs.sh` after saving the schematic and board.
 
 ## Firmware (`firmware/`)
 
-Design only at this stage. See [firmware/DESIGN.md](firmware/DESIGN.md) for the
-pin map, architecture, console commands and CAN protocol proposal.
+ATmega1284P firmware 0.3: UART service console, CAN protocol with host timeout,
+output current trip, motor control, EEPROM settings and a self-test. Not yet run
+on hardware. Build with `make` in `firmware/` (avr-gcc); `make fuses` and
+`make flash` program the board from a Raspberry Pi wired to J1. See
+[firmware/DESIGN.md](firmware/DESIGN.md) for the pin map, console commands,
+CAN frame layouts and settings.
+
+## Host tools (`tools/`)
+
+Everything for talking to the board over CAN from a Pi, laptop or robot:
+a DBC file, a Python package with the `robustio` command-line tool, a terminal
+dashboard, a browser dashboard, a bring-up and end-of-line test runner that
+writes a report per board, and a ROS 2 driver node. All of them also run
+against the firmware simulator, so they can be used before hardware exists.
+See [tools/README.md](tools/README.md).
 
 ## Fabrication outputs (`fab/`)
 

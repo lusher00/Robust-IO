@@ -1,0 +1,150 @@
+VERSION ""
+
+NS_ :
+
+BS_:
+
+BU_: RobustIO_0 Host
+
+BO_ 256 Inputs: 4 RobustIO_0
+ SG_ SG0 : 0|1@1+ (1,0) [0|1] "" Host
+ SG_ SG1 : 1|1@1+ (1,0) [0|1] "" Host
+ SG_ SG2 : 2|1@1+ (1,0) [0|1] "" Host
+ SG_ SG3 : 3|1@1+ (1,0) [0|1] "" Host
+ SG_ SG4 : 4|1@1+ (1,0) [0|1] "" Host
+ SG_ SG5 : 5|1@1+ (1,0) [0|1] "" Host
+ SG_ SG6 : 6|1@1+ (1,0) [0|1] "" Host
+ SG_ SG7 : 7|1@1+ (1,0) [0|1] "" Host
+ SG_ SG8 : 8|1@1+ (1,0) [0|1] "" Host
+ SG_ SG9 : 9|1@1+ (1,0) [0|1] "" Host
+ SG_ SG10 : 10|1@1+ (1,0) [0|1] "" Host
+ SG_ SG11 : 11|1@1+ (1,0) [0|1] "" Host
+ SG_ SG12 : 12|1@1+ (1,0) [0|1] "" Host
+ SG_ SG13 : 13|1@1+ (1,0) [0|1] "" Host
+ SG_ SP0 : 14|1@1+ (1,0) [0|1] "" Host
+ SG_ SP1 : 15|1@1+ (1,0) [0|1] "" Host
+ SG_ SP2 : 16|1@1+ (1,0) [0|1] "" Host
+ SG_ SP3 : 17|1@1+ (1,0) [0|1] "" Host
+ SG_ SP4 : 18|1@1+ (1,0) [0|1] "" Host
+ SG_ SP5 : 19|1@1+ (1,0) [0|1] "" Host
+ SG_ SP6 : 20|1@1+ (1,0) [0|1] "" Host
+ SG_ SP7 : 21|1@1+ (1,0) [0|1] "" Host
+ SG_ InputsValid : 24|1@1+ (1,0) [0|1] "" Host
+ SG_ InputDeviceFault : 25|1@1+ (1,0) [0|1] "" Host
+
+BO_ 272 Outputs: 5 RobustIO_0
+ SG_ Out0_Commanded : 0|1@1+ (1,0) [0|1] "" Host
+ SG_ Out1_Commanded : 1|1@1+ (1,0) [0|1] "" Host
+ SG_ Out2_Commanded : 2|1@1+ (1,0) [0|1] "" Host
+ SG_ Out3_Commanded : 3|1@1+ (1,0) [0|1] "" Host
+ SG_ Out4_Commanded : 4|1@1+ (1,0) [0|1] "" Host
+ SG_ Out5_Commanded : 5|1@1+ (1,0) [0|1] "" Host
+ SG_ Out6_Commanded : 6|1@1+ (1,0) [0|1] "" Host
+ SG_ Out7_Commanded : 7|1@1+ (1,0) [0|1] "" Host
+ SG_ Out0_On : 8|1@1+ (1,0) [0|1] "" Host
+ SG_ Out1_On : 9|1@1+ (1,0) [0|1] "" Host
+ SG_ Out2_On : 10|1@1+ (1,0) [0|1] "" Host
+ SG_ Out3_On : 11|1@1+ (1,0) [0|1] "" Host
+ SG_ Out4_On : 12|1@1+ (1,0) [0|1] "" Host
+ SG_ Out5_On : 13|1@1+ (1,0) [0|1] "" Host
+ SG_ Out6_On : 14|1@1+ (1,0) [0|1] "" Host
+ SG_ Out7_On : 15|1@1+ (1,0) [0|1] "" Host
+ SG_ Out0_Tripped : 16|1@1+ (1,0) [0|1] "" Host
+ SG_ Out1_Tripped : 17|1@1+ (1,0) [0|1] "" Host
+ SG_ Out2_Tripped : 18|1@1+ (1,0) [0|1] "" Host
+ SG_ Out3_Tripped : 19|1@1+ (1,0) [0|1] "" Host
+ SG_ Out4_Tripped : 20|1@1+ (1,0) [0|1] "" Host
+ SG_ Out5_Tripped : 21|1@1+ (1,0) [0|1] "" Host
+ SG_ Out6_Tripped : 22|1@1+ (1,0) [0|1] "" Host
+ SG_ Out7_Tripped : 23|1@1+ (1,0) [0|1] "" Host
+ SG_ Out0_DeviceFault : 24|1@1+ (1,0) [0|1] "" Host
+ SG_ Out1_DeviceFault : 25|1@1+ (1,0) [0|1] "" Host
+ SG_ Out2_DeviceFault : 26|1@1+ (1,0) [0|1] "" Host
+ SG_ Out3_DeviceFault : 27|1@1+ (1,0) [0|1] "" Host
+ SG_ Out4_DeviceFault : 28|1@1+ (1,0) [0|1] "" Host
+ SG_ Out5_DeviceFault : 29|1@1+ (1,0) [0|1] "" Host
+ SG_ Out6_DeviceFault : 30|1@1+ (1,0) [0|1] "" Host
+ SG_ Out7_DeviceFault : 31|1@1+ (1,0) [0|1] "" Host
+ SG_ Out0_OffHigh : 32|1@1+ (1,0) [0|1] "" Host
+ SG_ Out1_OffHigh : 33|1@1+ (1,0) [0|1] "" Host
+ SG_ Out2_OffHigh : 34|1@1+ (1,0) [0|1] "" Host
+ SG_ Out3_OffHigh : 35|1@1+ (1,0) [0|1] "" Host
+ SG_ Out4_OffHigh : 36|1@1+ (1,0) [0|1] "" Host
+ SG_ Out5_OffHigh : 37|1@1+ (1,0) [0|1] "" Host
+ SG_ Out6_OffHigh : 38|1@1+ (1,0) [0|1] "" Host
+ SG_ Out7_OffHigh : 39|1@1+ (1,0) [0|1] "" Host
+
+BO_ 288 Currents: 8 RobustIO_0
+ SG_ Out0_Current : 0|8@1+ (0.1,0) [0|25.5] "A" Host
+ SG_ Out1_Current : 8|8@1+ (0.1,0) [0|25.5] "A" Host
+ SG_ Out2_Current : 16|8@1+ (0.1,0) [0|25.5] "A" Host
+ SG_ Out3_Current : 24|8@1+ (0.1,0) [0|25.5] "A" Host
+ SG_ Out4_Current : 32|8@1+ (0.1,0) [0|25.5] "A" Host
+ SG_ Out5_Current : 40|8@1+ (0.1,0) [0|25.5] "A" Host
+ SG_ Out6_Current : 48|8@1+ (0.1,0) [0|25.5] "A" Host
+ SG_ Out7_Current : 56|8@1+ (0.1,0) [0|25.5] "A" Host
+
+BO_ 304 Motors: 6 RobustIO_0
+ SG_ Motor0_Duty : 0|8@1- (1,0) [-100|100] "%" Host
+ SG_ Motor1_Duty : 8|8@1- (1,0) [-100|100] "%" Host
+ SG_ Motor0_Current : 16|8@1+ (0.01,0) [0|2.55] "A" Host
+ SG_ Motor1_Current : 24|8@1+ (0.01,0) [0|2.55] "A" Host
+ SG_ MotorsAsleep : 32|1@1+ (1,0) [0|1] "" Host
+ SG_ MotorFaultLatched : 33|1@1+ (1,0) [0|1] "" Host
+ SG_ MotorFaultPin : 34|1@1+ (1,0) [0|1] "" Host
+ SG_ MotorFaultCount : 40|8@1+ (1,0) [0|255] "" Host
+
+BO_ 320 Heartbeat: 8 RobustIO_0
+ SG_ HostActive : 0|1@1+ (1,0) [0|1] "" Host
+ SG_ HostTimedOut : 1|1@1+ (1,0) [0|1] "" Host
+ SG_ InputsValid : 2|1@1+ (1,0) [0|1] "" Host
+ SG_ ConfigDefaults : 3|1@1+ (1,0) [0|1] "" Host
+ SG_ MotorFaultLatched : 4|1@1+ (1,0) [0|1] "" Host
+ SG_ OutputLatched : 5|1@1+ (1,0) [0|1] "" Host
+ SG_ ResetCause : 8|8@1+ (1,0) [0|255] "" Host
+ SG_ VersionMajor : 16|8@1+ (1,0) [0|255] "" Host
+ SG_ VersionMinor : 24|8@1+ (1,0) [0|255] "" Host
+ SG_ TEC : 32|8@1+ (1,0) [0|255] "" Host
+ SG_ REC : 40|8@1+ (1,0) [0|255] "" Host
+ SG_ EFLG : 48|8@1+ (1,0) [0|255] "" Host
+ SG_ TxDropped : 56|8@1+ (1,0) [0|255] "" Host
+
+BO_ 512 SetOutputs: 2 Host
+ SG_ Mask : 0|8@1+ (1,0) [0|255] "" RobustIO_0
+ SG_ Values : 8|8@1+ (1,0) [0|255] "" RobustIO_0
+
+BO_ 528 SetMotors: 2 Host
+ SG_ Motor0_Cmd : 0|8@1- (1,0) [-100|100] "%" RobustIO_0
+ SG_ Motor1_Cmd : 8|8@1- (1,0) [-100|100] "%" RobustIO_0
+
+BO_ 544 ClearFaults: 2 Host
+ SG_ OutputMask : 0|8@1+ (1,0) [0|255] "" RobustIO_0
+ SG_ ClearMotor : 8|1@1+ (1,0) [0|1] "" RobustIO_0
+
+BO_ 560 Config: 4 Host
+ SG_ Op : 0|8@1+ (1,0) [0|3] "" RobustIO_0
+ SG_ Key : 8|8@1+ (1,0) [0|255] "" RobustIO_0
+ SG_ Value : 16|16@1+ (1,0) [0|65535] "" RobustIO_0
+
+BO_ 576 ConfigReply: 5 RobustIO_0
+ SG_ Op : 0|8@1+ (1,0) [0|3] "" Host
+ SG_ Key : 8|8@1+ (1,0) [0|255] "" Host
+ SG_ Value : 16|16@1+ (1,0) [0|65535] "" Host
+ SG_ Result : 32|8@1+ (1,0) [0|3] "" Host
+
+CM_ BO_ 256 "Switch inputs, 1 = closed. On change and every 100 ms.";
+CM_ BO_ 272 "High-side output state, every 100 ms.";
+CM_ BO_ 288 "High-side output currents, every 100 ms.";
+CM_ BO_ 304 "Motor drivers, every 100 ms.";
+CM_ BO_ 320 "Node state, every 1 s.";
+CM_ BO_ 512 "Host command: outputs selected by Mask are set to the matching bit of Values. Restarts the host timeout.";
+CM_ BO_ 528 "Host command: motor duty, ramped. Restarts the host timeout.";
+CM_ BO_ 544 "Clear latched output trips and the motor fault.";
+CM_ BO_ 560 "Configuration request.";
+CM_ BO_ 576 "Configuration reply.";
+
+VAL_ 560 Op 0 "read" 1 "write" 2 "save" 3 "defaults" ;
+VAL_ 560 Key 0 "node" 1 "rate" 2 "timeout" 3 "debounce" 4 "wet_sp" 5 "wet_sg" 6 "slew" 7 "idle" 16 "limit0" 17 "limit1" 18 "limit2" 19 "limit3" 20 "limit4" 21 "limit5" 22 "limit6" 23 "limit7" 24 "trip0" 25 "trip1" 26 "trip2" 27 "trip3" 28 "trip4" 29 "trip5" 30 "trip6" 31 "trip7" ;
+VAL_ 576 Op 0 "read" 1 "write" 2 "save" 3 "defaults" ;
+VAL_ 576 Key 0 "node" 1 "rate" 2 "timeout" 3 "debounce" 4 "wet_sp" 5 "wet_sg" 6 "slew" 7 "idle" 16 "limit0" 17 "limit1" 18 "limit2" 19 "limit3" 20 "limit4" 21 "limit5" 22 "limit6" 23 "limit7" 24 "trip0" 25 "trip1" 26 "trip2" 27 "trip3" 28 "trip4" 29 "trip5" 30 "trip6" 31 "trip7" ;
+VAL_ 576 Result 0 "ok" 1 "bad key" 2 "bad value" 3 "EEPROM failed" ;
