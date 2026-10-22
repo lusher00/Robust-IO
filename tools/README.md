@@ -35,7 +35,7 @@ others.
     robustio dbc -n 3 -o node3.dbc    DBC file for another node number
     robustio tui                      terminal dashboard
     robustio web                      browser dashboard on http://127.0.0.1:8080/
-    robustio bringup --console /dev/serial0 --serial RA-0001
+    robustio bringup --console /dev/ttyUSB0 --serial RA-0001
                                       bring-up / end-of-line test with a written report
 
 Global options: `-i` interface (default socketcan), `-c` channel (default can0),
@@ -71,7 +71,7 @@ no login: anyone who can reach the port can switch outputs and run motors.
 
 ## Bring-up and end-of-line test
 
-    robustio bringup --console /dev/serial0 --serial RA-0001 [--loads] [--report DIR]
+    robustio bringup --console /dev/ttyUSB0 --serial RA-0001 [--loads] [--report DIR]
 
 Runs `ver` and `selftest` on the J20 console, then checks over CAN: status
 frames, matching firmware version, error counters, settings, every output by

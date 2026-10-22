@@ -1,0 +1,10 @@
+Manufacturer,Manufacturer Part Number,Description,Designators,Qty per board,Qty for 2 boards,Alternate
+Phoenix Contact,1757284,MSTBA 2.5/6-G-5.08 header 6-pos 5.08 mm horizontal,"J3,J5,J6",3,6,Mouser out of stock 2026-10-16; Newark and Arrow have it. 1740408 (black) is out of stock everywhere
+Phoenix Contact,1757051,MSTB 2.5/6-ST-5.08 plug 6-pos 5.08 mm (mates 1757284),"J3,J5,J6",3,6,
+Phoenix Contact,1757268,MSTBA 2.5/4-G-5.08 header 4-pos 5.08 mm horizontal,"J4,J15",2,4,
+Phoenix Contact,1757035,MSTB 2.5/4-ST-5.08 plug 4-pos 5.08 mm (mates 1757268),"J4,J15",2,4,
+Phoenix Contact,1844252,MC 1.5/6-G-3.5 header 6-pos 3.5 mm horizontal,"J9,J10,J16,J18,J19",5,10,
+Phoenix Contact,1840405,MC 1.5/6-ST-3.5 plug 6-pos 3.5 mm (mates 1844252),"J9,J10,J16,J18,J19",5,10,
+Phoenix Contact,1844236,MC 1.5/4-G-3.5 header 4-pos 3.5 mm horizontal,J14,1,2,
+Phoenix Contact,1840382,MC 1.5/4-ST-3.5 plug 4-pos 3.5 mm (mates 1844236),J14,1,2,
+Keystone,3568,Mini blade fuse holder PCB mount,F1,1,2,

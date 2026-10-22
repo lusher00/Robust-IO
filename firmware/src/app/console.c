@@ -51,6 +51,9 @@ static void cmd_ver(void)
              inputs_ok()    ? PSTR("ok") : PSTR("NOT RESPONDING"),
              canproto_ok()  ? PSTR("ok") : PSTR("NOT RESPONDING"),
              config_from_defaults() ? PSTR("defaults") : PSTR("EEPROM"));
+    if (!inputs_ok())
+        printf_P(PSTR("  MC33978 check frames: %08lX %08lX (want xx123456 in the second)\n"),
+                 mc33978_check_raw[0], mc33978_check_raw[1]);
     uint16_t rate;
     config_get(CFG_RATE, &rate);
     printf_P(PSTR("CAN node %u at %u kbit/s, uptime %lu s\n"), cfg.node, rate, tick_ms() / 1000UL);

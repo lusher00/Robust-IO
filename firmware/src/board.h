@@ -9,7 +9,7 @@
 #define F_CPU            12000000UL   /* Y2 */
 #endif
 #define MCP2515_F_OSC    16000000UL   /* Y1 */
-#define UART_BAUD        115200UL
+#define UART_BAUD        38400UL
 
 /* Port A */
 #define ADC_CH_AMUX      0            /* PA0  MC33978 AMUX */

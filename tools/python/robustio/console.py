@@ -1,4 +1,4 @@
-"""Line-based access to the firmware's UART console (J20, 115200 8N1)."""
+"""Line-based access to the firmware's UART console (J20, 38400 8N1)."""
 from __future__ import annotations
 
 import os
@@ -63,7 +63,7 @@ class Console:
 
 
 class SerialConsole(Console):
-    def __init__(self, port: str, baud: int = 115200):
+    def __init__(self, port: str, baud: int = 38400):
         try:
             import serial
         except ImportError:
@@ -116,5 +116,5 @@ class SimConsole(Console):
         self._p.wait()
 
 
-def open_console(spec: str, baud: int = 115200) -> Console:
+def open_console(spec: str, baud: int = 38400) -> Console:
     return SerialConsole(spec, baud)

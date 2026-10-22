@@ -30,11 +30,13 @@ void mc33978_write(uint8_t cmd, uint32_t data)
     mc33978_xfer(((uint32_t)cmd << 24) | (data & 0x00FFFFFFUL));
 }
 
+uint32_t mc33978_check_raw[2];       /* last two raw frames, for bring-up */
+
 bool mc33978_check(void)
 {
-    mc33978_xfer((uint32_t)MC33978_SPI_CHECK << 24);
-    uint32_t id = mc33978_xfer((uint32_t)MC33978_STATUS_R << 24) & 0x00FFFFFFUL;
-    return id == MC33978_CHECK_VALUE;
+    mc33978_check_raw[0] = mc33978_xfer((uint32_t)MC33978_SPI_CHECK << 24);
+    mc33978_check_raw[1] = mc33978_xfer((uint32_t)MC33978_STATUS_R << 24);
+    return (mc33978_check_raw[1] & 0x00FFFFFFUL) == MC33978_CHECK_VALUE;
 }
 
 bool mc33978_init(void)

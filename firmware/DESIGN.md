@@ -66,7 +66,7 @@ These come from the netlist and the device datasheets. Items marked CHECK are to
 - **Motor current limit is set in hardware.** PMODE is tied low (PH/EN mode). VREF = 3.3 V x 16.2k / 26.2k = 2.04 V and IPROPI is 1.5k, so the DRV8876 regulates at about 1.36 A. Firmware reads current at 1.5 V per amp but cannot raise the limit.
 - **nSLEEP and nFAULT are shared** between the two DRV8876. A fault cannot be attributed to one motor from the pin alone, so the firmware stops both and records both IPROPI currents at the time of the fault for diagnosis.
 - **SP0 to SP7 are configured as switch-to-ground.** SG pins are switch-to-ground only; SP pins are programmable as switch-to-ground or switch-to-battery. On rev A every input, SP included, has an indicator LED and 2.2k from +24V to the IC pin. In switch-to-battery mode that path sources about 8 mA into the pin with the switch open, more than the IC's sustain current sinks, so the input would read closed all the time. Switch-to-battery on an SP channel needs its LED removed (D14 to D17 for SP0 to SP3 on J9, D18 to D21 for SP4 to SP7 on J10). The MC33978 powers up with SP pins in switch-to-battery mode (datasheet), so the driver clears device configuration bits 7 to 0 before the first read.
-- **Clocks:** MCU 12 MHz, MCP2515 16 MHz (Y1). 115200 baud at 12 MHz with U2X has 0.16 % error.
+- **Clocks:** MCU 12 MHz, MCP2515 16 MHz (Y1). 38400 baud at 12 MHz with U2X has 0.16 % error (115200 also fits, but the Pi mini UART drops characters at that rate).
 - **CAN termination** is SW1 (120 ohm). Not readable by firmware.
 
 ## 4. Fuses
@@ -96,10 +96,14 @@ The Pi's GPIO is 3.3 V, so it connects to J1 with no level shifting. avrdude use
 - SPI must be enabled on the Pi (`dtparam=spi=on`), giving `/dev/spidev0.0`.
 - Packages on the Pi: `avrdude` (version 7 or later), plus `gcc-avr` and `avr-libc` if building there.
 - Port string: `-c linuxspi -P /dev/spidev0.0:/dev/gpiochip0:25`. On a Pi 5 the header GPIO chip is `gpiochip0` or `gpiochip4` depending on the kernel; `gpiodetect` shows which one is `pinctrl-rp1`.
-- A new chip runs from its 1 MHz internal clock, so the first connection must be slow: `-b 100000`. After the fuses select the 12 MHz crystal, `-b 1000000` works.
+- A new chip runs from its 1 MHz internal clock, so the first connection must be slow: `-B 10` (avrdude 7 syntax; the bit clock in microseconds). After the fuses select the 12 MHz crystal, `-B 1` works.
 - Keep the wires short (under about 15 cm).
+- Power-cycle the board before each avrdude run once firmware is on it. CS_CAN has no pull-up, so with the MCU in reset the MCP2515 can drive MISO and the chip "does not respond". A power cycle puts the MCP2515 back in its power-up state, which does not. Rev B gets a 10k pull-up on CS_CAN.
+- On a Pi 4 (BCM2711) avrdude leaves GPIO25 driven low after it exits, so the board stays in reset. Release it after programming with `pinctrl set 25 ip pu` (Bookworm) or `raspi-gpio set 25 ip pu` (older), or unplug J1 pin 5. A fuse write that fails verification on the first try (seen once with hfuse) succeeds on a retry.
 
-The Pi's UART can also serve as the J20 console: Pi pin 8 (TXD) to J20 pin 4, Pi pin 10 (RXD) to J20 pin 5, ground to J20 pin 1.
+Observed on rev A: with a blank chip (JTAG enabled) outputs 2, 3, 4 and 5 are on, not only 2, 3 and 5; PC4 (TDO) floats high enough to pass the BTS7008 input threshold. All four go off once the fuses are written.
+
+The Pi's UART can serve as the J20 console (Pi pin 8 TXD to J20 pin 4, Pi pin 10 RXD to J20 pin 5, ground to J20 pin 1), but on a Pi 4 the mini UART on those pins dropped characters at 115200 and at 38400 even with `enable_uart=1`. An FTDI cable on J20 at 38400 is reliable; so should the PL011 be (`dtoverlay=disable-bt`), untested. Disable the serial login shell in raspi-config either way, or the getty answers the board's prompt.
 
 ## 5. Architecture
 
@@ -172,7 +176,7 @@ Per-device faults stop only what they affect:
 
 The reset cause (MCUSR) is saved at start and reported on the console and in the CAN heartbeat.
 
-## 8. Console (UART0, 115200 8N1)
+## 8. Console (UART0, 38400 8N1)
 
 Line-based text commands, used for bring-up and service. `help` lists them.
 
@@ -311,6 +315,6 @@ None blocking. Decisions taken as defaults, all changeable in configuration:
 
 To confirm on hardware:
 
-- MC33978 SPI mode (see section 3).
+- MC33978 SPI. Status on rev A board 1: the chip does not answer the SPI check in any of the four modes. VBATP and VDDQ are present, continuity from the MCU to pins 2, 3, 4, 16, 31 and 32 is good, the MCP2515 on the same bus works. The banner prints the two raw check frames when the check fails; `spi_init` enables the MISO pull-up so an undriven bus reads 0xFFFFFFFF rather than noise. 0x00000000 would mean the chip is selected and holding MISO low without shifting. Next step after that is a scope on TP7 (CS_IN0), TP4 (SCLK0) and TP6 (MISO0) during `selftest`. The datasheet (rev 9) says SI is latched on the rising edge of SCLK, so mode 0 is correct once the chip answers.
 - Which of each BTS7008's two channels reaches which connector pin. The firmware assumes DRV_OUTn switches OUT_n; `out n 1` at bring-up confirms it, and a swap within a pair is a one-line change.
 - BTS7008 sense scaling against a meter (kILIS is plus or minus 30 % at 100 mA, 4 % at 5.5 A).

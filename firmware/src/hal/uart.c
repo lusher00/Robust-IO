@@ -38,7 +38,7 @@ FILE uart_stdout = FDEV_SETUP_STREAM(uart_put, NULL, _FDEV_SETUP_WRITE);
 
 void uart_init(void)
 {
-    /* U2X: 12 MHz / (8 * 115200) - 1 = 12.02 -> 12, error 0.16 % */
+    /* U2X: 12 MHz / (8 * 38400) - 1 = 38.06 -> 38, error 0.16 % */
     UCSR0A = (1 << U2X0);
     UBRR0  = (uint16_t)((F_CPU + 4UL * UART_BAUD) / (8UL * UART_BAUD) - 1UL);
     UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);

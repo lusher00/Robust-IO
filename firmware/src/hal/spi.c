@@ -6,6 +6,7 @@
  * controller cannot be forced into slave mode. Foreground use only. */
 void spi_init(void)
 {
+    PORTB |= (1 << SPI_MISO_BIT);        /* pull-up: an unselected bus reads 0xFF, not noise */
     SPCR = (1 << SPE) | (1 << MSTR);
     SPSR = 0;
 }

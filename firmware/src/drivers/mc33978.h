@@ -40,6 +40,7 @@ uint32_t mc33978_xfer(uint32_t frame);              /* returns the response to t
 uint32_t mc33978_read(uint8_t cmd);                 /* 24-bit register content, flags included */
 void     mc33978_write(uint8_t cmd, uint32_t data);
 bool     mc33978_check(void);                       /* SPI check: true when the device answers 0x123456 */
+extern uint32_t mc33978_check_raw[2];                 /* raw frames from the last check, for bring-up */
 bool     mc33978_init(void);                        /* check, SP pins to switch-to-ground, interrupts on */
 uint32_t mc33978_inputs(void);                      /* bit n = 1 when closed; 0..13 SG, 14..21 SP */
 void     mc33978_set_wetting(uint8_t sp_code, uint8_t sg_code);   /* codes 0..7 */
