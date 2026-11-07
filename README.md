@@ -117,6 +117,15 @@ listed in `fab/robust-io-testpoints.csv`.
 
 ## Rev B change list
 
+- MCU: replace the ATmega1284P + MCP2515 with an STM32G474 (Cortex-M4,
+  170 MHz, 3 native FDCAN, 5 ADCs, HRTIM/advanced timers, native USB).
+  Board CAN becomes CAN FD with an FD-rated transceiver. Programming over
+  SWD (Tag-Connect or 10-pin header; Blue via OpenOCD, or the ESP32 over
+  Wi-Fi). Freed pins mean the ESP32-S3 links to the MCU over a UART
+  instead of joining the CAN bus (its TWAI is classic only and would break
+  an FD bus), and USB-CAN runs on the G474's own USB. Firmware: drivers and
+  CAN protocol port in C; the HAL layer is rewritten. An M7 (STM32H723)
+  only if robust-io needs Ethernet itself.
 - Mark + and - on the silkscreen at J15.
 - 24 V input protection front end, in order from J15: F1 blade fuse, input
   bidirectional TVS (SMDJ30CA class: 30 V standoff both ways, so a reversed
@@ -133,7 +142,6 @@ listed in `fab/robust-io-testpoints.csv`.
   either direction and switch-to-battery works on the SP channels. Check the
   MC33978 comparator thresholds against the LED drop before committing.
 - 47 ohm in series with each BTS7008 GND pin (U8 to U11).
-- 10k pull-up on CS_CAN.
 - C69/C70 to 220 pF, or drive the UART LEDs from the MCU.
 - C57 to C60: non-polarized capacitor symbol.
 - Test points: Keystone 5015 SMT loops on the rails, SPI, UART, interrupt,
@@ -148,17 +156,14 @@ listed in `fab/robust-io-testpoints.csv`.
   hand fitting, freeing top-side area around the output stage.
 - Optional Wi-Fi/BLE: socket headers for a Waveshare ESP32-S3-Zero (same
   module as the POV project); the board works without it fitted. It joins
-  the board's CAN bus as its own node through its TWAI controller and a
-  dedicated 3.3 V CAN transceiver on the board (every ATmega1284P pin is
-  used), is wired to the J1 ISP lines and RESET so it can reflash the AVR
-  over Wi-Fi, and can take the console UART through a jumper shared with
-  J20. Powered from +5V into the Zero's own regulator, so the +5V rail must
+  the MCU over a UART (see MCU item), is wired to SWD and NRST/BOOT0 so it
+  can reflash the MCU over Wi-Fi, and can bridge the console UART. Powered from +5V into the Zero's own regulator, so the +5V rail must
   cover its Wi-Fi peaks (about 350 to 500 mA).
   Bridge functions on the S3 (classic CAN only; CAN FD, Ethernet fieldbuses
   and Linux stay on the can-gateway):
   - Wi-Fi/BLE to CAN bridge: web UI, MQTT and a CAN socket for hosts.
-  - USB-to-CAN adapter on the S3's native USB (candleLight/gs_usb class) via
-    a USB-C connector, so a Mac or PC gets a CAN interface.
+  - USB-to-CAN adapter (candleLight/gs_usb class) on the G474's native USB
+    via USB-C, so a Mac or PC gets a CAN FD interface.
   - One RS-485 port (Modbus RTU) from an S3 UART: transceiver, terminal
     block, switchable 120 ohm termination and bias.
 - Rev A fab outputs move to `fab/revA/` and `docs/revA/` before any rev B
