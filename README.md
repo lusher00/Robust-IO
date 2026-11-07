@@ -146,6 +146,13 @@ listed in `fab/robust-io-testpoints.csv`.
 - Use the bottom side: move the large SMC diodes (output clamps D2, D4,
   D8 to D13 B560C, D7 B340, input TVS D6) and other bulky parts to B.Cu for
   hand fitting, freeing top-side area around the output stage.
+- ESP32 module for Wi-Fi/BLE (ESP32-C5 or C6, both have a TWAI CAN
+  controller). Every ATmega1284P pin is used, so it joins as its own node on
+  the board's CAN bus (own transceiver, no MCU pins), is wired to the J1 ISP
+  lines and RESET so it can reflash the AVR over Wi-Fi, and can take the
+  console UART through a jumper or mux shared with J20. Needs a larger 3.3 V
+  buck (Wi-Fi TX peaks about 350 to 500 mA; the rev A TPS560430 is 600 mA
+  for the whole board).
 - Rev A fab outputs move to `fab/revA/` and `docs/revA/` before any rev B
   output is generated.
 
