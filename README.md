@@ -143,6 +143,9 @@ listed in `fab/robust-io-testpoints.csv`.
   (BeagleBone Blue 9-18 V jack), each fused, on their own terminal block and
   fed from +24V ahead of the output switches so the host timeout cannot cut
   the host's own power.
+- Use the bottom side: move the large SMC diodes (output clamps D2, D4,
+  D8 to D13 B560C, D7 B340, input TVS D6) and other bulky parts to B.Cu for
+  hand fitting, freeing top-side area around the output stage.
 - Rev A fab outputs move to `fab/revA/` and `docs/revA/` before any rev B
   output is generated.
 
