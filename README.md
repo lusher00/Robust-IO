@@ -9,8 +9,10 @@ A rugged industrial I/O board designed in KiCad 10.
 - **Rev A:** fabricated and assembled by JLCPCB (5 bare boards, 2 assembled),
   ordered 2026-10-05. Board 1 passes bring-up: power rails, MCU, UART
   console, MC33978 inputs (after replacing U7), MCP2515 CAN at 250 kbit/s
-  with a BeagleBone Blue host, and outputs 1 to 7 under CAN control.
-  Output 0 does not switch on board 1. Board 2 is partly disassembled from
+  with a BeagleBone Blue host, and all 8 outputs under TUI and CAN control
+  (OUT_0's indicator LED is dead; the output itself works). Load test:
+  OUT_0 to OUT_3 on together at about 3.7 A each, 14.8 A from 24 V, board
+  cool on IR. Board 2 is partly disassembled from
   the reverse-polarity incident and needs C44/C45, U5, U1, U14 and one
   BTS7008 refitted.
 - **Rev B:** change list collected below, not started.
