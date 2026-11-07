@@ -146,8 +146,15 @@ listed in `fab/robust-io-testpoints.csv`.
   the MCU so input V/I and protection trips are reported over CAN.
 - Input indicator LEDs: two-lead bicolour LED (red/green) in series with each
   input, replacing the 2.2k pull-ups R62 to R83, so the LED shows current in
-  either direction and switch-to-battery works on the SP channels. Check the
-  MC33978 comparator thresholds against the LED drop before committing.
+  either direction and switch-to-battery works on the SP channels. Checked
+  against the MC33978 datasheet: detection threshold 4.0 V (3.7 to 4.3 V,
+  80 to 300 mV hysteresis), sustain 2.0 mA SG / 2.2 mA SB. SG closed sits at
+  the LED drop (about 2 V), at least 1.4 V under the minimum threshold; SB
+  closed sits near +24V minus the drop. Use high-efficiency LEDs, visible at
+  2 mA and rated for the 20 mA maximum wetting pulse. Do not use low-power
+  mode (SG threshold 100 to 300 mV, below the LED drop) or the 2.5 V
+  threshold option on these inputs. Put the LED after the input filter and
+  clamp so field transients do not pass through it.
 - 47 ohm in series with each BTS7008 GND pin (U8 to U11).
 - C69/C70 to 220 pF, or drive the UART LEDs from the MCU.
 - C57 to C60: non-polarized capacitor symbol.
