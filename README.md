@@ -177,13 +177,15 @@ listed in `fab/robust-io-testpoints.csv`.
   Size connector GND/supply pins per bank (rev A has one GND pin per four
   outputs on J3/J5).
 - Replace the two DRV8876 (current limit fixed at about 1.36 A by
-  resistors, too low for typical 2 to 5 A linear actuators) with a quad
-  half-bridge, DRV8962 class (about 65 V, 5 A per half-bridge; confirm in
+  resistors, too low for typical 2 to 5 A linear actuators) with two quad
+  half-bridges (8 half-bridges), DRV8962 class (about 65 V, 5 A per half-bridge; confirm in
   the datasheet). Current limit set from a G474 DAC instead of fixed
-  resistors, with per-half-bridge current sense to the ADC. The four
-  half-bridges can run two reversing motors or linear actuators, four DC
-  latching irrigation valves, one bipolar stepper, or extra high/low-side
-  outputs.
+  resistors, with per-half-bridge current sense to the ADC. Each
+  half-bridge is configured in firmware as a high-side or low-side output,
+  or paired for reversing: up to four reversing motors or linear actuators,
+  four latching irrigation valve zones, two bipolar steppers, or any mix.
+  Needs about 16 MCU control pins plus sense and fault lines (G474 in
+  LQFP100).
 - 4 relay outputs, dry contact (SPDT), for AC loads: 24 VAC irrigation
   valves, pump/fan contactor coils. Mains loads go through external
   contactors.
