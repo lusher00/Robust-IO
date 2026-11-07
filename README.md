@@ -193,6 +193,11 @@ listed in `fab/robust-io-testpoints.csv`.
   0-10 V, protected, on G474 ADCs (tank level, pressure, soil moisture).
 - 2 fast pulse inputs on G474 timer pins for flow meters and encoders.
 - LoRa (SX1262 module) on the ESP32 side for remote sites beyond Wi-Fi.
+- Connectors: replace Phoenix MSTBA/MC with LCSC-stocked equivalents of the
+  same pitch (Degson/Kefa/Dinkle 5.08 mm for power, outputs and motors,
+  3.5 mm for inputs; plugs about $0.30 to $1 instead of about $7), and
+  standardize on as few pin counts as possible so one plug type covers
+  each group. Prefer push-in spring plugs for the inputs.
 - Rev A fab outputs move to `fab/revA/` and `docs/revA/` before any rev B
   output is generated.
 
