@@ -166,18 +166,23 @@ listed in `fab/robust-io-testpoints.csv`.
     via USB-C, so a Mac or PC gets a CAN FD interface.
   - One RS-485 port (Modbus RTU) from an S3 UART: transceiver, terminal
     block, switchable 120 ohm termination and bias.
-- 16 high-side outputs in two banks; all 16 work from the main 24 V input:
-  - Bank A, OUT_0 to OUT_7: keep the four BTS7008-2EPA (7.5 A per channel,
-    9 to 28 V supply).
-  - Bank B, OUT_8 to OUT_15: four 36 V-class duals (TPS272C45, 3 A,
-    adjustable current limit, or BTT6030-2ERA; pick at schematic time),
-    fed from the main +24V by default. An optional injection terminal for
-    bank B (up to 36 V) is diode-ORed with +24V through ideal-diode
-    controllers, so an injected supply takes over when it is higher and
-    the bank falls back to +24V when it is absent. The injection input gets
-    its own reverse/overvoltage protection.
+- 16 high-side outputs, all on the protected 9 to 28 V input (12 V and
+  24 V systems; vehicle load dump handled by the input front end):
+  - OUT_0 to OUT_7: keep the four BTS7008-2EPA (7.5 A per channel).
+  - OUT_8 to OUT_15: four 24 V-family duals (BTT6030-2ERA or TPS272C45,
+    pick at schematic time), with margin above 28 V.
+  - Each bank has its own output-power terminal, fed from the main input by
+    default, so an E-stop or safety relay can cut output power while the MCU
+    stays up and reporting. No separate 36 V injection.
   Size connector GND/supply pins per bank (rev A has one GND pin per four
   outputs on J3/J5).
+- 4 relay outputs, dry contact (SPDT), for AC loads: 24 VAC irrigation
+  valves, pump/fan contactor coils. Mains loads go through external
+  contactors.
+- Analog inputs: 4 channels, each jumper or software selectable 4-20 mA /
+  0-10 V, protected, on G474 ADCs (tank level, pressure, soil moisture).
+- 2 fast pulse inputs on G474 timer pins for flow meters and encoders.
+- LoRa (SX1262 module) on the ESP32 side for remote sites beyond Wi-Fi.
 - Rev A fab outputs move to `fab/revA/` and `docs/revA/` before any rev B
   output is generated.
 
