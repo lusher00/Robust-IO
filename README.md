@@ -154,6 +154,13 @@ listed in `fab/robust-io-testpoints.csv`.
   over Wi-Fi, and can take the console UART through a jumper shared with
   J20. Powered from +5V into the Zero's own regulator, so the +5V rail must
   cover its Wi-Fi peaks (about 350 to 500 mA).
+  Bridge functions on the S3 (classic CAN only; CAN FD, Ethernet fieldbuses
+  and Linux stay on the can-gateway):
+  - Wi-Fi/BLE to CAN bridge: web UI, MQTT and a CAN socket for hosts.
+  - USB-to-CAN adapter on the S3's native USB (candleLight/gs_usb class) via
+    a USB-C connector, so a Mac or PC gets a CAN interface.
+  - One RS-485 port (Modbus RTU) from an S3 UART: transceiver, terminal
+    block, switchable 120 ohm termination and bias.
 - Rev A fab outputs move to `fab/revA/` and `docs/revA/` before any rev B
   output is generated.
 
