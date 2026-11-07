@@ -119,7 +119,8 @@ listed in `fab/robust-io-testpoints.csv`.
 
 - Mark + and - on the silkscreen at J15.
 - 24 V input protection front end, in order from J15: F1 blade fuse, input
-  TVS sized for surge, then an LTC4368-class surge stopper / ideal-diode
+  bidirectional TVS (SMDJ30CA class: 30 V standoff both ways, so a reversed
+  24 V supply does not conduct and nothing blows), then an LTC4368-class surge stopper / ideal-diode
   controller with back-to-back 60 V N-FETs giving reverse polarity (to
   -40 V), overvoltage cutoff (about 30 V, below the BTS7008 28 V limit plus
   margin, set by divider), undervoltage lockout, a forward/reverse
