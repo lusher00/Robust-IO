@@ -130,6 +130,10 @@ listed in `fab/robust-io-testpoints.csv`.
 - Test points: Keystone 5015 SMT loops on the rails, SPI, UART, interrupt,
   fault and analog sense lines; the four corner mounting holes are GND and
   take a ring lug, which covers the ground clips.
+- SBC supply: 24 V to 5 V 5 A buck (Pi 5 / CM5) and 24 V to 12 V 3 A buck
+  (BeagleBone Blue 9-18 V jack), each fused, on their own terminal block and
+  fed from +24V ahead of the output switches so the host timeout cannot cut
+  the host's own power.
 - Rev A fab outputs move to `fab/revA/` and `docs/revA/` before any rev B
   output is generated.
 
