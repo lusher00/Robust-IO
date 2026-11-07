@@ -117,8 +117,16 @@ listed in `fab/robust-io-testpoints.csv`.
 
 ## Rev B change list
 
-- Mark + and - on the silkscreen at J15; add a reverse-polarity stage at the
-  input (P-FET or ideal-diode controller) so a reversed supply does nothing.
+- Mark + and - on the silkscreen at J15.
+- 24 V input protection front end, in order from J15: F1 blade fuse, input
+  TVS sized for surge, then an LTC4368-class surge stopper / ideal-diode
+  controller with back-to-back 60 V N-FETs giving reverse polarity (to
+  -40 V), overvoltage cutoff (about 30 V, below the BTS7008 28 V limit plus
+  margin, set by divider), undervoltage lockout, a forward/reverse
+  overcurrent circuit breaker and soft-start for hot-plug inrush. Move the
+  bulk capacitors after it. Add a supply monitor (INA228-class: bus voltage,
+  total current, fault alert) on the MCU so input V/I and protection trips
+  are reported over CAN.
 - Input indicator LEDs: two-lead bicolour LED (red/green) in series with each
   input, replacing the 2.2k pull-ups R62 to R83, so the LED shows current in
   either direction and switch-to-battery works on the SP channels. Check the
