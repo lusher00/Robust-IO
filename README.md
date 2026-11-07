@@ -128,16 +128,20 @@ listed in `fab/robust-io-testpoints.csv`.
   CAN protocol port in C; the HAL layer is rewritten. An M7 (STM32H723)
   only if robust-io needs Ethernet itself.
 - Mark + and - on the silkscreen at J15.
-- 24 V input protection front end, in order from J15: F1 blade fuse, input
-  bidirectional TVS (SMDJ30CA class: 30 V standoff both ways, so a reversed
-  24 V supply does not conduct and nothing blows), then an LTC4368-class surge stopper / ideal-diode
-  controller with back-to-back 60 V N-FETs giving reverse polarity (to
-  -40 V), overvoltage cutoff (about 30 V, below the BTS7008 28 V limit plus
-  margin, set by divider), undervoltage lockout, a forward/reverse
-  overcurrent circuit breaker and soft-start for hot-plug inrush. Move the
-  bulk capacitors after it. Add a supply monitor (INA228-class: bus voltage,
-  total current, fault alert) on the MCU so input V/I and protection trips
-  are reported over CAN.
+- 24 V input protection front end, in order from J15: F1 blade fuse, a
+  surge stopper / ideal-diode controller rated for at least 100 V
+  (LTC4368/LT4363 class) with back-to-back 100 V N-FETs, then the rail TVS
+  after the FETs. The controller gives reverse polarity (to -40 V or
+  better), overvoltage cutoff at about 30 V set by divider, undervoltage
+  lockout, a forward/reverse overcurrent circuit breaker and soft-start for
+  hot-plug inrush. Any TVS ahead of the FETs is bidirectional with a
+  standoff above the worst wrong supply (SMDJ64CA class), so reverse
+  polarity or a 48 to 60 V supply turns the board off instead of clamping
+  and blowing F1. Rev A board 1 was hit with 60 V on 2026-11-07: the
+  SMDJ24A clamped, both 10 A fuses blew and the rail was left shorted.
+  Move the bulk capacitors after the controller and rate them 100 V. Add a
+  supply monitor (INA228-class: bus voltage, total current, fault alert) on
+  the MCU so input V/I and protection trips are reported over CAN.
 - Input indicator LEDs: two-lead bicolour LED (red/green) in series with each
   input, replacing the 2.2k pull-ups R62 to R83, so the LED shows current in
   either direction and switch-to-battery works on the SP channels. Check the
