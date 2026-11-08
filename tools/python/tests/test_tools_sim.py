@@ -59,7 +59,8 @@ def test_web_api_and_client_timeout():
     bus = SimBus(f"127.0.0.1:{port}")
     io = RobustIO(bus)
     ready = threading.Event()
-    t = threading.Thread(target=web.serve, args=(io, "127.0.0.1", 0, ready), daemon=True)
+    t = threading.Thread(target=web.serve, args=(io, "127.0.0.1", 0, ready),
+                         kwargs={"client_timeout": 1.0}, daemon=True)
     t.start()
     assert ready.wait(5)
     base = f"http://127.0.0.1:{ready.port}"
@@ -85,7 +86,14 @@ def test_web_api_and_client_timeout():
             s = get("/api/state")
             time.sleep(0.2)
         assert s["outputs"][6]["state"] == "on"
-        time.sleep(2.0)                         # page closed: no polling
+        log = get("/api/frames?since=0")
+        sent = [f for f in log["frames"] if f["dir"] == "tx" and f["name"] == "set outputs"]
+        assert sent[0]["text"] == "OUT6=on" and sent[0]["id"] == 0x200
+        assert any(f["dir"] == "rx" and f["name"] == "outputs" and "on 6" in f["text"] for f in log["frames"])
+        assert post("/api/motor", {"m": 1, "duty": -5})[0] == 200
+        later = get(f"/api/frames?since={log['seq']}")["frames"]
+        assert any(f["text"] == "M0 +0 %  M1 -5 %" for f in later)
+        time.sleep(2.6)                         # page closed: no polling
         s = get("/api/state")
         assert s["outputs"][6]["state"] == "off" and s["heartbeat"]["host_timed_out"]
     finally:

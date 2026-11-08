@@ -260,3 +260,80 @@ def config_key(name_or_key) -> int:
         return CONFIG_KEYS[name_or_key][0]
     except KeyError:
         raise KeyError(f"unknown setting '{name_or_key}', known: {', '.join(CONFIG_KEYS)}") from None
+
+
+# ---------------------------------------------------------------- trace text
+
+FRAME_NAMES = {
+    ID_INPUTS: "inputs", ID_OUTPUTS: "outputs", ID_CURRENTS: "currents", ID_MOTORS: "motors",
+    ID_HEARTBEAT: "heartbeat", ID_CONFIG_REPLY: "config reply",
+    ID_SET_OUTPUTS: "set outputs", ID_SET_MOTORS: "set motors", ID_CLEAR: "clear", ID_CONFIG: "config",
+}
+OP_NAMES = {OP_READ: "read", OP_WRITE: "write", OP_SAVE: "save", OP_DEFAULTS: "defaults"}
+
+
+def _bits(v: int, n: int = NUM_OUTPUTS) -> str:
+    on = [str(i) for i in range(n) if v >> i & 1]
+    return ",".join(on) if on else "none"
+
+
+def describe(arbitration_id: int, data: bytes) -> Optional[Tuple[str, int, bool, str]]:
+    """Plain-text trace of any Robust IO frame: (name, node, is_command, text), or None."""
+    s = split_id(arbitration_id)
+    if not s:
+        return None
+    base, node = s
+    d = bytes(data)
+    name = FRAME_NAMES[base]
+    try:
+        if base == ID_SET_OUTPUTS:
+            d = _pad(d, 2)
+            if d[0] == 0:
+                text = "keepalive"
+            else:
+                sel = [i for i in range(NUM_OUTPUTS) if d[0] >> i & 1]
+                text = " ".join(f"OUT{i}={'on' if d[1] >> i & 1 else 'off'}" for i in sel)
+        elif base == ID_SET_MOTORS:
+            d = _pad(d, 2)
+            a, b = struct.unpack_from("<bb", d, 0)
+            text = f"M0 {a:+d} %  M1 {b:+d} %"
+        elif base == ID_CLEAR:
+            d = _pad(d, 2)
+            text = f"outputs {_bits(d[0])}, motor {'yes' if d[1] else 'no'}"
+        elif base == ID_CONFIG:
+            d = _pad(d, 4)
+            op = OP_NAMES.get(d[0], f"op {d[0]}")
+            key = CONFIG_NAMES.get(d[1], f"0x{d[1]:02X}")
+            text = f"{op} {key} = {d[2] | d[3] << 8}" if d[0] == OP_WRITE else (
+                f"{op} {key}" if d[0] == OP_READ else op)
+        elif base == ID_INPUTS:
+            o = decode_inputs(d)
+            closed = [n for i, n in enumerate(INPUT_NAMES) if o.bits >> i & 1]
+            text = ("closed " + " ".join(closed) if closed else "all open") + ("" if o.valid else "  INVALID") + (
+                "  DEVICE FAULT" if o.device_fault else "")
+        elif base == ID_OUTPUTS:
+            o = decode_outputs(d)
+            text = f"cmd {_bits(o.commanded)}  on {_bits(o.on)}"
+            for label, v in (("tripped", o.tripped), ("fault", o.device_fault), ("off-high", o.off_high)):
+                if v:
+                    text += f"  {label} {_bits(v)}"
+        elif base == ID_CURRENTS:
+            text = " ".join(f"{a:.1f}" for a in decode_currents(d).amps) + " A"
+        elif base == ID_MOTORS:
+            o = decode_motors(d)
+            text = (f"M0 {o.duty[0]:+d} % {o.amps[0]:.2f} A  M1 {o.duty[1]:+d} % {o.amps[1]:.2f} A"
+                    + ("  asleep" if o.asleep else "") + ("  FAULT LATCHED" if o.fault_latched else "")
+                    + (f"  faults {o.fault_count}" if o.fault_count else ""))
+        elif base == ID_HEARTBEAT:
+            o = decode_heartbeat(d)
+            flags = [t for t, v in (("host active", o.host_active), ("host timed out", o.host_timed_out),
+                                    ("inputs valid", o.inputs_valid), ("config defaults", o.config_defaults),
+                                    ("motor fault", o.motor_fault), ("output latched", o.output_latched)) if v]
+            text = f"fw {o.version[0]}.{o.version[1]}  TEC {o.tec} REC {o.rec}  " + ", ".join(flags)
+        else:
+            o = decode_config_reply(d)
+            key = CONFIG_NAMES.get(o.key, f"0x{o.key:02X}")
+            text = f"{OP_NAMES.get(o.op, o.op)} {key} = {o.value}  {RESULT_TEXT.get(o.result, o.result)}"
+    except ValueError as e:
+        text = str(e)
+    return name, node, base in COMMAND_IDS, text

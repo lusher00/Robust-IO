@@ -22,3 +22,6 @@ Thumbs.db
 # KiCad caches / backup dirs
 fp-info-cache
 *-backups/
+__pycache__/
+.pytest_cache/
+*.egg-info/

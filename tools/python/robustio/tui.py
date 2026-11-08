@@ -58,7 +58,7 @@ def _prompt(win, y, text) -> str:
     finally:
         curses.noecho()
         curses.curs_set(0)
-        win.nodelay(True)
+        win.timeout(250)
     return s
 
 
@@ -116,13 +116,12 @@ def _draw(win, io: RobustIO, msg: str) -> int:
 def _run(win, io: RobustIO) -> None:
     curses.curs_set(0)
     _init_colors()
-    win.nodelay(True)
+    win.timeout(250)                    # redraw 4 times a second; keys still act at once
     msg = "waiting for the board..."
     while True:
         prompt_row = _draw(win, io, msg)
         ch = win.getch()
         if ch == -1:
-            time.sleep(0.1)
             continue
         key = chr(ch) if 0 <= ch < 256 else ""
         try:

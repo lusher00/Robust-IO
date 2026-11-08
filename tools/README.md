@@ -9,6 +9,7 @@ Everything here talks to the board over CAN using the protocol in
 | `python/robustio/` | Python package: protocol, `RobustIO` device class, `robustio` command-line tool, terminal dashboard, browser dashboard, bring-up test runner, DBC generator, simulator bus |
 | `python/tests/` | Protocol and DBC tests, and end-to-end tests of the tools against the firmware running in the simulator |
 | `ros2/robustio_ros/` | ROS 2 driver node: inputs, outputs, currents and motors as topics, services, `/diagnostics` |
+| `canweb/` | CAN diagnostic web app for the Pi: live bus view, DBC decode, send, log, and a Robust IO page with input lights, output buttons and current graphs. Product-independent; other boards are added as plugins. See `canweb/README.md` |
 
 ## Install
 
@@ -61,7 +62,12 @@ screen. Keys: `0`-`7` toggle an output, `a` all off, `m` set a motor duty (typed
 ## Browser dashboard
 
 `robustio web` serves a page with the same view plus every setting, using only
-the Python standard library. Motor duty and settings are typed number fields.
+the Python standard library: an LED for each input, a switch for each output,
+and a slider with -1/+1 buttons for each motor. The CAN panel shows the bus
+traffic (raw frames, sent and received, each decoded) and a command trace: every
+command with its values, config replies, and each change of the inputs, outputs
+and motors. It can pause, clear, hide status frames and keepalives, and filter
+by ID.
 The keepalive runs only while a page is polling, so closing the tab, losing the
 network or stopping the server lets the board time out to all off.
 

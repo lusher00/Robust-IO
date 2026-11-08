@@ -139,7 +139,7 @@ def cmd_tui(io, a):
 
 def cmd_web(io, a):
     from .web import serve
-    serve(io, a.host, a.port)
+    serve(io, a.host, a.port, client_timeout=a.client_timeout)
 
 
 def _sim_paths(a):
@@ -246,6 +246,8 @@ def main(argv=None) -> None:
     s = sub.add_parser("web", help="browser dashboard")
     s.add_argument("--host", default="127.0.0.1", help="address to listen on (default %(default)s; 0.0.0.0 for the network)")
     s.add_argument("--port", type=int, default=8080)
+    s.add_argument("--client-timeout", type=float, default=3.0,
+                   help="seconds without a page polling before the keepalive stops and the board times out (default %(default)s)")
     s = sub.add_parser("bringup", help="bring-up / end-of-line test with a written report")
     s.add_argument("--console", help="serial port of the J20 console, e.g. /dev/serial0 or /dev/ttyUSB0")
     s.add_argument("--serial", default="unnumbered", help="board serial number for the report")

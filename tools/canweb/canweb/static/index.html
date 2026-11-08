@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>canweb</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{--bg:#14171c;--panel:#1d2127;--line:#2c323a;--fg:#d8dde3;--dim:#8a93a0;--on:#39c46a;--off:#3a4049;--warn:#e0a63a;--bad:#e05a4a;--acc:#4a8de0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.4 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+header{display:flex;align-items:center;gap:16px;padding:8px 16px;background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:2}
+header h1{font-size:16px;margin:0 12px 0 0}
+nav button{background:none;border:1px solid var(--line);color:var(--fg);padding:6px 12px;border-radius:4px;cursor:pointer;margin-right:4px}
+nav button.active{background:var(--acc);border-color:var(--acc);color:#fff}
+#busline{margin-left:auto;color:var(--dim);font-family:ui-monospace,Menlo,monospace;font-size:12px}
+main{padding:12px 16px;max-width:1400px}
+section{display:none}section.active{display:block}
+h2{font-size:14px;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;margin:18px 0 8px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px;margin-bottom:12px}
+table{border-collapse:collapse;width:100%;font-family:ui-monospace,Menlo,monospace;font-size:12.5px}
+th,td{text-align:left;padding:4px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{color:var(--dim);font-weight:normal}tr.fresh td{color:#fff}
+.lights{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:6px}
+.light{display:flex;align-items:center;gap:6px;padding:4px 6px;border:1px solid var(--line);border-radius:4px;font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--off);flex:none}.dot.on{background:var(--on);box-shadow:0 0 6px var(--on)}
+.btns{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+.btn{padding:10px;border-radius:6px;border:1px solid var(--line);background:var(--off);color:var(--fg);cursor:pointer;font-family:ui-monospace,Menlo,monospace;text-align:left}
+.btn.on{background:var(--on);color:#06220f;border-color:var(--on)}.btn.trip{background:var(--bad);color:#fff}
+.btn small{display:block;font-size:11px;opacity:.8}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input[type=text],input[type=number]{background:#0f1215;border:1px solid var(--line);color:var(--fg);padding:5px 7px;border-radius:4px;font-family:ui-monospace,Menlo,monospace;width:110px}
+button.act{background:var(--line);border:1px solid #3a4149;color:var(--fg);padding:6px 10px;border-radius:4px;cursor:pointer}
+button.act:hover{border-color:var(--acc)}
+.num{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:4px;padding:4px 8px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px}
+canvas{width:100%;height:160px;display:block;background:#0f1215;border:1px solid var(--line);border-radius:4px}
+.charts{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}
+.chart h3{font:12px ui-monospace,Menlo,monospace;color:var(--dim);margin:0 0 4px}
+.status{color:var(--dim)}.status.bad{color:var(--bad)}
+#msg{color:var(--warn);min-height:1.2em;font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.fields{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:4px 16px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px}
+.fields span:first-child{color:var(--dim)}
+.cfg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px}
+</style></head><body>
+<header><h1>canweb</h1><nav id="tabs"><button data-tab="bus" class="active">Bus</button><button data-tab="send">Send</button><button data-tab="log">Log</button></nav><div id="busline">connecting</div></header>
+<main>
+<div id="msg"></div>
+<section id="tab-bus" class="active">
+ <div class="panel row"><span id="businfo" class="status"></span>
+  <button class="act" onclick="post('/api/clear',{})">reset counters</button>
+  <input type="text" id="dbcpath" placeholder="/path/to/file.dbc" style="width:280px">
+  <button class="act" onclick="post('/api/dbc',{path:el('dbcpath').value})">load DBC</button>
+  <label><input type="checkbox" id="onlychanged"> only IDs changed in last 5 s</label></div>
+ <div class="panel"><table id="ids"><thead><tr><th>ID</th><th>DLC</th><th>data</th><th>count</th><th>rate Hz</th><th>age s</th><th>decoded</th></tr></thead><tbody></tbody></table></div>
+</section>
+<section id="tab-send">
+ <div class="panel row"><span>ID (hex)</span><input type="text" id="sid" value="200"><span>data (hex bytes)</span><input type="text" id="sdata" value="" style="width:260px"><label><input type="checkbox" id="sext"> extended</label>
+  <button class="act" onclick="sendFrame()">send once</button><span>repeat every</span><input type="number" id="srep" value="0" min="0" step="10" style="width:80px"><span>ms (0 = off)</span><button class="act" onclick="repeatToggle()" id="srepbtn">start</button></div>
+</section>
+<section id="tab-log">
+ <div class="panel row"><button class="act" onclick="loadLog()">refresh</button><input type="text" id="logpath" placeholder="/home/pi/can-log.csv" style="width:280px"><button class="act" onclick="post('/api/log/save',{path:el('logpath').value})">save CSV</button><span class="status" id="loginfo"></span></div>
+ <div class="panel"><table id="log"><thead><tr><th>time</th><th>ID</th><th>data</th></tr></thead><tbody></tbody></table></div>
+</section>
+<div id="plugins"></div>
+</main>
+<script>
+const el=id=>document.getElementById(id);
+const hex=(n,ext)=>n.toString(16).toUpperCase().padStart(ext?8:3,'0');
+let cur='bus';
+function showTab(t){cur=t;document.querySelectorAll('section').forEach(s=>s.classList.toggle('active',s.id==='tab-'+t));document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));}
+el('tabs').addEventListener('click',e=>{if(e.target.dataset.tab)showTab(e.target.dataset.tab)});
+function msg(t,bad){el('msg').textContent=t||'';el('msg').style.color=bad?'var(--bad)':'var(--warn)';if(t)setTimeout(()=>{if(el('msg').textContent===t)el('msg').textContent=''},4000)}
+async function post(url,body){try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body||{})});const j=await r.json();if(!r.ok){msg(j.error||r.status,true);return null}if(j.info)msg(j.info);if(j.frames!==undefined)msg(j.frames+' frames written');return j}catch(e){msg(String(e),true);return null}}
+
+/* ---- bus table ---- */
+function renderBus(b){
+ el('busline').textContent=`${b.interface}:${b.channel} ${b.bitrate} | rx ${b.rx} tx ${b.tx} err ${b.errors} | ${b.ids.length} IDs`;
+ el('businfo').textContent=b.dbc?('DBC: '+b.dbc):'no DBC loaded';
+ if(cur!=='bus')return;
+ const only=el('onlychanged').checked;const tb=el('ids').querySelector('tbody');
+ const rows=b.ids.filter(d=>!only||d.changed<5).map(d=>{let dec='';if(d.decoded){dec=d.decoded.name+(d.decoded.signals?' '+Object.entries(d.decoded.signals).map(([k,v])=>k+'='+(typeof v==='number'?+v.toFixed(3):v)).join(' '):' '+(d.decoded.error||''))}
+  return `<tr class="${d.changed<0.5?'fresh':''}"><td>${hex(d.id,d.ext)}</td><td>${d.dlc}</td><td>${d.data}</td><td>${d.count}</td><td>${d.rate.toFixed(1)}</td><td>${d.age.toFixed(1)}</td><td>${dec}</td></tr>`}).join('');
+ tb.innerHTML=rows;
+}
+/* ---- send ---- */
+function sendFrame(){return post('/api/send',{id:el('sid').value,data:el('sdata').value,ext:el('sext').checked})}
+let rep=null;function repeatToggle(){if(rep){clearInterval(rep);rep=null;el('srepbtn').textContent='start';return}const ms=+el('srep').value;if(ms<=0){msg('set a period');return}rep=setInterval(sendFrame,ms);el('srepbtn').textContent='stop'}
+/* ---- log ---- */
+async function loadLog(){const r=await fetch('/api/log?limit=500');const rows=await r.json();el('loginfo').textContent=rows.length+' frames (last 500)';el('log').querySelector('tbody').innerHTML=rows.map(x=>`<tr><td>${new Date(x.t*1000).toLocaleTimeString()}.${String(Math.floor(x.t*1000)%1000).padStart(3,'0')}</td><td>${hex(x.id,x.ext)}</td><td>${x.data}</td></tr>`).reverse().join('')}
+
+/* ---- plugins: generic page per plugin ---- */
+const P={};   // name -> {sec, series:{name:[...]}, built}
+function ensurePlugin(name,st){
+ if(P[name])return P[name];
+ const b=document.createElement('button');b.dataset.tab=name;b.textContent=name;el('tabs').appendChild(b);
+ const s=document.createElement('section');s.id='tab-'+name;s.innerHTML=`<div class="panel"><div class="row"><strong id="${name}-title"></strong><span class="status" id="${name}-status"></span><span style="margin-left:auto" id="${name}-actions"></span></div></div>
+ <h2>inputs</h2><div class="panel lights" id="${name}-lights"></div>
+ <h2>outputs</h2><div class="panel btns" id="${name}-buttons"></div>
+ <h2>control</h2><div class="panel row" id="${name}-numbers"></div>
+ <h2>current</h2><div class="charts" id="${name}-charts"></div>
+ <h2>status</h2><div class="panel fields" id="${name}-fields"></div>
+ <h2>settings</h2><div class="panel cfg" id="${name}-config"></div>`;
+ el('plugins').appendChild(s);
+ return P[name]={sec:s,series:{},built:{}};
+}
+function pcmd(name,cmd,args){return post('/api/plugin/'+name,{cmd,args})}
+function renderPlugin(name,st){
+ const p=ensurePlugin(name,st);
+ el(name+'-title').textContent=st.title||name;const sl=el(name+'-status');sl.textContent=st.status||'';sl.className='status'+(st.online?'':' bad');
+ /* series buffers always update, even when the tab is hidden */
+ (st.series||[]).forEach(s=>{const a=p.series[s.name]||(p.series[s.name]=[]);a.push(s.value);if(a.length>300)a.shift()});
+ if(cur!==name)return;
+ const L=el(name+'-lights');if(!p.built.lights||p.built.lights!==(st.lights||[]).length){L.innerHTML=(st.lights||[]).map(l=>`<div class="light"><span class="dot" id="${name}-l-${l.name}"></span>${l.label||l.name}</div>`).join('');p.built.lights=(st.lights||[]).length}
+ (st.lights||[]).forEach(l=>{const d=el(`${name}-l-${l.name}`);if(d)d.classList.toggle('on',!!l.on)});
+ const B=el(name+'-buttons');if(!p.built.buttons){B.innerHTML=(st.buttons||[]).map(b=>`<button class="btn" id="${name}-b-${b.id}" onclick="toggleBtn('${name}','${b.id}')">${b.label}<small id="${name}-bs-${b.id}"></small></button>`).join('');p.built.buttons=true}
+ (st.buttons||[]).forEach(b=>{const e=el(`${name}-b-${b.id}`);if(!e)return;e.classList.toggle('on',!!b.on);e.classList.toggle('trip',/trip|fault/i.test(b.state||''));e.dataset.on=b.on?'1':'0';const s=el(`${name}-bs-${b.id}`);if(s)s.textContent=b.state||''});
+ const N=el(name+'-numbers');if(!p.built.numbers){N.innerHTML=(st.numbers||[]).map(n=>`<div class="num"><span>${n.label}</span><input type="number" id="${name}-n-${n.id}" value="${n.value}" min="${n.min}" max="${n.max}" step="1"><span>${n.unit||''}</span><button class="act" onclick="setNum('${name}','${n.id}')">set</button></div>`).join('')+(st.actions||[]).map(a=>`<button class="act" onclick="pcmd('${name}','action',{id:'${a.id}'})">${a.label}</button>`).join('');p.built.numbers=true}
+ const C=el(name+'-charts');if(!p.built.charts){C.innerHTML=(st.series||[]).map(s=>`<div class="chart"><h3>${s.name} <span id="${name}-sv-${s.name}"></span> ${s.unit||''}</h3><canvas id="${name}-c-${s.name}"></canvas></div>`).join('');p.built.charts=true}
+ (st.series||[]).forEach(s=>{const v=el(`${name}-sv-${s.name}`);if(v)v.textContent=(+s.value).toFixed(2);drawChart(el(`${name}-c-${s.name}`),p.series[s.name])});
+ el(name+'-fields').innerHTML=(st.fields||[]).map(f=>`<span>${f.name}</span><span>${f.value}</span>`).join('');
+ const G=el(name+'-config');const cfg=st.config||[];if(p.built.cfgCount!==cfg.length){G.innerHTML=cfg.length?cfg.map(c=>`<div class="num" title="${c.help||''}"><span>${c.name}</span><input type="number" id="${name}-g-${c.name}" value="${c.value}" step="1"><span>${c.unit||''}</span><button class="act" onclick="setCfg('${name}','${c.name}')">set</button></div>`).join(''):'<span class="status">use "read settings" above</span>';p.built.cfgCount=cfg.length}
+}
+function toggleBtn(name,id){const e=el(`${name}-b-${id}`);pcmd(name,'button',{id,on:e.dataset.on!=='1'})}
+function setNum(name,id){pcmd(name,'number',{id,value:+el(`${name}-n-${id}`).value})}
+async function setCfg(name,key){const r=await pcmd(name,'config',{name:key,value:+el(`${name}-g-${key}`).value});if(r&&r.value!==undefined){el(`${name}-g-${key}`).value=r.value;msg(key+' = '+r.value)}}
+function drawChart(cv,data){if(!cv||!data)return;const W=cv.clientWidth,H=cv.clientHeight;if(cv.width!==W||cv.height!==H){cv.width=W;cv.height=H}
+ const g=cv.getContext('2d');g.clearRect(0,0,W,H);let max=Math.max(0.5,...data);max=Math.ceil(max*2)/2;
+ g.strokeStyle='#2c323a';g.lineWidth=1;g.beginPath();for(let i=1;i<4;i++){const y=H-H*i/4;g.moveTo(0,y);g.lineTo(W,y)}g.stroke();
+ g.fillStyle='#8a93a0';g.font='11px ui-monospace,Menlo,monospace';for(let i=1;i<=4;i++)g.fillText((max*i/4).toFixed(2),4,H-H*i/4+11);
+ g.strokeStyle='#4a8de0';g.lineWidth=1.5;g.beginPath();const n=300;data.forEach((v,i)=>{const x=W*(n-data.length+i)/n,y=H-H*v/max;i?g.lineTo(x,y):g.moveTo(x,y)});g.stroke();}
+/* ---- stream ---- */
+function connect(){const es=new EventSource('/events');es.onmessage=e=>{const f=JSON.parse(e.data);renderBus(f.bus);for(const [n,st] of Object.entries(f.plugins||{}))renderPlugin(n,st)};es.onerror=()=>{el('busline').textContent='disconnected, retrying';es.close();setTimeout(connect,1500)}}
+connect();
+</script></body></html>

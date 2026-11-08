@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "canweb"
+version = "0.1"
+description = "CAN bus diagnostic web app for a Raspberry Pi: live bus view, DBC decode, send, log, and product pages (lights, buttons, graphs) through plugins"
+requires-python = ">=3.8"
+dependencies = ["python-can>=4.0"]
+
+[project.optional-dependencies]
+dbc = ["cantools>=39"]
+robustio = ["robustio"]
+
+[project.scripts]
+canweb = "canweb.server:main"
+
+[project.entry-points."canweb.plugins"]
+robustio = "canweb.plugins.robustio:RobustIOPlugin"
+
+[tool.setuptools.packages.find]
+include = ["canweb*"]
+
+[tool.setuptools.package-data]
+canweb = ["static/*"]

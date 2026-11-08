@@ -1,5 +1,6 @@
 #include <avr/io.h>
 #include <avr/pgmspace.h>
+#include <avr/wdt.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -63,6 +64,7 @@ static void cmd_help(void)
 {
     printf_P(PSTR(
         "ver                       version, reset cause, device check\n"
+        "cstest                    hold MC33978 chip select low for meter checks\n"
         "in                        debounced and raw inputs\n"
         "in watch                  print inputs on change (any key stops)\n"
         "in raw <cmd-hex>          read one MC33978 register\n"
@@ -235,6 +237,19 @@ static void cmd_cfg(uint8_t argc, char **argv)
     config_print();
 }
 
+/* Bring-up aid: hold the MC33978 chip select low with no clocks so the pins
+ * can be measured with a meter. TP7 (CS_IN0) should read 0 V; with the MISO
+ * pull-up enabled in spi_init, TP6 reads 0 V if the chip drives MISO (MSB of
+ * its status word is 0) and 3.3 V if it does not. Any key releases CS. */
+static void cmd_cstest(void)
+{
+    printf_P(PSTR("CS_IN0 held low. Measure TP7 (expect 0 V) and TP6 (0 V = MC33978 driving MISO, 3.3 V = not). Any key to release.\n"));
+    PORTB &= (uint8_t)~(1 << CS_IN_BIT);
+    while (uart_getc() < 0) { wdt_reset(); }
+    PORTB |= (1 << CS_IN_BIT);
+    printf_P(PSTR("released\n"));
+}
+
 static void execute(void)
 {
     char *argv[ARG_MAX];
@@ -245,6 +260,7 @@ static void execute(void)
 
     if      (is(c, PSTR("help")))   cmd_help();
     else if (is(c, PSTR("ver")))    cmd_ver();
+    else if (is(c, PSTR("cstest"))) cmd_cstest();
     else if (is(c, PSTR("in")))     cmd_in(argc, argv);
     else if (is(c, PSTR("amux")))   cmd_amux(argc, argv);
     else if (is(c, PSTR("out")))    cmd_out(argc, argv);

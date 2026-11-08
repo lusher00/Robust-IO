@@ -170,7 +170,10 @@ CAN frame layouts and settings.
 Everything for talking to the board over CAN from a Pi, laptop or robot:
 a DBC file, a Python package with the `robustio` command-line tool, a terminal
 dashboard, a browser dashboard, a bring-up and end-of-line test runner that
-writes a report per board, and a ROS 2 driver node. All of them also run
+writes a report per board, a ROS 2 driver node, and `canweb`, a CAN
+diagnostic web app for a Pi with a transceiver (live bus view, DBC decode,
+send, log, and a Robust IO page with input lights, output buttons and current
+graphs; other products plug in as a Python class). All of them also run
 against the firmware simulator, so they can be used before hardware exists.
 See [tools/README.md](tools/README.md).
 
