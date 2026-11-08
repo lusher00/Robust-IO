@@ -1,0 +1,198 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "322f7d05-ddc2-428a-a730-7ae2c3e041ae")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 56.896 123.952)
+		(size 12.7 5.588)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "878c653f-0446-4c44-85cd-aca9070e2b41")
+		(property "Sheetname" "outputs2"
+			(at 56.896 123.2404 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "outputs2.kicad_sch"
+			(at 56.896 130.1246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 53.086 97.282)
+		(size 13.97 6.858)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "887a3d78-1564-4676-8391-bb394e346573")
+		(property "Sheetname" "inputs"
+			(at 53.086 96.5704 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "inputs.kicad_sch"
+			(at 53.086 104.7246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 51.308 82.296)
+		(size 14.478 5.588)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "c9871cc2-d22f-4c29-a335-190c71969a0a")
+		(property "Sheetname" "Power"
+			(at 51.308 81.5844 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power.kicad_sch"
+			(at 51.308 88.4686 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 54.102 47.244)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "e660d825-5c97-4b68-bee0-34100cb6ed33")
+		(property "Sheetname" "processor"
+			(at 54.102 46.5324 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "processor.kicad_sch"
+			(at 54.102 51.6386 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "robust-io"
+				(path "/322f7d05-ddc2-428a-a730-7ae2c3e041ae"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "robust-io")(type "KiCad")(uri "${KIPRJMOD}/robust-io.kicad_sym")(options "")(descr "Project symbols for Robust IO"))
+)

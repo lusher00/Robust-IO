@@ -2,17 +2,21 @@
 
 A rugged industrial I/O board designed in KiCad 10.
 
-![Robust IO rev A, assembled board](docs/robust-io-revA-top.jpg)
+![Robust IO rev A, assembled board](hardware/rev-a/docs/robust-io-revA-top.jpg)
 
 ## Status
 
 - **Rev A:** fabricated and assembled by JLCPCB (5 bare boards, 2 assembled),
-  ordered 2026-10-05. Board 1 is under bring-up: power rails, MCU, UART
-  console and MCP2515 CAN controller are verified; the MC33978 input
-  interface does not yet answer on SPI (see Bring-up log). Board 2 is
-  partly disassembled from the reverse-polarity incident and needs C44/C45,
-  U5, U1, U14 and one BTS7008 refitted.
-- **Rev B:** change list collected below, not started.
+  ordered 2026-10-05. Board 1 passes bring-up: power rails, MCU, UART
+  console, MC33978 inputs (after replacing U7), MCP2515 CAN at 250 kbit/s
+  with a BeagleBone Blue host, and all 8 outputs under TUI and CAN control
+  (OUT_0's indicator LED is dead; the output itself works). Load test:
+  OUT_0 to OUT_3 on together at about 3.7 A each, 14.8 A from 24 V, board
+  cool on IR. Board 2 is partly disassembled from
+  the reverse-polarity incident and needs C44/C45, U5, U1, U14 and one
+  BTS7008 refitted.
+- **Rev B:** change list collected below. The KiCad project in
+  `hardware/rev-b/` starts as a copy of rev A.
 - **Schematic:** complete across four hierarchical sheets. ERC clean.
 - **PCB layout:** fully routed. DRC reports 0 errors and 4 library-mismatch
   warnings (J20, U1, U14, U7), which are intentional local footprint edits.
@@ -54,7 +58,7 @@ A rugged industrial I/O board designed in KiCad 10.
 
 41 test points (35 top, 6 bottom) cover the supply rails, SPI, UART, CAN
 interrupt, driver control and sense lines, and ground. Positions and nets are
-listed in `fab/robust-io-testpoints.csv`.
+listed in `hardware/rev-a/fab/robust-io-testpoints.csv`.
 
 ## Known limits of rev A
 
@@ -117,23 +121,113 @@ listed in `fab/robust-io-testpoints.csv`.
 
 ## Rev B change list
 
-- Mark + and - on the silkscreen at J15; add a reverse-polarity stage at the
-  input (P-FET or ideal-diode controller) so a reversed supply does nothing.
+- MCU: replace the ATmega1284P + MCP2515 with an STM32G474 (Cortex-M4,
+  170 MHz, 3 native FDCAN, 5 ADCs, HRTIM/advanced timers, native USB).
+  Board CAN becomes CAN FD with an FD-rated transceiver. Programming over
+  SWD (Tag-Connect or 10-pin header; Blue via OpenOCD, or the ESP32 over
+  Wi-Fi). Freed pins mean the ESP32-S3 links to the MCU over a UART
+  instead of joining the CAN bus (its TWAI is classic only and would break
+  an FD bus), and USB-CAN runs on the G474's own USB. Firmware: drivers and
+  CAN protocol port in C; the HAL layer is rewritten. An M7 (STM32H723)
+  only if robust-io needs Ethernet itself.
+- Mark + and - on the silkscreen at J15.
+- 24 V input protection front end, in order from J15: F1 blade fuse, a
+  surge stopper / ideal-diode controller rated for at least 100 V
+  (LTC4368/LT4363 class) with back-to-back 100 V N-FETs, then the rail TVS
+  after the FETs. The controller gives reverse polarity (to -40 V or
+  better), overvoltage cutoff at about 30 V set by divider, undervoltage
+  lockout, a forward/reverse overcurrent circuit breaker and soft-start for
+  hot-plug inrush. Any TVS ahead of the FETs is bidirectional with a
+  standoff above the worst wrong supply (SMDJ64CA class), so reverse
+  polarity or a 48 to 60 V supply turns the board off instead of clamping
+  and blowing F1. A rev A board was hit with 60 V on 2026-11-07: the
+  SMDJ24A clamped, both 10 A fuses blew and the rail was left shorted.
+  Move the bulk capacitors after the controller and rate them 100 V. Add a
+  supply monitor (INA228-class: bus voltage, total current, fault alert) on
+  the MCU so input V/I and protection trips are reported over CAN.
 - Input indicator LEDs: two-lead bicolour LED (red/green) in series with each
   input, replacing the 2.2k pull-ups R62 to R83, so the LED shows current in
-  either direction and switch-to-battery works on the SP channels. Check the
-  MC33978 comparator thresholds against the LED drop before committing.
+  either direction and switch-to-battery works on the SP channels. Checked
+  against the MC33978 datasheet: detection threshold 4.0 V (3.7 to 4.3 V,
+  80 to 300 mV hysteresis), sustain 2.0 mA SG / 2.2 mA SB. SG closed sits at
+  the LED drop (about 2 V), at least 1.4 V under the minimum threshold; SB
+  closed sits near +24V minus the drop. Use high-efficiency LEDs, visible at
+  2 mA and rated for the 20 mA maximum wetting pulse. Do not use low-power
+  mode (SG threshold 100 to 300 mV, below the LED drop) or the 2.5 V
+  threshold option on these inputs. Put the LED after the input filter and
+  clamp so field transients do not pass through it.
 - 47 ohm in series with each BTS7008 GND pin (U8 to U11).
-- 10k pull-up on CS_CAN.
 - C69/C70 to 220 pF, or drive the UART LEDs from the MCU.
 - C57 to C60: non-polarized capacitor symbol.
 - Test points: Keystone 5015 SMT loops on the rails, SPI, UART, interrupt,
   fault and analog sense lines; the four corner mounting holes are GND and
   take a ring lug, which covers the ground clips.
-- Rev A fab outputs move to `fab/revA/` and `docs/revA/` before any rev B
-  output is generated.
+- SBC supply: 24 V to 5 V 5 A buck (Pi 5 / CM5) and 24 V to 12 V 3 A buck
+  (BeagleBone Blue 9-18 V jack), each fused, on their own terminal block and
+  fed from +24V ahead of the output switches so the host timeout cannot cut
+  the host's own power.
+- Use the bottom side: move the large SMC diodes (output clamps D2, D4,
+  D8 to D13 B560C, D7 B340, input TVS D6) and other bulky parts to B.Cu for
+  hand fitting, freeing top-side area around the output stage.
+- Optional Wi-Fi/BLE: socket headers for a Waveshare ESP32-S3-Zero (same
+  module as the POV project); the board works without it fitted. It joins
+  the MCU over a UART (see MCU item), is wired to SWD and NRST/BOOT0 so it
+  can reflash the MCU over Wi-Fi, and can bridge the console UART. Powered from +5V into the Zero's own regulator, so the +5V rail must
+  cover its Wi-Fi peaks (about 350 to 500 mA).
+  Bridge functions on the S3 (classic CAN only; CAN FD, Ethernet fieldbuses
+  and Linux stay on the can-gateway):
+  - Wi-Fi/BLE to CAN bridge: web UI, MQTT and a CAN socket for hosts.
+  - USB-to-CAN adapter (candleLight/gs_usb class) on the G474's native USB
+    via USB-C, so a Mac or PC gets a CAN FD interface.
+  - One RS-485 port (Modbus RTU) from an S3 UART: transceiver, terminal
+    block, switchable 120 ohm termination and bias.
+- 16 high-side outputs, all on the protected 9 to 28 V input (12 V and
+  24 V systems; vehicle load dump handled by the input front end):
+  - OUT_0 to OUT_7: keep the four BTS7008-2EPA (7.5 A per channel).
+  - OUT_8 to OUT_15: four 24 V-family duals (BTT6030-2ERA or TPS272C45,
+    pick at schematic time), with margin above 28 V.
+  - Each bank has its own output-power terminal, fed from the main input by
+    default, so an E-stop or safety relay can cut output power while the MCU
+    stays up and reporting. No separate 36 V injection.
+  Size connector GND/supply pins per bank (rev A has one GND pin per four
+  outputs on J3/J5).
+- Replace the two DRV8876 (current limit fixed at about 1.36 A by
+  resistors, too low for typical 2 to 5 A linear actuators) with two quad
+  half-bridges (8 half-bridges), DRV8962 class (about 65 V, 5 A per half-bridge; confirm in
+  the datasheet). Current limit set from a G474 DAC instead of fixed
+  resistors, with per-half-bridge current sense to the ADC. Each
+  half-bridge is configured in firmware as a high-side or low-side output,
+  or paired for reversing: up to four reversing motors or linear actuators,
+  four latching irrigation valve zones, two bipolar steppers, or any mix.
+  Needs about 16 MCU control pins plus sense and fault lines (G474 in
+  LQFP100).
+- 4 relay outputs, dry contact (SPDT), for AC loads: 24 VAC irrigation
+  valves, pump/fan contactor coils. Mains loads go through external
+  contactors.
+- Analog inputs: 4 channels, each jumper or software selectable 4-20 mA /
+  0-10 V, protected, on G474 ADCs (tank level, pressure, soil moisture).
+- 2 fast pulse inputs on G474 timer pins for flow meters and encoders.
+- LoRa (SX1262 module) on the ESP32 side for remote sites beyond Wi-Fi.
+- Connectors: replace Phoenix MSTBA/MC with LCSC-stocked equivalents of the
+  same pitch (Degson/Kefa/Dinkle 5.08 mm for power, outputs and motors,
+  3.5 mm for inputs; plugs about $0.30 to $1 instead of about $7), and
+  standardize on as few pin counts as possible so one plug type covers
+  each group. Prefer push-in spring plugs for the inputs.
 
-## Files
+## Repository layout
+
+| Folder | Content |
+|---|---|
+| `hardware/rev-a/` | Rev A as built (git tag `rev-a`): KiCad project, `fab/` outputs and parts orders, `docs/` drawings and photos, `fixture/` bench fixture |
+| `hardware/rev-b/` | Rev B KiCad project, in progress |
+| `firmware/` | ATmega1284P firmware for rev A |
+| `tools/` | Host tools, shared by both revisions (same CAN protocol) |
+| `manufacturers datasheets/` | Part datasheets |
+
+Rev A files stay as they were built; all new hardware work happens in
+`hardware/rev-b/`.
+
+### Rev A KiCad files (`hardware/rev-a/`)
 
 - `robust-io.kicad_pro` - project file
 - `robust-io.kicad_sch` - root sheet
@@ -143,17 +237,17 @@ listed in `fab/robust-io-testpoints.csv`.
 - `robust-io.kicad_dru` - custom design rules
 - `DRC.rpt`, `ERC.rpt` - latest check reports
 
-## Documentation (`docs/`)
+## Documentation (`hardware/rev-a/docs/`)
 
 | File | Content |
 |---|---|
-| [robust-io-schematic.pdf](docs/robust-io-schematic.pdf) | Schematic, all sheets |
-| [layout-top.pdf](docs/layout-top.pdf), [layout-bottom.pdf](docs/layout-bottom.pdf) | Copper and silkscreen per side |
-| [assembly-top.pdf](docs/assembly-top.pdf) | Assembly drawing with reference designators |
-| [board-top.png](docs/board-top.png), [board-bottom.png](docs/board-bottom.png), [board-angle.png](docs/board-angle.png) | 3D renders |
-| [robust-io-revA-top.jpg](docs/robust-io-revA-top.jpg), [robust-io-revA-top-board-only.jpg](docs/robust-io-revA-top-board-only.jpg) | Photos of the assembled rev A board (composite of several exposures, rectified to the board outline) |
+| [robust-io-schematic.pdf](hardware/rev-a/docs/robust-io-schematic.pdf) | Schematic, all sheets |
+| [layout-top.pdf](hardware/rev-a/docs/layout-top.pdf), [layout-bottom.pdf](hardware/rev-a/docs/layout-bottom.pdf) | Copper and silkscreen per side |
+| [assembly-top.pdf](hardware/rev-a/docs/assembly-top.pdf) | Assembly drawing with reference designators |
+| [board-top.png](hardware/rev-a/docs/board-top.png), [board-bottom.png](hardware/rev-a/docs/board-bottom.png), [board-angle.png](hardware/rev-a/docs/board-angle.png) | 3D renders |
+| [robust-io-revA-top.jpg](hardware/rev-a/docs/robust-io-revA-top.jpg), [robust-io-revA-top-board-only.jpg](hardware/rev-a/docs/robust-io-revA-top-board-only.jpg) | Photos of the assembled rev A board (composite of several exposures, rectified to the board outline) |
 
-Regenerate with `bash docs/make_docs.sh` after saving the schematic and board.
+Regenerate with `bash hardware/rev-a/docs/make_docs.sh` after saving the schematic and board.
 
 ## Firmware (`firmware/`)
 
@@ -177,7 +271,7 @@ graphs; other products plug in as a Python class). All of them also run
 against the firmware simulator, so they can be used before hardware exists.
 See [tools/README.md](tools/README.md).
 
-## Fabrication outputs (`fab/`)
+## Fabrication outputs (`hardware/rev-a/fab/`)
 
 | File | Purpose |
 |---|---|
@@ -193,7 +287,7 @@ See [tools/README.md](tools/README.md).
 
 To regenerate the Gerbers after a board change, save the board in KiCad and run:
 
-    bash fab/make_gerbers.sh
+    bash hardware/rev-a/fab/make_gerbers.sh
 
 The placement file is not produced by the script. JLCPCB's rotation
 convention differs from KiCad's for some packages, so the rotation for each
