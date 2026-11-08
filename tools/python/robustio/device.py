@@ -20,6 +20,7 @@ client goes quiet, the keepalive stops and the board switches off.
 """
 from __future__ import annotations
 
+import collections
 import threading
 import time
 from typing import Callable, Dict, List, Optional
@@ -39,7 +40,7 @@ class ConfigRejected(RobustIOError):
 
 class RobustIO:
     def __init__(self, bus: can.BusABC, node: int = 0, keepalive: float = 0.2,
-                 keepalive_gate: Optional[Callable[[], bool]] = None):
+                 keepalive_gate: Optional[Callable[[], bool]] = None, log_size: int = 4000):
         p._check_node(node)
         self.bus = bus
         self.node = node
@@ -60,11 +61,31 @@ class RobustIO:
         self._listeners: List[Callable[[int, object], None]] = []
         self._ka_stop = threading.Event()
         self._ka_thread: Optional[threading.Thread] = None
+        self._log = collections.deque(maxlen=log_size)
+        self._log_seq = 0
+        self._log_lock = threading.Lock()
         self._notifier = can.Notifier(bus, [self._on_message], timeout=0.05)
 
     # ------------------------------------------------------------ receive
 
+    def _record(self, direction: str, msg: can.Message) -> None:
+        d = p.describe(msg.arbitration_id, msg.data) if not (msg.is_extended_id or msg.is_error_frame) else None
+        with self._log_lock:
+            self._log_seq += 1
+            self._log.append({
+                "seq": self._log_seq, "t": msg.timestamp or time.time(), "dir": direction,
+                "id": msg.arbitration_id, "ext": msg.is_extended_id, "err": msg.is_error_frame,
+                "data": bytes(msg.data).hex(" "), "name": d[0] if d else "",
+                "node": d[1] if d else None, "cmd": d[2] if d else False, "text": d[3] if d else ""})
+
+    def frames(self, since: int = 0, limit: int = 1000) -> dict:
+        """Logged frames (received and sent) with seq > since, oldest first."""
+        with self._log_lock:
+            out = [f for f in self._log if f["seq"] > since][-limit:]
+            return {"seq": self._log_seq, "frames": out}
+
     def _on_message(self, msg: can.Message) -> None:
+        self._record("rx", msg)
         if msg.is_extended_id or msg.is_error_frame:
             return
         r = p.decode(msg.arbitration_id, msg.data)
@@ -141,7 +162,9 @@ class RobustIO:
 
     def _send(self, frame) -> None:
         arb, data = frame
-        self.bus.send(can.Message(arbitration_id=arb, data=data, is_extended_id=False))
+        msg = can.Message(arbitration_id=arb, data=data, is_extended_id=False, timestamp=time.time())
+        self.bus.send(msg)
+        self._record("tx", msg)
 
     def set_outputs(self, mask: int, values: int) -> None:
         """Outputs selected by mask are set to the matching bit of values."""
@@ -157,8 +180,9 @@ class RobustIO:
         self.set_outputs(0xFF, 0)
 
     def set_motors(self, duty0: int, duty1: int) -> None:
+        frame = p.encode_set_motors(self.node, int(duty0), int(duty1))
         self._motor_cmd = [int(duty0), int(duty1)]
-        self._send(p.encode_set_motors(self.node, *self._motor_cmd))
+        self._send(frame)
         self._start_keepalive()
 
     def set_motor(self, m: int, duty: int) -> None:

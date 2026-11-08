@@ -61,7 +61,12 @@ screen. Keys: `0`-`7` toggle an output, `a` all off, `m` set a motor duty (typed
 ## Browser dashboard
 
 `robustio web` serves a page with the same view plus every setting, using only
-the Python standard library. Motor duty and settings are typed number fields.
+the Python standard library: an LED for each input, a switch for each output,
+and a slider with -1/+1 buttons for each motor. The CAN panel shows the bus
+traffic (raw frames, sent and received, each decoded) and a command trace: every
+command with its values, config replies, and each change of the inputs, outputs
+and motors. It can pause, clear, hide status frames and keepalives, and filter
+by ID.
 The keepalive runs only while a page is polling, so closing the tab, losing the
 network or stopping the server lets the board time out to all off.
 

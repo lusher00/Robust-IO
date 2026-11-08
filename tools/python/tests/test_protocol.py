@@ -76,3 +76,14 @@ def test_dbc_matches_decoders(node):
 
     data = db.encode_message(0x230 + node, {"Op": 1, "Key": 2, "Value": 1000})
     assert data == p.encode_config(node, p.OP_WRITE, 2, 1000)[1]
+
+
+def test_describe_commands_and_status():
+    assert p.describe(0x200, bytes([0x00, 0x00]))[3] == "keepalive"
+    assert p.describe(0x203, bytes([0x81, 0x01])) == ("set outputs", 3, True, "OUT0=on OUT7=off")
+    assert p.describe(0x210, bytes([40, 0x9C]))[3] == "M0 +40 %  M1 -100 %"
+    assert p.describe(0x230, bytes([1, 0x02, 0xE8, 0x03]))[3] == "write timeout = 1000"
+    assert p.describe(0x110, bytes([3, 1, 2, 0, 0]))[3] == "cmd 0,1  on 0  tripped 1"
+    assert p.describe(0x100, bytes([1, 0, 0x10, 1]))[3] == "closed SG0 SP6"
+    assert p.describe(0x110, b"\x01")[3].startswith("frame too short")
+    assert p.describe(0x7FF, b"") is None
